@@ -4,3 +4,10 @@ requires = [
 	"wheel"
 ]
 build-backend = "setuptools.build_meta"
+
+[tool.mypy]
+mypy_path ="GHEtool"
+ignore_missing_imports = true
+
+[tool.black]
+line-length = 160

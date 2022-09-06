@@ -10,7 +10,7 @@ def run():
     # init application
     app = QtWidgets_QApplication(argv)
     # Create and display the splash screen
-    myAppID = 'GHEtool.0.9'  # arbitrary string
+    myAppID = "GHEtool.0.9"  # arbitrary string
     ctypes_windll.shell32.SetCurrentProcessExplicitAppUserModelID(myAppID)
     # init window
     window = QtWidgets_QMainWindow()
@@ -20,6 +20,7 @@ def run():
     # show window
     try:
         import pyi_splash
+
         pyi_splash.close()
     except ModuleNotFoundError:
         pass

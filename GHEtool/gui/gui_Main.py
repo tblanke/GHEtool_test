@@ -27,47 +27,53 @@ class Ui_GHEtool(object):
         font.setWeight(50)
         GHEtool.setFont(font)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icons/icons/icon_05.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(
+            QtGui.QPixmap(":/icons/icons/icon_05.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         GHEtool.setWindowIcon(icon)
-        GHEtool.setStyleSheet("*{color: rgb(255, 255, 255);\n"
-"font: 11pt \"Lexend\";\n"
-"background-color: rgb(0, 64, 122);\n"
-"selection-background-color: rgb(84, 188, 235);\n"
-"alternate-background-color: rgb(84, 188, 235);}\n"
-"QToolTip { color: #fff; background-color: #000; border: none; }\n"
-"QPushButton{border: 3px solid rgb(84, 188, 235);\n"
-"border-radius: 5px;\n"
-"color: rgb(255, 255, 255);\n"
-"gridline-color: rgb(84, 188, 235);\n"
-"background-color: rgb(84, 188, 235);\n"
-"font-weight:500;}\n"
-"QPushButton:hover{background-color: rgb(0, 64, 122);}\n"
-"QPushButton:disabled{border: 3px solid rgb(100, 100, 100);\n"
-"border-radius: 5px;\n"
-"color: rgb(255, 255, 255);\n"
-"gridline-color: rgb(100, 100, 100);\n"
-"background-color: rgb(100, 100, 100);}\n"
-"QPushButton:disabled:hover{background-color: rgb(0, 64, 122);}\n"
-"QComboBox{border: 1px solid #ffffff;\n"
-"border-bottom-left-radius: 0px;\n"
-"border-bottom-right-radius: 0px;\n"
-"}\n"
-"QDoubleSpinBox{selection-color: rgb(255, 255, 255);\n"
-"selection-background-color: rgb(84, 188, 235);\n"
-"border: 1px solid rgb(255, 255, 255);\n"
-"font: 11pt \"Lexend Deca Light\";}\n"
-"QSpinBox{selection-color: rgb(255, 255, 255);\n"
-"selection-background-color: rgb(84, 188, 235);\n"
-"border: 1px solid rgb(255, 255, 255);\n"
-"font: 11pt \"Lexend Deca Light\";}\n"
-"QLineEdit{border: 3px solid rgb(84, 188, 235);\n"
-"border-radius: 5px;\n"
-"color: rgb(255, 255, 255);\n"
-"gridline-color: rgb(84, 188, 235);\n"
-"background-color: rgb(84, 188, 235);\n"
-"font-weight:500;\n"
-"selection-background-color: rgb(42, 126, 179);}\n"
-"QLineEdit:hover{background-color: rgb(0, 64, 122);}")
+        GHEtool.setStyleSheet(
+            "*{color: rgb(255, 255, 255);\n"
+            'font: 11pt "Lexend";\n'
+            "background-color: rgb(0, 64, 122);\n"
+            "selection-background-color: rgb(84, 188, 235);\n"
+            "alternate-background-color: rgb(84, 188, 235);}\n"
+            "QToolTip { color: #fff; background-color: #000; border: none; }\n"
+            "QPushButton{border: 3px solid rgb(84, 188, 235);\n"
+            "border-radius: 5px;\n"
+            "color: rgb(255, 255, 255);\n"
+            "gridline-color: rgb(84, 188, 235);\n"
+            "background-color: rgb(84, 188, 235);\n"
+            "font-weight:500;}\n"
+            "QPushButton:hover{background-color: rgb(0, 64, 122);}\n"
+            "QPushButton:disabled{border: 3px solid rgb(100, 100, 100);\n"
+            "border-radius: 5px;\n"
+            "color: rgb(255, 255, 255);\n"
+            "gridline-color: rgb(100, 100, 100);\n"
+            "background-color: rgb(100, 100, 100);}\n"
+            "QPushButton:disabled:hover{background-color: rgb(0, 64, 122);}\n"
+            "QComboBox{border: 1px solid #ffffff;\n"
+            "border-bottom-left-radius: 0px;\n"
+            "border-bottom-right-radius: 0px;\n"
+            "}\n"
+            "QDoubleSpinBox{selection-color: rgb(255, 255, 255);\n"
+            "selection-background-color: rgb(84, 188, 235);\n"
+            "border: 1px solid rgb(255, 255, 255);\n"
+            'font: 11pt "Lexend Deca Light";}\n'
+            "QSpinBox{selection-color: rgb(255, 255, 255);\n"
+            "selection-background-color: rgb(84, 188, 235);\n"
+            "border: 1px solid rgb(255, 255, 255);\n"
+            'font: 11pt "Lexend Deca Light";}\n'
+            "QLineEdit{border: 3px solid rgb(84, 188, 235);\n"
+            "border-radius: 5px;\n"
+            "color: rgb(255, 255, 255);\n"
+            "gridline-color: rgb(84, 188, 235);\n"
+            "background-color: rgb(84, 188, 235);\n"
+            "font-weight:500;\n"
+            "selection-background-color: rgb(42, 126, 179);}\n"
+            "QLineEdit:hover{background-color: rgb(0, 64, 122);}"
+        )
         self.centralwidget = QtWidgets.QWidget(GHEtool)
         self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
@@ -85,7 +91,11 @@ class Ui_GHEtool(object):
         self.pushButton_SaveScenario.setMaximumSize(QtCore.QSize(250, 30))
         self.pushButton_SaveScenario.setStyleSheet("text-align:left;")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/icons/icons/Update.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Update.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.pushButton_SaveScenario.setIcon(icon1)
         self.pushButton_SaveScenario.setIconSize(QtCore.QSize(20, 20))
         self.pushButton_SaveScenario.setObjectName("pushButton_SaveScenario")
@@ -105,7 +115,11 @@ class Ui_GHEtool(object):
         self.pushButton_DeleteScenario.setMaximumSize(QtCore.QSize(250, 30))
         self.pushButton_DeleteScenario.setStyleSheet("text-align:left;")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(":/icons/icons/Delete.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Delete.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.pushButton_DeleteScenario.setIcon(icon3)
         self.pushButton_DeleteScenario.setIconSize(QtCore.QSize(20, 20))
         self.pushButton_DeleteScenario.setObjectName("pushButton_DeleteScenario")
@@ -115,7 +129,11 @@ class Ui_GHEtool(object):
         self.button_rename_scenario.setMaximumSize(QtCore.QSize(250, 30))
         self.button_rename_scenario.setStyleSheet("text-align:left;")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap(":/icons/icons/Rename.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Rename.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.button_rename_scenario.setIcon(icon4)
         self.button_rename_scenario.setIconSize(QtCore.QSize(20, 20))
         self.button_rename_scenario.setObjectName("button_rename_scenario")
@@ -127,13 +145,17 @@ class Ui_GHEtool(object):
         sizePolicy.setHeightForWidth(self.list_widget_scenario.sizePolicy().hasHeightForWidth())
         self.list_widget_scenario.setSizePolicy(sizePolicy)
         self.list_widget_scenario.setMaximumSize(QtCore.QSize(16666711, 16666711))
-        self.list_widget_scenario.setStyleSheet("*{border: 1px solid white;}\n"
-"QListWidget{outline: 0;}\n"
-"QListWidget::item:selected{background:rgb(84, 188, 235);color: rgb(255, 255, 255);border: 0px solid white;}\n"
-"QListWidget::item:hover{border: 1px solid white;color: rgb(255, 255, 255);}")
+        self.list_widget_scenario.setStyleSheet(
+            "*{border: 1px solid white;}\n"
+            "QListWidget{outline: 0;}\n"
+            "QListWidget::item:selected{background:rgb(84, 188, 235);color: rgb(255, 255, 255);border: 0px solid white;}\n"
+            "QListWidget::item:hover{border: 1px solid white;color: rgb(255, 255, 255);}"
+        )
         self.list_widget_scenario.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
         self.list_widget_scenario.setAutoScrollMargin(10)
-        self.list_widget_scenario.setEditTriggers(QtWidgets.QAbstractItemView.DoubleClicked|QtWidgets.QAbstractItemView.EditKeyPressed|QtWidgets.QAbstractItemView.SelectedClicked)
+        self.list_widget_scenario.setEditTriggers(
+            QtWidgets.QAbstractItemView.DoubleClicked | QtWidgets.QAbstractItemView.EditKeyPressed | QtWidgets.QAbstractItemView.SelectedClicked
+        )
         self.list_widget_scenario.setDragDropMode(QtWidgets.QAbstractItemView.DragDrop)
         self.list_widget_scenario.setDefaultDropAction(QtCore.Qt.TargetMoveAction)
         self.list_widget_scenario.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectItems)
@@ -150,7 +172,11 @@ class Ui_GHEtool(object):
         self.pushButton_General.setMinimumSize(QtCore.QSize(100, 100))
         self.pushButton_General.setStyleSheet("")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(":/icons/icons/Borehole.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Borehole.png"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.pushButton_General.setIcon(icon5)
         self.pushButton_General.setIconSize(QtCore.QSize(24, 24))
         self.pushButton_General.setObjectName("pushButton_General")
@@ -165,7 +191,11 @@ class Ui_GHEtool(object):
         self.pushButton_borehole_resistance.setMinimumSize(QtCore.QSize(100, 100))
         self.pushButton_borehole_resistance.setStyleSheet("")
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap(":/icons/icons/Resistance.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon6.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Resistance.png"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.pushButton_borehole_resistance.setIcon(icon6)
         self.pushButton_borehole_resistance.setIconSize(QtCore.QSize(24, 24))
         self.pushButton_borehole_resistance.setObjectName("pushButton_borehole_resistance")
@@ -180,7 +210,11 @@ class Ui_GHEtool(object):
         self.pushButton_thermalDemands.setMinimumSize(QtCore.QSize(100, 100))
         self.pushButton_thermalDemands.setStyleSheet("")
         icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap(":/icons/icons/Thermal.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon7.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Thermal.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.pushButton_thermalDemands.setIcon(icon7)
         self.pushButton_thermalDemands.setIconSize(QtCore.QSize(24, 24))
         self.pushButton_thermalDemands.setObjectName("pushButton_thermalDemands")
@@ -195,7 +229,11 @@ class Ui_GHEtool(object):
         self.pushButton_Results.setMinimumSize(QtCore.QSize(100, 100))
         self.pushButton_Results.setStyleSheet("")
         icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap(":/icons/icons/Result.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon8.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Result.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.pushButton_Results.setIcon(icon8)
         self.pushButton_Results.setIconSize(QtCore.QSize(24, 24))
         self.pushButton_Results.setObjectName("pushButton_Results")
@@ -211,7 +249,11 @@ class Ui_GHEtool(object):
         self.pushButton_Settings.setMinimumSize(QtCore.QSize(100, 100))
         self.pushButton_Settings.setStyleSheet("")
         icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap(":/icons/icons/Settings.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon9.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Settings.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.pushButton_Settings.setIcon(icon9)
         self.pushButton_Settings.setIconSize(QtCore.QSize(24, 24))
         self.pushButton_Settings.setObjectName("pushButton_Settings")
@@ -244,7 +286,7 @@ class Ui_GHEtool(object):
         self.verticalLayout_8.setSpacing(0)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.label_Borehole_earth = QtWidgets.QLabel(self.scrollAreaWidgetContents_3)
-        self.label_Borehole_earth.setStyleSheet("font: 63 16pt \"Lexend SemiBold\";")
+        self.label_Borehole_earth.setStyleSheet('font: 63 16pt "Lexend SemiBold";')
         self.label_Borehole_earth.setObjectName("label_Borehole_earth")
         self.verticalLayout_8.addWidget(self.label_Borehole_earth)
         self.label_41 = QtWidgets.QLabel(self.scrollAreaWidgetContents_3)
@@ -266,25 +308,29 @@ class Ui_GHEtool(object):
         font.setItalic(False)
         font.setWeight(62)
         self.label_aim.setFont(font)
-        self.label_aim.setStyleSheet("QLabel {\n"
-"        qproperty-alignment: AlignCenter;\n"
-"    border: 1px solid  rgb(84, 188, 235);\n"
-"    border-top-left-radius: 15px;\n"
-"    border-top-right-radius: 15px;\n"
-"    background-color:  rgb(84, 188, 235);\n"
-"    padding: 5px 0px;\n"
-"    color:  rgb(255, 255, 235);\n"
-"font-weight:500;\n"
-"}")
+        self.label_aim.setStyleSheet(
+            "QLabel {\n"
+            "        qproperty-alignment: AlignCenter;\n"
+            "    border: 1px solid  rgb(84, 188, 235);\n"
+            "    border-top-left-radius: 15px;\n"
+            "    border-top-right-radius: 15px;\n"
+            "    background-color:  rgb(84, 188, 235);\n"
+            "    padding: 5px 0px;\n"
+            "    color:  rgb(255, 255, 235);\n"
+            "font-weight:500;\n"
+            "}"
+        )
         self.label_aim.setObjectName("label_aim")
         self.verticalLayout_8.addWidget(self.label_aim)
         self.frame_7 = QtWidgets.QFrame(self.scrollAreaWidgetContents_3)
-        self.frame_7.setStyleSheet("QFrame {\n"
-"    border: 1px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);}")
+        self.frame_7.setStyleSheet(
+            "QFrame {\n"
+            "    border: 1px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);}"
+        )
         self.frame_7.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_7.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_7.setObjectName("frame_7")
@@ -301,11 +347,9 @@ class Ui_GHEtool(object):
         self.comboBox_aim.setMinimumSize(QtCore.QSize(100, 0))
         self.comboBox_aim.setToolTip("")
         self.comboBox_aim.setToolTipDuration(-1)
-        self.comboBox_aim.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_aim.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_aim.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContents)
         self.comboBox_aim.setObjectName("comboBox_aim")
         self.comboBox_aim.addItem("")
@@ -321,25 +365,29 @@ class Ui_GHEtool(object):
         self.label_46.setObjectName("label_46")
         self.verticalLayout_8.addWidget(self.label_46)
         self.label_Earth_Properties = QtWidgets.QLabel(self.scrollAreaWidgetContents_3)
-        self.label_Earth_Properties.setStyleSheet("QLabel {\n"
-"        qproperty-alignment: AlignCenter;\n"
-"    border: 1px solid  rgb(84, 188, 235);\n"
-"    border-top-left-radius: 15px;\n"
-"    border-top-right-radius: 15px;\n"
-"    background-color:  rgb(84, 188, 235);\n"
-"    padding: 5px 0px;\n"
-"    color:  rgb(255, 255, 235);\n"
-"font-weight:500;\n"
-"}")
+        self.label_Earth_Properties.setStyleSheet(
+            "QLabel {\n"
+            "        qproperty-alignment: AlignCenter;\n"
+            "    border: 1px solid  rgb(84, 188, 235);\n"
+            "    border-top-left-radius: 15px;\n"
+            "    border-top-right-radius: 15px;\n"
+            "    background-color:  rgb(84, 188, 235);\n"
+            "    padding: 5px 0px;\n"
+            "    color:  rgb(255, 255, 235);\n"
+            "font-weight:500;\n"
+            "}"
+        )
         self.label_Earth_Properties.setObjectName("label_Earth_Properties")
         self.verticalLayout_8.addWidget(self.label_Earth_Properties)
         self.frame_2 = QtWidgets.QFrame(self.scrollAreaWidgetContents_3)
-        self.frame_2.setStyleSheet("QFrame {\n"
-"    border: 1px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);}")
+        self.frame_2.setStyleSheet(
+            "QFrame {\n"
+            "    border: 1px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);}"
+        )
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -351,7 +399,7 @@ class Ui_GHEtool(object):
         self.gridLayout_4.addWidget(self.label_H, 0, 0, 1, 1)
         self.doubleSpinBox_H = QtWidgets.QDoubleSpinBox(self.frame_2)
         self.doubleSpinBox_H.setStyleSheet("")
-        self.doubleSpinBox_H.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_H.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_H.setMinimum(15.0)
         self.doubleSpinBox_H.setMaximum(500.0)
         self.doubleSpinBox_H.setProperty("value", 100.0)
@@ -362,7 +410,7 @@ class Ui_GHEtool(object):
         self.gridLayout_4.addWidget(self.label_BS, 1, 0, 1, 1)
         self.doubleSpinBox_B = QtWidgets.QDoubleSpinBox(self.frame_2)
         self.doubleSpinBox_B.setStyleSheet("")
-        self.doubleSpinBox_B.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_B.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_B.setMinimum(1.0)
         self.doubleSpinBox_B.setMaximum(99.0)
         self.doubleSpinBox_B.setSingleStep(0.1)
@@ -374,7 +422,7 @@ class Ui_GHEtool(object):
         self.gridLayout_4.addWidget(self.label_B_max, 2, 0, 1, 1)
         self.doubleSpinBox_B_max = QtWidgets.QDoubleSpinBox(self.frame_2)
         self.doubleSpinBox_B_max.setStyleSheet("")
-        self.doubleSpinBox_B_max.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_B_max.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_B_max.setMinimum(3.0)
         self.doubleSpinBox_B_max.setMaximum(9.0)
         self.doubleSpinBox_B_max.setSingleStep(0.1)
@@ -383,7 +431,7 @@ class Ui_GHEtool(object):
         self.gridLayout_4.addWidget(self.doubleSpinBox_B_max, 2, 2, 1, 1)
         self.doubleSpinBox_k_s = QtWidgets.QDoubleSpinBox(self.frame_2)
         self.doubleSpinBox_k_s.setStyleSheet("")
-        self.doubleSpinBox_k_s.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_k_s.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_k_s.setDecimals(3)
         self.doubleSpinBox_k_s.setMinimum(0.1)
         self.doubleSpinBox_k_s.setMaximum(10.0)
@@ -399,7 +447,7 @@ class Ui_GHEtool(object):
         self.gridLayout_4.addWidget(self.label_GroundTemp, 4, 0, 1, 1)
         self.doubleSpinBox_Tg = QtWidgets.QDoubleSpinBox(self.frame_2)
         self.doubleSpinBox_Tg.setStyleSheet("")
-        self.doubleSpinBox_Tg.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Tg.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Tg.setDecimals(2)
         self.doubleSpinBox_Tg.setMinimum(-273.15)
         self.doubleSpinBox_Tg.setMaximum(100.0)
@@ -412,7 +460,7 @@ class Ui_GHEtool(object):
         self.gridLayout_4.addWidget(self.label_LengthField, 7, 0, 1, 1)
         self.spinBox_N_1 = QtWidgets.QSpinBox(self.frame_2)
         self.spinBox_N_1.setStyleSheet("")
-        self.spinBox_N_1.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.spinBox_N_1.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.spinBox_N_1.setMinimum(1)
         self.spinBox_N_1.setMaximum(40)
         self.spinBox_N_1.setProperty("value", 12)
@@ -423,7 +471,7 @@ class Ui_GHEtool(object):
         self.gridLayout_4.addWidget(self.label_WidthField, 5, 0, 1, 1)
         self.spinBox_N_2 = QtWidgets.QSpinBox(self.frame_2)
         self.spinBox_N_2.setStyleSheet("")
-        self.spinBox_N_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.spinBox_N_2.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.spinBox_N_2.setMinimum(1)
         self.spinBox_N_2.setMaximum(40)
         self.spinBox_N_2.setProperty("value", 8)
@@ -434,7 +482,7 @@ class Ui_GHEtool(object):
         self.gridLayout_4.addWidget(self.label_MaxWidthField, 6, 0, 1, 1)
         self.doubleSpinBox_W_max = QtWidgets.QDoubleSpinBox(self.frame_2)
         self.doubleSpinBox_W_max.setStyleSheet("")
-        self.doubleSpinBox_W_max.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_W_max.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_W_max.setMinimum(10.0)
         self.doubleSpinBox_W_max.setMaximum(500.0)
         self.doubleSpinBox_W_max.setProperty("value", 100.0)
@@ -445,7 +493,7 @@ class Ui_GHEtool(object):
         self.gridLayout_4.addWidget(self.label_MaxLengthField, 8, 0, 1, 1)
         self.doubleSpinBox_L_max = QtWidgets.QDoubleSpinBox(self.frame_2)
         self.doubleSpinBox_L_max.setStyleSheet("")
-        self.doubleSpinBox_L_max.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_L_max.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_L_max.setMinimum(10.0)
         self.doubleSpinBox_L_max.setMaximum(500.0)
         self.doubleSpinBox_L_max.setProperty("value", 100.0)
@@ -461,21 +509,17 @@ class Ui_GHEtool(object):
         self.gridLayout_4.addWidget(self.label_calc_method_sizing, 11, 0, 1, 1)
         self.comboBox_Size_Method = QtWidgets.QComboBox(self.frame_2)
         self.comboBox_Size_Method.setMinimumSize(QtCore.QSize(100, 0))
-        self.comboBox_Size_Method.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_Size_Method.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_Size_Method.setObjectName("comboBox_Size_Method")
         self.comboBox_Size_Method.addItem("")
         self.comboBox_Size_Method.addItem("")
         self.gridLayout_4.addWidget(self.comboBox_Size_Method, 11, 2, 1, 1)
         self.comboBox_depth_Method = QtWidgets.QComboBox(self.frame_2)
-        self.comboBox_depth_Method.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_depth_Method.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_depth_Method.setObjectName("comboBox_depth_Method")
         self.comboBox_depth_Method.addItem("")
         self.comboBox_depth_Method.addItem("")
@@ -495,25 +539,29 @@ class Ui_GHEtool(object):
         self.verticalLayout_8.addWidget(self.label_37)
         self.label_TempConstraints = QtWidgets.QLabel(self.scrollAreaWidgetContents_3)
         self.label_TempConstraints.setToolTipDuration(-1)
-        self.label_TempConstraints.setStyleSheet("QLabel {\n"
-"        qproperty-alignment: AlignCenter;\n"
-"    border: 1px solid  rgb(84, 188, 235);\n"
-"    border-top-left-radius: 15px;\n"
-"    border-top-right-radius: 15px;\n"
-"    background-color:  rgb(84, 188, 235);\n"
-"    padding: 5px 0px;\n"
-"    color:  rgb(255, 255, 235);\n"
-"font-weight:500;\n"
-"}")
+        self.label_TempConstraints.setStyleSheet(
+            "QLabel {\n"
+            "        qproperty-alignment: AlignCenter;\n"
+            "    border: 1px solid  rgb(84, 188, 235);\n"
+            "    border-top-left-radius: 15px;\n"
+            "    border-top-right-radius: 15px;\n"
+            "    background-color:  rgb(84, 188, 235);\n"
+            "    padding: 5px 0px;\n"
+            "    color:  rgb(255, 255, 235);\n"
+            "font-weight:500;\n"
+            "}"
+        )
         self.label_TempConstraints.setObjectName("label_TempConstraints")
         self.verticalLayout_8.addWidget(self.label_TempConstraints)
         self.frame_3 = QtWidgets.QFrame(self.scrollAreaWidgetContents_3)
-        self.frame_3.setStyleSheet("QFrame {\n"
-"    border: 1px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);}")
+        self.frame_3.setStyleSheet(
+            "QFrame {\n"
+            "    border: 1px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);}"
+        )
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
@@ -531,7 +579,7 @@ class Ui_GHEtool(object):
         self.doubleSpinBox_TMax.setMinimumSize(QtCore.QSize(100, 0))
         self.doubleSpinBox_TMax.setMaximumSize(QtCore.QSize(100, 16777215))
         self.doubleSpinBox_TMax.setStyleSheet("")
-        self.doubleSpinBox_TMax.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_TMax.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_TMax.setMinimum(-273.0)
         self.doubleSpinBox_TMax.setMaximum(1000.0)
         self.doubleSpinBox_TMax.setSingleStep(0.1)
@@ -545,7 +593,7 @@ class Ui_GHEtool(object):
         self.doubleSpinBox_TMin.setMinimumSize(QtCore.QSize(100, 0))
         self.doubleSpinBox_TMin.setMaximumSize(QtCore.QSize(100, 16777215))
         self.doubleSpinBox_TMin.setStyleSheet("")
-        self.doubleSpinBox_TMin.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_TMin.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_TMin.setMinimum(-273.0)
         self.doubleSpinBox_TMin.setMaximum(1000.0)
         self.doubleSpinBox_TMin.setSingleStep(0.1)
@@ -555,7 +603,7 @@ class Ui_GHEtool(object):
         self.spinBox_Years.setMinimumSize(QtCore.QSize(100, 0))
         self.spinBox_Years.setMaximumSize(QtCore.QSize(100, 16777215))
         self.spinBox_Years.setStyleSheet("")
-        self.spinBox_Years.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.spinBox_Years.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.spinBox_Years.setMinimum(1)
         self.spinBox_Years.setMaximum(100)
         self.spinBox_Years.setProperty("value", 20)
@@ -601,7 +649,11 @@ class Ui_GHEtool(object):
         self.pushButton_NextGeneral.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.pushButton_NextGeneral.setStyleSheet("")
         icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap(":/icons/icons/ArrowRight2.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon10.addPixmap(
+            QtGui.QPixmap(":/icons/icons/ArrowRight2.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.pushButton_NextGeneral.setIcon(icon10)
         self.pushButton_NextGeneral.setIconSize(QtCore.QSize(20, 20))
         self.pushButton_NextGeneral.setObjectName("pushButton_NextGeneral")
@@ -627,7 +679,7 @@ class Ui_GHEtool(object):
         self.verticalLayout_17.setSpacing(0)
         self.verticalLayout_17.setObjectName("verticalLayout_17")
         self.label_Borehole_Resistance = QtWidgets.QLabel(self.scrollAreaWidgetContents_5)
-        self.label_Borehole_Resistance.setStyleSheet("font: 63 16pt \"Lexend SemiBold\";")
+        self.label_Borehole_Resistance.setStyleSheet('font: 63 16pt "Lexend SemiBold";')
         self.label_Borehole_Resistance.setObjectName("label_Borehole_Resistance")
         self.verticalLayout_17.addWidget(self.label_Borehole_Resistance)
         self.label_49 = QtWidgets.QLabel(self.scrollAreaWidgetContents_5)
@@ -642,25 +694,29 @@ class Ui_GHEtool(object):
         self.label_49.setObjectName("label_49")
         self.verticalLayout_17.addWidget(self.label_49)
         self.label_Borehole_Resistance_Head = QtWidgets.QLabel(self.scrollAreaWidgetContents_5)
-        self.label_Borehole_Resistance_Head.setStyleSheet("QLabel {\n"
-"        qproperty-alignment: AlignCenter;\n"
-"    border: 1px solid  rgb(84, 188, 235);\n"
-"    border-top-left-radius: 15px;\n"
-"    border-top-right-radius: 15px;\n"
-"    background-color:  rgb(84, 188, 235);\n"
-"    padding: 5px 0px;\n"
-"    color:  rgb(255, 255, 235);\n"
-"font-weight:500;\n"
-"}")
+        self.label_Borehole_Resistance_Head.setStyleSheet(
+            "QLabel {\n"
+            "        qproperty-alignment: AlignCenter;\n"
+            "    border: 1px solid  rgb(84, 188, 235);\n"
+            "    border-top-left-radius: 15px;\n"
+            "    border-top-right-radius: 15px;\n"
+            "    background-color:  rgb(84, 188, 235);\n"
+            "    padding: 5px 0px;\n"
+            "    color:  rgb(255, 255, 235);\n"
+            "font-weight:500;\n"
+            "}"
+        )
         self.label_Borehole_Resistance_Head.setObjectName("label_Borehole_Resistance_Head")
         self.verticalLayout_17.addWidget(self.label_Borehole_Resistance_Head)
         self.frame_9 = QtWidgets.QFrame(self.scrollAreaWidgetContents_5)
-        self.frame_9.setStyleSheet("QFrame {\n"
-"    border: 1px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);}")
+        self.frame_9.setStyleSheet(
+            "QFrame {\n"
+            "    border: 1px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);}"
+        )
         self.frame_9.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_9.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_9.setObjectName("frame_9")
@@ -681,11 +737,9 @@ class Ui_GHEtool(object):
         self.gridLayout_9.addWidget(self.label_BoreholeResistance, 2, 0, 1, 1)
         self.comboBox_Rb_method = QtWidgets.QComboBox(self.frame_9)
         self.comboBox_Rb_method.setMinimumSize(QtCore.QSize(220, 0))
-        self.comboBox_Rb_method.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_Rb_method.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_Rb_method.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContents)
         self.comboBox_Rb_method.setMinimumContentsLength(0)
         self.comboBox_Rb_method.setObjectName("comboBox_Rb_method")
@@ -695,7 +749,7 @@ class Ui_GHEtool(object):
         self.gridLayout_9.addWidget(self.comboBox_Rb_method, 0, 2, 1, 1)
         self.doubleSpinBox_Rb = QtWidgets.QDoubleSpinBox(self.frame_9)
         self.doubleSpinBox_Rb.setStyleSheet("")
-        self.doubleSpinBox_Rb.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Rb.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Rb.setDecimals(4)
         self.doubleSpinBox_Rb.setMinimum(0.0)
         self.doubleSpinBox_Rb.setMaximum(100.0)
@@ -720,25 +774,29 @@ class Ui_GHEtool(object):
         self.label_47.setObjectName("label_47")
         self.verticalLayout_17.addWidget(self.label_47)
         self.label_fluid_data = QtWidgets.QLabel(self.scrollAreaWidgetContents_5)
-        self.label_fluid_data.setStyleSheet("QLabel {\n"
-"        qproperty-alignment: AlignCenter;\n"
-"    border: 1px solid  rgb(84, 188, 235);\n"
-"    border-top-left-radius: 15px;\n"
-"    border-top-right-radius: 15px;\n"
-"    background-color:  rgb(84, 188, 235);\n"
-"    padding: 5px 0px;\n"
-"    color:  rgb(255, 255, 235);\n"
-"font-weight:500;\n"
-"}")
+        self.label_fluid_data.setStyleSheet(
+            "QLabel {\n"
+            "        qproperty-alignment: AlignCenter;\n"
+            "    border: 1px solid  rgb(84, 188, 235);\n"
+            "    border-top-left-radius: 15px;\n"
+            "    border-top-right-radius: 15px;\n"
+            "    background-color:  rgb(84, 188, 235);\n"
+            "    padding: 5px 0px;\n"
+            "    color:  rgb(255, 255, 235);\n"
+            "font-weight:500;\n"
+            "}"
+        )
         self.label_fluid_data.setObjectName("label_fluid_data")
         self.verticalLayout_17.addWidget(self.label_fluid_data)
         self.frame_fluid_data = QtWidgets.QFrame(self.scrollAreaWidgetContents_5)
-        self.frame_fluid_data.setStyleSheet("QFrame {\n"
-"    border: 1px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);}")
+        self.frame_fluid_data.setStyleSheet(
+            "QFrame {\n"
+            "    border: 1px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);}"
+        )
         self.frame_fluid_data.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_fluid_data.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_fluid_data.setObjectName("frame_fluid_data")
@@ -749,7 +807,7 @@ class Ui_GHEtool(object):
         self.gridLayout_5.addWidget(self.label_fluid_thermal_capacity, 3, 0, 1, 1)
         self.doubleSpinBox_fluid_thermal_capacity = QtWidgets.QDoubleSpinBox(self.frame_fluid_data)
         self.doubleSpinBox_fluid_thermal_capacity.setStyleSheet("")
-        self.doubleSpinBox_fluid_thermal_capacity.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_fluid_thermal_capacity.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_fluid_thermal_capacity.setDecimals(1)
         self.doubleSpinBox_fluid_thermal_capacity.setMinimum(0.0)
         self.doubleSpinBox_fluid_thermal_capacity.setMaximum(100000000.0)
@@ -767,7 +825,7 @@ class Ui_GHEtool(object):
         self.gridLayout_5.addWidget(self.label_fluid_lambda, 0, 0, 1, 1)
         self.doubleSpinBox_fluid_lambda = QtWidgets.QDoubleSpinBox(self.frame_fluid_data)
         self.doubleSpinBox_fluid_lambda.setStyleSheet("")
-        self.doubleSpinBox_fluid_lambda.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_fluid_lambda.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_fluid_lambda.setDecimals(3)
         self.doubleSpinBox_fluid_lambda.setMinimum(0.0)
         self.doubleSpinBox_fluid_lambda.setMaximum(100.0)
@@ -780,7 +838,7 @@ class Ui_GHEtool(object):
         self.gridLayout_5.addWidget(self.label_fluid_density, 2, 0, 1, 1)
         self.doubleSpinBox_fluid_mass_flow_rate = QtWidgets.QDoubleSpinBox(self.frame_fluid_data)
         self.doubleSpinBox_fluid_mass_flow_rate.setStyleSheet("")
-        self.doubleSpinBox_fluid_mass_flow_rate.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_fluid_mass_flow_rate.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_fluid_mass_flow_rate.setDecimals(3)
         self.doubleSpinBox_fluid_mass_flow_rate.setMinimum(0.0)
         self.doubleSpinBox_fluid_mass_flow_rate.setMaximum(10000000.0)
@@ -790,7 +848,7 @@ class Ui_GHEtool(object):
         self.gridLayout_5.addWidget(self.doubleSpinBox_fluid_mass_flow_rate, 1, 2, 1, 1)
         self.doubleSpinBox_fluid_density = QtWidgets.QDoubleSpinBox(self.frame_fluid_data)
         self.doubleSpinBox_fluid_density.setStyleSheet("")
-        self.doubleSpinBox_fluid_density.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_fluid_density.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_fluid_density.setDecimals(1)
         self.doubleSpinBox_fluid_density.setMinimum(0.0)
         self.doubleSpinBox_fluid_density.setMaximum(10000000.0)
@@ -803,7 +861,7 @@ class Ui_GHEtool(object):
         self.gridLayout_5.addWidget(self.label_fluid_viscosity, 4, 0, 1, 1)
         self.doubleSpinBox_fluid_viscosity = QtWidgets.QDoubleSpinBox(self.frame_fluid_data)
         self.doubleSpinBox_fluid_viscosity.setStyleSheet("")
-        self.doubleSpinBox_fluid_viscosity.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_fluid_viscosity.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_fluid_viscosity.setDecimals(6)
         self.doubleSpinBox_fluid_viscosity.setMinimum(0.0)
         self.doubleSpinBox_fluid_viscosity.setMaximum(1000.0)
@@ -819,25 +877,29 @@ class Ui_GHEtool(object):
         self.label_48.setObjectName("label_48")
         self.verticalLayout_17.addWidget(self.label_48)
         self.label_pipe_data = QtWidgets.QLabel(self.scrollAreaWidgetContents_5)
-        self.label_pipe_data.setStyleSheet("QLabel {\n"
-"        qproperty-alignment: AlignCenter;\n"
-"    border: 1px solid  rgb(84, 188, 235);\n"
-"    border-top-left-radius: 15px;\n"
-"    border-top-right-radius: 15px;\n"
-"    background-color:  rgb(84, 188, 235);\n"
-"    padding: 5px 0px;\n"
-"    color:  rgb(255, 255, 235);\n"
-"font-weight:500;\n"
-"}")
+        self.label_pipe_data.setStyleSheet(
+            "QLabel {\n"
+            "        qproperty-alignment: AlignCenter;\n"
+            "    border: 1px solid  rgb(84, 188, 235);\n"
+            "    border-top-left-radius: 15px;\n"
+            "    border-top-right-radius: 15px;\n"
+            "    background-color:  rgb(84, 188, 235);\n"
+            "    padding: 5px 0px;\n"
+            "    color:  rgb(255, 255, 235);\n"
+            "font-weight:500;\n"
+            "}"
+        )
         self.label_pipe_data.setObjectName("label_pipe_data")
         self.verticalLayout_17.addWidget(self.label_pipe_data)
         self.frame_pipe_data = QtWidgets.QFrame(self.scrollAreaWidgetContents_5)
-        self.frame_pipe_data.setStyleSheet("QFrame {\n"
-"    border: 1px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);}")
+        self.frame_pipe_data.setStyleSheet(
+            "QFrame {\n"
+            "    border: 1px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);}"
+        )
         self.frame_pipe_data.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_pipe_data.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_pipe_data.setObjectName("frame_pipe_data")
@@ -846,12 +908,14 @@ class Ui_GHEtool(object):
         self.graphicsView = QtWidgets.QGraphicsView(self.frame_pipe_data)
         self.graphicsView.setMinimumSize(QtCore.QSize(0, 0))
         self.graphicsView.setMaximumSize(QtCore.QSize(100, 16777215))
-        self.graphicsView.setStyleSheet("QFrame {\n"
-"    border: 1px solid #54bceb;\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);}")
+        self.graphicsView.setStyleSheet(
+            "QFrame {\n"
+            "    border: 1px solid #54bceb;\n"
+            "    border-bottom-left-radius: 0px;\n"
+            "    border-bottom-right-radius: 0px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);}"
+        )
         self.graphicsView.setObjectName("graphicsView")
         self.horizontalLayout_35.addWidget(self.graphicsView)
         self.gridLayout = QtWidgets.QGridLayout()
@@ -861,7 +925,7 @@ class Ui_GHEtool(object):
         self.gridLayout.addWidget(self.label_NumberOfPipes, 0, 0, 1, 1)
         self.doubleSpinBox_pipe_roughness = QtWidgets.QDoubleSpinBox(self.frame_pipe_data)
         self.doubleSpinBox_pipe_roughness.setStyleSheet("")
-        self.doubleSpinBox_pipe_roughness.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_pipe_roughness.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_pipe_roughness.setDecimals(7)
         self.doubleSpinBox_pipe_roughness.setMinimum(0.0)
         self.doubleSpinBox_pipe_roughness.setMaximum(1000.0)
@@ -871,7 +935,7 @@ class Ui_GHEtool(object):
         self.gridLayout.addWidget(self.doubleSpinBox_pipe_roughness, 7, 2, 1, 1)
         self.doubleSpinBox_pipe_distance = QtWidgets.QDoubleSpinBox(self.frame_pipe_data)
         self.doubleSpinBox_pipe_distance.setStyleSheet("")
-        self.doubleSpinBox_pipe_distance.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_pipe_distance.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_pipe_distance.setDecimals(4)
         self.doubleSpinBox_pipe_distance.setMinimum(0.0)
         self.doubleSpinBox_pipe_distance.setMaximum(1000.0)
@@ -881,7 +945,7 @@ class Ui_GHEtool(object):
         self.gridLayout.addWidget(self.doubleSpinBox_pipe_distance, 6, 2, 1, 1)
         self.doubleSpinBox_pipe_inner_radius = QtWidgets.QDoubleSpinBox(self.frame_pipe_data)
         self.doubleSpinBox_pipe_inner_radius.setStyleSheet("")
-        self.doubleSpinBox_pipe_inner_radius.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_pipe_inner_radius.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_pipe_inner_radius.setDecimals(4)
         self.doubleSpinBox_pipe_inner_radius.setMinimum(0.0)
         self.doubleSpinBox_pipe_inner_radius.setMaximum(10000000.0)
@@ -891,7 +955,7 @@ class Ui_GHEtool(object):
         self.gridLayout.addWidget(self.doubleSpinBox_pipe_inner_radius, 4, 2, 1, 1)
         self.doubleSpinBox_borehole_radius = QtWidgets.QDoubleSpinBox(self.frame_pipe_data)
         self.doubleSpinBox_borehole_radius.setStyleSheet("")
-        self.doubleSpinBox_borehole_radius.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_borehole_radius.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_borehole_radius.setDecimals(4)
         self.doubleSpinBox_borehole_radius.setMinimum(0.0)
         self.doubleSpinBox_borehole_radius.setMaximum(1000.0)
@@ -902,7 +966,7 @@ class Ui_GHEtool(object):
         self.spinBox_number_pipes = QtWidgets.QSpinBox(self.frame_pipe_data)
         self.spinBox_number_pipes.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.spinBox_number_pipes.setStyleSheet("")
-        self.spinBox_number_pipes.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.spinBox_number_pipes.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.spinBox_number_pipes.setMinimum(1)
         self.spinBox_number_pipes.setProperty("value", 2)
         self.spinBox_number_pipes.setObjectName("spinBox_number_pipes")
@@ -914,7 +978,7 @@ class Ui_GHEtool(object):
         self.gridLayout.addItem(spacerItem8, 0, 1, 1, 1)
         self.doubleSpinBox_pipe_conductivity = QtWidgets.QDoubleSpinBox(self.frame_pipe_data)
         self.doubleSpinBox_pipe_conductivity.setStyleSheet("")
-        self.doubleSpinBox_pipe_conductivity.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_pipe_conductivity.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_pipe_conductivity.setDecimals(3)
         self.doubleSpinBox_pipe_conductivity.setMinimum(0.0)
         self.doubleSpinBox_pipe_conductivity.setMaximum(100000.0)
@@ -924,7 +988,7 @@ class Ui_GHEtool(object):
         self.gridLayout.addWidget(self.doubleSpinBox_pipe_conductivity, 2, 2, 1, 1)
         self.doubleSpinBox_grout_conductivity = QtWidgets.QDoubleSpinBox(self.frame_pipe_data)
         self.doubleSpinBox_grout_conductivity.setStyleSheet("")
-        self.doubleSpinBox_grout_conductivity.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_grout_conductivity.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_grout_conductivity.setDecimals(3)
         self.doubleSpinBox_grout_conductivity.setMinimum(0.0)
         self.doubleSpinBox_grout_conductivity.setMaximum(100000.0)
@@ -934,7 +998,7 @@ class Ui_GHEtool(object):
         self.gridLayout.addWidget(self.doubleSpinBox_grout_conductivity, 1, 2, 1, 1)
         self.doubleSpinBox_pipe_outer_radius = QtWidgets.QDoubleSpinBox(self.frame_pipe_data)
         self.doubleSpinBox_pipe_outer_radius.setStyleSheet("")
-        self.doubleSpinBox_pipe_outer_radius.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_pipe_outer_radius.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_pipe_outer_radius.setDecimals(4)
         self.doubleSpinBox_pipe_outer_radius.setMinimum(0.0)
         self.doubleSpinBox_pipe_outer_radius.setMaximum(1000.0)
@@ -944,7 +1008,7 @@ class Ui_GHEtool(object):
         self.gridLayout.addWidget(self.doubleSpinBox_pipe_outer_radius, 3, 2, 1, 1)
         self.doubleSpinBox_borehole_burial_depth = QtWidgets.QDoubleSpinBox(self.frame_pipe_data)
         self.doubleSpinBox_borehole_burial_depth.setStyleSheet("")
-        self.doubleSpinBox_borehole_burial_depth.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_borehole_burial_depth.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_borehole_burial_depth.setDecimals(1)
         self.doubleSpinBox_borehole_burial_depth.setMinimum(0.0)
         self.doubleSpinBox_borehole_burial_depth.setMaximum(1000.0)
@@ -990,7 +1054,11 @@ class Ui_GHEtool(object):
         self.pushButton_PreviousResistance.setMaximumSize(QtCore.QSize(16777215, 30))
         self.pushButton_PreviousResistance.setStyleSheet("")
         icon11 = QtGui.QIcon()
-        icon11.addPixmap(QtGui.QPixmap(":/icons/icons/ArrowLeft2.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon11.addPixmap(
+            QtGui.QPixmap(":/icons/icons/ArrowLeft2.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.pushButton_PreviousResistance.setIcon(icon11)
         self.pushButton_PreviousResistance.setIconSize(QtCore.QSize(20, 20))
         self.pushButton_PreviousResistance.setCheckable(False)
@@ -1028,7 +1096,7 @@ class Ui_GHEtool(object):
         self.verticalLayout_20.setSpacing(0)
         self.verticalLayout_20.setObjectName("verticalLayout_20")
         self.label_ThermalDemandsTitle = QtWidgets.QLabel(self.scrollAreaWidgetContents)
-        self.label_ThermalDemandsTitle.setStyleSheet("font: 63 16pt \"Lexend SemiBold\";")
+        self.label_ThermalDemandsTitle.setStyleSheet('font: 63 16pt "Lexend SemiBold";')
         self.label_ThermalDemandsTitle.setObjectName("label_ThermalDemandsTitle")
         self.verticalLayout_20.addWidget(self.label_ThermalDemandsTitle)
         self.label_40 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
@@ -1038,26 +1106,30 @@ class Ui_GHEtool(object):
         self.label_40.setObjectName("label_40")
         self.verticalLayout_20.addWidget(self.label_40)
         self.label_Import = QtWidgets.QLabel(self.scrollAreaWidgetContents)
-        self.label_Import.setStyleSheet("QLabel {\n"
-"        qproperty-alignment: AlignCenter;\n"
-"    border: 1px solid  rgb(84, 188, 235);\n"
-"    border-top-left-radius: 15px;\n"
-"    border-top-right-radius: 15px;\n"
-"    background-color:  rgb(84, 188, 235);\n"
-"    padding: 5px 0px;\n"
-"    color:  rgb(255, 255, 235);\n"
-"font-weight:500;\n"
-"}")
+        self.label_Import.setStyleSheet(
+            "QLabel {\n"
+            "        qproperty-alignment: AlignCenter;\n"
+            "    border: 1px solid  rgb(84, 188, 235);\n"
+            "    border-top-left-radius: 15px;\n"
+            "    border-top-right-radius: 15px;\n"
+            "    background-color:  rgb(84, 188, 235);\n"
+            "    padding: 5px 0px;\n"
+            "    color:  rgb(255, 255, 235);\n"
+            "font-weight:500;\n"
+            "}"
+        )
         self.label_Import.setObjectName("label_Import")
         self.verticalLayout_20.addWidget(self.label_Import)
         self.frame_import = QtWidgets.QFrame(self.scrollAreaWidgetContents)
-        self.frame_import.setStyleSheet("QFrame {\n"
-"    border: 1px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);font: 12pt;}\n"
-"")
+        self.frame_import.setStyleSheet(
+            "QFrame {\n"
+            "    border: 1px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);font: 12pt;}\n"
+            ""
+        )
         self.frame_import.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_import.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_import.setObjectName("frame_import")
@@ -1069,26 +1141,28 @@ class Ui_GHEtool(object):
         self.verticalLayout_9.addWidget(self.checkBox_Import)
         self.toolBox = QtWidgets.QToolBox(self.frame_import)
         self.toolBox.setMinimumSize(QtCore.QSize(0, 250))
-        self.toolBox.setStyleSheet("QWidget{border: 0px solid rgb(255,255,255);}\n"
-"QToolBox::tab {\n"
-"    background: transparent;\n"
-"    font-weight: 500;\n"
-"}\n"
-"QToolBox::tab:first {\n"
-"    border-bottom: 1px solid #eee;\n"
-"}\n"
-"\n"
-"QToolBox::tab:last {\n"
-"    border-bottom: 1px solid #eee;\n"
-"}\n"
-"\n"
-"QToolBox{\n"
-"    border: 0px solid  rgb(255, 255, 255);\n"
-"border-radius: 5px;\n"
-"}\n"
-"QComboBox{border: 1px solid #ffffff;\n"
-"border-bottom-left-radius: 0px;\n"
-"border-bottom-right-radius: 0px;}")
+        self.toolBox.setStyleSheet(
+            "QWidget{border: 0px solid rgb(255,255,255);}\n"
+            "QToolBox::tab {\n"
+            "    background: transparent;\n"
+            "    font-weight: 500;\n"
+            "}\n"
+            "QToolBox::tab:first {\n"
+            "    border-bottom: 1px solid #eee;\n"
+            "}\n"
+            "\n"
+            "QToolBox::tab:last {\n"
+            "    border-bottom: 1px solid #eee;\n"
+            "}\n"
+            "\n"
+            "QToolBox{\n"
+            "    border: 0px solid  rgb(255, 255, 255);\n"
+            "border-radius: 5px;\n"
+            "}\n"
+            "QComboBox{border: 1px solid #ffffff;\n"
+            "border-bottom-left-radius: 0px;\n"
+            "border-bottom-right-radius: 0px;}"
+        )
         self.toolBox.setObjectName("toolBox")
         self.page_File = QtWidgets.QWidget()
         self.page_File.setGeometry(QtCore.QRect(0, -67, 1106, 241))
@@ -1099,7 +1173,7 @@ class Ui_GHEtool(object):
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.label_DataType = QtWidgets.QLabel(self.page_File)
         self.label_DataType.setStyleSheet("")
-        self.label_DataType.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_DataType.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.label_DataType.setObjectName("label_DataType")
         self.horizontalLayout.addWidget(self.label_DataType)
         spacerItem11 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -1109,11 +1183,9 @@ class Ui_GHEtool(object):
         self.comboBox_Datentyp.setMaximumSize(QtCore.QSize(200, 30))
         self.comboBox_Datentyp.setSizeIncrement(QtCore.QSize(0, 0))
         self.comboBox_Datentyp.setBaseSize(QtCore.QSize(0, 0))
-        self.comboBox_Datentyp.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_Datentyp.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_Datentyp.setEditable(False)
         self.comboBox_Datentyp.setFrame(True)
         self.comboBox_Datentyp.setObjectName("comboBox_Datentyp")
@@ -1130,27 +1202,31 @@ class Ui_GHEtool(object):
         self.horizontalLayout_11.addWidget(self.label_Filename)
         self.lineEdit_displayCsv = QtWidgets.QLineEdit(self.page_File)
         self.lineEdit_displayCsv.setMaximumSize(QtCore.QSize(10000000, 25))
-        self.lineEdit_displayCsv.setStyleSheet("QLineEdit{border: 3px solid rgb(84, 188, 235);\n"
-"border-radius: 5px;\n"
-"color: rgb(255, 255, 255);\n"
-"gridline-color: rgb(84, 188, 235);\n"
-"background-color: rgb(84, 188, 235);\n"
-"font-weight:500;\n"
-"selection-background-color: rgb(42, 126, 179);}\n"
-"QLineEdit:hover{background-color: rgb(0, 64, 122);}")
+        self.lineEdit_displayCsv.setStyleSheet(
+            "QLineEdit{border: 3px solid rgb(84, 188, 235);\n"
+            "border-radius: 5px;\n"
+            "color: rgb(255, 255, 255);\n"
+            "gridline-color: rgb(84, 188, 235);\n"
+            "background-color: rgb(84, 188, 235);\n"
+            "font-weight:500;\n"
+            "selection-background-color: rgb(42, 126, 179);}\n"
+            "QLineEdit:hover{background-color: rgb(0, 64, 122);}"
+        )
         self.lineEdit_displayCsv.setText("")
         self.lineEdit_displayCsv.setObjectName("lineEdit_displayCsv")
         self.horizontalLayout_11.addWidget(self.lineEdit_displayCsv)
         self.pushButton_loadCsv = QtWidgets.QPushButton(self.page_File)
         self.pushButton_loadCsv.setMinimumSize(QtCore.QSize(30, 30))
         self.pushButton_loadCsv.setMaximumSize(QtCore.QSize(30, 30))
-        self.pushButton_loadCsv.setStyleSheet("*{border: 3px solid rgb(84, 188, 235);\n"
-"border-radius: 5px;\n"
-"color: rgb(255, 255, 255);\n"
-"gridline-color: rgb(84, 188, 235);\n"
-"background-color: rgb(84, 188, 235);\n"
-"font: 75;}\n"
-"*:hover{background-color: rgb(0, 64, 122);}")
+        self.pushButton_loadCsv.setStyleSheet(
+            "*{border: 3px solid rgb(84, 188, 235);\n"
+            "border-radius: 5px;\n"
+            "color: rgb(255, 255, 255);\n"
+            "gridline-color: rgb(84, 188, 235);\n"
+            "background-color: rgb(84, 188, 235);\n"
+            "font: 75;}\n"
+            "*:hover{background-color: rgb(0, 64, 122);}"
+        )
         self.pushButton_loadCsv.setObjectName("pushButton_loadCsv")
         self.horizontalLayout_11.addWidget(self.pushButton_loadCsv)
         self.verticalLayout.addLayout(self.horizontalLayout_11)
@@ -1168,11 +1244,9 @@ class Ui_GHEtool(object):
         self.horizontalLayout_26.addItem(spacerItem12)
         self.comboBox_Seperator = QtWidgets.QComboBox(self.frame_Seperator)
         self.comboBox_Seperator.setMinimumSize(QtCore.QSize(120, 0))
-        self.comboBox_Seperator.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_Seperator.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_Seperator.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContents)
         self.comboBox_Seperator.setObjectName("comboBox_Seperator")
         self.comboBox_Seperator.addItem("")
@@ -1193,11 +1267,9 @@ class Ui_GHEtool(object):
         self.horizontalLayout_27.addItem(spacerItem13)
         self.comboBox_decimal = QtWidgets.QComboBox(self.frame_decimal)
         self.comboBox_decimal.setMinimumSize(QtCore.QSize(120, 0))
-        self.comboBox_decimal.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_decimal.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_decimal.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContents)
         self.comboBox_decimal.setObjectName("comboBox_decimal")
         self.comboBox_decimal.addItem("")
@@ -1222,11 +1294,9 @@ class Ui_GHEtool(object):
         self.comboBox_sheetName = QtWidgets.QComboBox(self.frame_sheetName)
         self.comboBox_sheetName.setMinimumSize(QtCore.QSize(120, 30))
         self.comboBox_sheetName.setMaximumSize(QtCore.QSize(300, 300))
-        self.comboBox_sheetName.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_sheetName.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_sheetName.setEditable(True)
         self.comboBox_sheetName.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContents)
         self.comboBox_sheetName.setFrame(True)
@@ -1247,15 +1317,21 @@ class Ui_GHEtool(object):
         self.pushButton_load.setSizePolicy(sizePolicy)
         self.pushButton_load.setMinimumSize(QtCore.QSize(100, 35))
         self.pushButton_load.setMaximumSize(QtCore.QSize(100, 35))
-        self.pushButton_load.setStyleSheet("QPushButton{border: 3px solid rgb(84, 188, 235);\n"
-"border-radius: 5px;\n"
-"color: rgb(255, 255, 255);\n"
-"gridline-color: rgb(84, 188, 235);\n"
-"background-color: rgb(84, 188, 235);\n"
-"font-weight:500;}\n"
-"QPushButton:hover{background-color: rgb(0, 64, 122);}")
+        self.pushButton_load.setStyleSheet(
+            "QPushButton{border: 3px solid rgb(84, 188, 235);\n"
+            "border-radius: 5px;\n"
+            "color: rgb(255, 255, 255);\n"
+            "gridline-color: rgb(84, 188, 235);\n"
+            "background-color: rgb(84, 188, 235);\n"
+            "font-weight:500;}\n"
+            "QPushButton:hover{background-color: rgb(0, 64, 122);}"
+        )
         icon12 = QtGui.QIcon()
-        icon12.addPixmap(QtGui.QPixmap(":/icons/icons/Download.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon12.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Download.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.pushButton_load.setIcon(icon12)
         self.pushButton_load.setObjectName("pushButton_load")
         self.horizontalLayout_16.addWidget(self.pushButton_load)
@@ -1319,7 +1395,7 @@ class Ui_GHEtool(object):
         self.label_HeatingLoadLine.setMinimumSize(QtCore.QSize(0, 30))
         self.label_HeatingLoadLine.setMaximumSize(QtCore.QSize(1672341, 30))
         self.label_HeatingLoadLine.setStyleSheet("")
-        self.label_HeatingLoadLine.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_HeatingLoadLine.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.label_HeatingLoadLine.setObjectName("label_HeatingLoadLine")
         self.horizontalLayout_13.addWidget(self.label_HeatingLoadLine, 0, QtCore.Qt.AlignRight)
         self.comboBox_heatingLoad = QtWidgets.QComboBox(self.frame_heatingLoad)
@@ -1343,7 +1419,7 @@ class Ui_GHEtool(object):
         self.label_CoolingLoadLine.setMinimumSize(QtCore.QSize(0, 30))
         self.label_CoolingLoadLine.setMaximumSize(QtCore.QSize(1672341, 30))
         self.label_CoolingLoadLine.setStyleSheet("")
-        self.label_CoolingLoadLine.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_CoolingLoadLine.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.label_CoolingLoadLine.setObjectName("label_CoolingLoadLine")
         self.horizontalLayout_24.addWidget(self.label_CoolingLoadLine)
         self.comboBox_coolingLoad = QtWidgets.QComboBox(self.frame_coolingLoad)
@@ -1367,7 +1443,7 @@ class Ui_GHEtool(object):
         self.label_combined.setMinimumSize(QtCore.QSize(0, 30))
         self.label_combined.setMaximumSize(QtCore.QSize(1672341, 30))
         self.label_combined.setStyleSheet("")
-        self.label_combined.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_combined.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.label_combined.setObjectName("label_combined")
         self.horizontalLayout_32.addWidget(self.label_combined)
         self.comboBox_combined = QtWidgets.QComboBox(self.frame_combined)
@@ -1395,7 +1471,7 @@ class Ui_GHEtool(object):
         self.label_TimeStep.setMinimumSize(QtCore.QSize(0, 30))
         self.label_TimeStep.setMaximumSize(QtCore.QSize(1672341, 30))
         self.label_TimeStep.setStyleSheet("")
-        self.label_TimeStep.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_TimeStep.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.label_TimeStep.setObjectName("label_TimeStep")
         self.horizontalLayout_28.addWidget(self.label_TimeStep)
         self.comboBox_timeStep = QtWidgets.QComboBox(self.frame_timeStep)
@@ -1422,7 +1498,7 @@ class Ui_GHEtool(object):
         self.label_DateLine.setMinimumSize(QtCore.QSize(0, 30))
         self.label_DateLine.setMaximumSize(QtCore.QSize(1672341, 30))
         self.label_DateLine.setStyleSheet("")
-        self.label_DateLine.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_DateLine.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.label_DateLine.setObjectName("label_DateLine")
         self.horizontalLayout_30.addWidget(self.label_DateLine, 0, QtCore.Qt.AlignRight)
         self.comboBox_date = QtWidgets.QComboBox(self.frame_date)
@@ -1470,13 +1546,15 @@ class Ui_GHEtool(object):
         self.pushButton_calculate.setMinimumSize(QtCore.QSize(100, 35))
         self.pushButton_calculate.setMaximumSize(QtCore.QSize(100, 35))
         self.pushButton_calculate.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.pushButton_calculate.setStyleSheet("QPushButton{border: 3px solid rgb(84, 188, 235);\n"
-"border-radius: 5px;\n"
-"color: rgb(255, 255, 255);\n"
-"gridline-color: rgb(84, 188, 235);\n"
-"background-color: rgb(84, 188, 235);\n"
-"font-weight:500;}\n"
-"QPushButton:hover{background-color: rgb(0, 64, 122);}")
+        self.pushButton_calculate.setStyleSheet(
+            "QPushButton{border: 3px solid rgb(84, 188, 235);\n"
+            "border-radius: 5px;\n"
+            "color: rgb(255, 255, 255);\n"
+            "gridline-color: rgb(84, 188, 235);\n"
+            "background-color: rgb(84, 188, 235);\n"
+            "font-weight:500;}\n"
+            "QPushButton:hover{background-color: rgb(0, 64, 122);}"
+        )
         self.pushButton_calculate.setIcon(icon8)
         self.pushButton_calculate.setFlat(False)
         self.pushButton_calculate.setObjectName("pushButton_calculate")
@@ -1494,25 +1572,29 @@ class Ui_GHEtool(object):
         self.label_39.setObjectName("label_39")
         self.verticalLayout_20.addWidget(self.label_39)
         self.label_ThermalDemands = QtWidgets.QLabel(self.scrollAreaWidgetContents)
-        self.label_ThermalDemands.setStyleSheet("QLabel {\n"
-"        qproperty-alignment: AlignCenter;\n"
-"    border: 1px solid  rgb(84, 188, 235);\n"
-"    border-top-left-radius: 15px;\n"
-"    border-top-right-radius: 15px;\n"
-"    background-color:  rgb(84, 188, 235);\n"
-"    padding: 5px 0px;\n"
-"    color:  rgb(255, 255, 235);\n"
-"font-weight:500;\n"
-"}")
+        self.label_ThermalDemands.setStyleSheet(
+            "QLabel {\n"
+            "        qproperty-alignment: AlignCenter;\n"
+            "    border: 1px solid  rgb(84, 188, 235);\n"
+            "    border-top-left-radius: 15px;\n"
+            "    border-top-right-radius: 15px;\n"
+            "    background-color:  rgb(84, 188, 235);\n"
+            "    padding: 5px 0px;\n"
+            "    color:  rgb(255, 255, 235);\n"
+            "font-weight:500;\n"
+            "}"
+        )
         self.label_ThermalDemands.setObjectName("label_ThermalDemands")
         self.verticalLayout_20.addWidget(self.label_ThermalDemands)
         self.frame_thermal_demand = QtWidgets.QFrame(self.scrollAreaWidgetContents)
-        self.frame_thermal_demand.setStyleSheet("QFrame {\n"
-"    border: 1px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);}")
+        self.frame_thermal_demand.setStyleSheet(
+            "QFrame {\n"
+            "    border: 1px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);}"
+        )
         self.frame_thermal_demand.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_thermal_demand.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_thermal_demand.setObjectName("frame_thermal_demand")
@@ -1541,7 +1623,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.label_pC, 0, 2, 1, 1)
         self.doubleSpinBox_Hp_Jan = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Hp_Jan.setStyleSheet("")
-        self.doubleSpinBox_Hp_Jan.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Hp_Jan.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Hp_Jan.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Hp_Jan.setPrefix("")
         self.doubleSpinBox_Hp_Jan.setSuffix("")
@@ -1561,7 +1643,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.label_Apr, 5, 0, 1, 1)
         self.doubleSpinBox_Cp_Jan = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Cp_Jan.setStyleSheet("")
-        self.doubleSpinBox_Cp_Jan.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Cp_Jan.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Cp_Jan.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Cp_Jan.setMinimum(0.0)
         self.doubleSpinBox_Cp_Jan.setMaximum(1000000.0)
@@ -1570,7 +1652,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Cp_Jan, 2, 2, 1, 1)
         self.doubleSpinBox_Hp_Feb = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Hp_Feb.setStyleSheet("")
-        self.doubleSpinBox_Hp_Feb.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Hp_Feb.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Hp_Feb.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Hp_Feb.setMinimum(0.0)
         self.doubleSpinBox_Hp_Feb.setMaximum(1000000.0)
@@ -1582,7 +1664,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.label_Unit_pC, 1, 2, 1, 1)
         self.doubleSpinBox_Hp_May = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Hp_May.setStyleSheet("")
-        self.doubleSpinBox_Hp_May.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Hp_May.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Hp_May.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Hp_May.setMinimum(0.0)
         self.doubleSpinBox_Hp_May.setMaximum(1000000.0)
@@ -1601,7 +1683,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.label_Feb, 3, 0, 1, 1)
         self.doubleSpinBox_Hp_Mar = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Hp_Mar.setStyleSheet("")
-        self.doubleSpinBox_Hp_Mar.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Hp_Mar.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Hp_Mar.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Hp_Mar.setMinimum(0.0)
         self.doubleSpinBox_Hp_Mar.setMaximum(1000000.0)
@@ -1610,7 +1692,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Hp_Mar, 4, 1, 1, 1)
         self.doubleSpinBox_Cp_Feb = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Cp_Feb.setStyleSheet("")
-        self.doubleSpinBox_Cp_Feb.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Cp_Feb.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Cp_Feb.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Cp_Feb.setMinimum(0.0)
         self.doubleSpinBox_Cp_Feb.setMaximum(1000000.0)
@@ -1619,7 +1701,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Cp_Feb, 3, 2, 1, 1)
         self.doubleSpinBox_Hp_Apr = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Hp_Apr.setStyleSheet("")
-        self.doubleSpinBox_Hp_Apr.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Hp_Apr.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Hp_Apr.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Hp_Apr.setMinimum(0.0)
         self.doubleSpinBox_Hp_Apr.setMaximum(1000000.0)
@@ -1631,7 +1713,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.label_Dec, 13, 0, 1, 1)
         self.doubleSpinBox_Cp_May = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Cp_May.setStyleSheet("")
-        self.doubleSpinBox_Cp_May.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Cp_May.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Cp_May.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Cp_May.setMinimum(0.0)
         self.doubleSpinBox_Cp_May.setMaximum(1000000.0)
@@ -1643,7 +1725,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.label_HL, 0, 3, 1, 1)
         self.doubleSpinBox_Cp_Apr = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Cp_Apr.setStyleSheet("")
-        self.doubleSpinBox_Cp_Apr.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Cp_Apr.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Cp_Apr.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Cp_Apr.setMinimum(0.0)
         self.doubleSpinBox_Cp_Apr.setMaximum(1000000.0)
@@ -1652,7 +1734,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Cp_Apr, 5, 2, 1, 1)
         self.doubleSpinBox_CL_Mar = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_CL_Mar.setStyleSheet("")
-        self.doubleSpinBox_CL_Mar.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_CL_Mar.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_CL_Mar.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_CL_Mar.setDecimals(0)
         self.doubleSpinBox_CL_Mar.setMinimum(0.0)
@@ -1662,7 +1744,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_CL_Mar, 4, 4, 1, 1)
         self.doubleSpinBox_CL_May = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_CL_May.setStyleSheet("")
-        self.doubleSpinBox_CL_May.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_CL_May.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_CL_May.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_CL_May.setDecimals(0)
         self.doubleSpinBox_CL_May.setMinimum(0.0)
@@ -1672,7 +1754,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_CL_May, 6, 4, 1, 1)
         self.doubleSpinBox_HL_Jun = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_HL_Jun.setStyleSheet("")
-        self.doubleSpinBox_HL_Jun.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_HL_Jun.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_HL_Jun.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_HL_Jun.setDecimals(0)
         self.doubleSpinBox_HL_Jun.setMinimum(0.0)
@@ -1694,7 +1776,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.label_Unit_CL, 1, 4, 1, 1)
         self.doubleSpinBox_Cp_Mar = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Cp_Mar.setStyleSheet("")
-        self.doubleSpinBox_Cp_Mar.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Cp_Mar.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Cp_Mar.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Cp_Mar.setMinimum(0.0)
         self.doubleSpinBox_Cp_Mar.setMaximum(1000000.0)
@@ -1706,7 +1788,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.label_Nov, 12, 0, 1, 1)
         self.doubleSpinBox_HL_Jan = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_HL_Jan.setStyleSheet("")
-        self.doubleSpinBox_HL_Jan.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_HL_Jan.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_HL_Jan.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_HL_Jan.setDecimals(0)
         self.doubleSpinBox_HL_Jan.setMinimum(0.0)
@@ -1716,7 +1798,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_HL_Jan, 2, 3, 1, 1)
         self.doubleSpinBox_HL_Mar = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_HL_Mar.setStyleSheet("")
-        self.doubleSpinBox_HL_Mar.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_HL_Mar.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_HL_Mar.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_HL_Mar.setDecimals(0)
         self.doubleSpinBox_HL_Mar.setMinimum(0.0)
@@ -1726,7 +1808,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_HL_Mar, 4, 3, 1, 1)
         self.doubleSpinBox_HL_May = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_HL_May.setStyleSheet("")
-        self.doubleSpinBox_HL_May.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_HL_May.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_HL_May.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_HL_May.setDecimals(0)
         self.doubleSpinBox_HL_May.setMinimum(0.0)
@@ -1736,7 +1818,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_HL_May, 6, 3, 1, 1)
         self.doubleSpinBox_CL_Jan = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_CL_Jan.setStyleSheet("")
-        self.doubleSpinBox_CL_Jan.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_CL_Jan.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_CL_Jan.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_CL_Jan.setDecimals(0)
         self.doubleSpinBox_CL_Jan.setMinimum(0.0)
@@ -1746,7 +1828,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_CL_Jan, 2, 4, 1, 1)
         self.doubleSpinBox_HL_Feb = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_HL_Feb.setStyleSheet("")
-        self.doubleSpinBox_HL_Feb.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_HL_Feb.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_HL_Feb.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_HL_Feb.setDecimals(0)
         self.doubleSpinBox_HL_Feb.setMinimum(0.0)
@@ -1756,7 +1838,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_HL_Feb, 3, 3, 1, 1)
         self.doubleSpinBox_CL_Apr = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_CL_Apr.setStyleSheet("")
-        self.doubleSpinBox_CL_Apr.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_CL_Apr.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_CL_Apr.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_CL_Apr.setDecimals(0)
         self.doubleSpinBox_CL_Apr.setMinimum(0.0)
@@ -1766,7 +1848,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_CL_Apr, 5, 4, 1, 1)
         self.doubleSpinBox_HL_Apr = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_HL_Apr.setStyleSheet("")
-        self.doubleSpinBox_HL_Apr.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_HL_Apr.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_HL_Apr.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_HL_Apr.setDecimals(0)
         self.doubleSpinBox_HL_Apr.setMinimum(0.0)
@@ -1776,7 +1858,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_HL_Apr, 5, 3, 1, 1)
         self.doubleSpinBox_CL_Feb = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_CL_Feb.setStyleSheet("")
-        self.doubleSpinBox_CL_Feb.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_CL_Feb.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_CL_Feb.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_CL_Feb.setDecimals(0)
         self.doubleSpinBox_CL_Feb.setMinimum(0.0)
@@ -1786,7 +1868,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_CL_Feb, 3, 4, 1, 1)
         self.doubleSpinBox_HL_Jul = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_HL_Jul.setStyleSheet("")
-        self.doubleSpinBox_HL_Jul.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_HL_Jul.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_HL_Jul.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_HL_Jul.setDecimals(0)
         self.doubleSpinBox_HL_Jul.setMinimum(0.0)
@@ -1796,7 +1878,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_HL_Jul, 8, 3, 1, 1)
         self.doubleSpinBox_CL_Jun = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_CL_Jun.setStyleSheet("")
-        self.doubleSpinBox_CL_Jun.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_CL_Jun.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_CL_Jun.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_CL_Jun.setDecimals(0)
         self.doubleSpinBox_CL_Jun.setMinimum(0.0)
@@ -1806,7 +1888,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_CL_Jun, 7, 4, 1, 1)
         self.doubleSpinBox_CL_Aug = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_CL_Aug.setStyleSheet("")
-        self.doubleSpinBox_CL_Aug.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_CL_Aug.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_CL_Aug.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_CL_Aug.setDecimals(0)
         self.doubleSpinBox_CL_Aug.setMinimum(0.0)
@@ -1816,7 +1898,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_CL_Aug, 9, 4, 1, 1)
         self.doubleSpinBox_HL_Aug = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_HL_Aug.setStyleSheet("")
-        self.doubleSpinBox_HL_Aug.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_HL_Aug.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_HL_Aug.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_HL_Aug.setDecimals(0)
         self.doubleSpinBox_HL_Aug.setMinimum(0.0)
@@ -1826,7 +1908,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_HL_Aug, 9, 3, 1, 1)
         self.doubleSpinBox_CL_Jul = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_CL_Jul.setStyleSheet("")
-        self.doubleSpinBox_CL_Jul.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_CL_Jul.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_CL_Jul.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_CL_Jul.setDecimals(0)
         self.doubleSpinBox_CL_Jul.setMinimum(0.0)
@@ -1836,7 +1918,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_CL_Jul, 8, 4, 1, 1)
         self.doubleSpinBox_CL_Sep = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_CL_Sep.setStyleSheet("")
-        self.doubleSpinBox_CL_Sep.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_CL_Sep.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_CL_Sep.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_CL_Sep.setDecimals(0)
         self.doubleSpinBox_CL_Sep.setMinimum(0.0)
@@ -1846,7 +1928,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_CL_Sep, 10, 4, 1, 1)
         self.doubleSpinBox_HL_Sep = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_HL_Sep.setStyleSheet("")
-        self.doubleSpinBox_HL_Sep.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_HL_Sep.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_HL_Sep.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_HL_Sep.setDecimals(0)
         self.doubleSpinBox_HL_Sep.setMinimum(0.0)
@@ -1856,7 +1938,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_HL_Sep, 10, 3, 1, 1)
         self.doubleSpinBox_HL_Oct = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_HL_Oct.setStyleSheet("")
-        self.doubleSpinBox_HL_Oct.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_HL_Oct.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_HL_Oct.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_HL_Oct.setDecimals(0)
         self.doubleSpinBox_HL_Oct.setMinimum(0.0)
@@ -1866,7 +1948,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_HL_Oct, 11, 3, 1, 1)
         self.doubleSpinBox_CL_Oct = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_CL_Oct.setStyleSheet("")
-        self.doubleSpinBox_CL_Oct.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_CL_Oct.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_CL_Oct.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_CL_Oct.setDecimals(0)
         self.doubleSpinBox_CL_Oct.setMinimum(0.0)
@@ -1876,7 +1958,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_CL_Oct, 11, 4, 1, 1)
         self.doubleSpinBox_CL_Nov = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_CL_Nov.setStyleSheet("")
-        self.doubleSpinBox_CL_Nov.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_CL_Nov.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_CL_Nov.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_CL_Nov.setDecimals(0)
         self.doubleSpinBox_CL_Nov.setMinimum(0.0)
@@ -1886,7 +1968,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_CL_Nov, 12, 4, 1, 1)
         self.doubleSpinBox_HL_Dec = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_HL_Dec.setStyleSheet("")
-        self.doubleSpinBox_HL_Dec.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_HL_Dec.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_HL_Dec.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_HL_Dec.setDecimals(0)
         self.doubleSpinBox_HL_Dec.setMinimum(0.0)
@@ -1896,7 +1978,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_HL_Dec, 13, 3, 1, 1)
         self.doubleSpinBox_HL_Nov = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_HL_Nov.setStyleSheet("")
-        self.doubleSpinBox_HL_Nov.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_HL_Nov.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_HL_Nov.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_HL_Nov.setDecimals(0)
         self.doubleSpinBox_HL_Nov.setMinimum(0.0)
@@ -1906,7 +1988,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_HL_Nov, 12, 3, 1, 1)
         self.doubleSpinBox_Cp_Jun = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Cp_Jun.setStyleSheet("")
-        self.doubleSpinBox_Cp_Jun.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Cp_Jun.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Cp_Jun.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Cp_Jun.setMinimum(0.0)
         self.doubleSpinBox_Cp_Jun.setMaximum(1000000.0)
@@ -1915,7 +1997,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Cp_Jun, 7, 2, 1, 1)
         self.doubleSpinBox_CL_Dec = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_CL_Dec.setStyleSheet("")
-        self.doubleSpinBox_CL_Dec.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_CL_Dec.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_CL_Dec.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_CL_Dec.setDecimals(0)
         self.doubleSpinBox_CL_Dec.setMinimum(0.0)
@@ -1925,7 +2007,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_CL_Dec, 13, 4, 1, 1)
         self.doubleSpinBox_Hp_Jul = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Hp_Jul.setStyleSheet("")
-        self.doubleSpinBox_Hp_Jul.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Hp_Jul.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Hp_Jul.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Hp_Jul.setMinimum(0.0)
         self.doubleSpinBox_Hp_Jul.setMaximum(1000000.0)
@@ -1934,7 +2016,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Hp_Jul, 8, 1, 1, 1)
         self.doubleSpinBox_Hp_Jun = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Hp_Jun.setStyleSheet("")
-        self.doubleSpinBox_Hp_Jun.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Hp_Jun.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Hp_Jun.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Hp_Jun.setMinimum(0.0)
         self.doubleSpinBox_Hp_Jun.setMaximum(1000000.0)
@@ -1943,7 +2025,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Hp_Jun, 7, 1, 1, 1)
         self.doubleSpinBox_Cp_Jul = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Cp_Jul.setStyleSheet("")
-        self.doubleSpinBox_Cp_Jul.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Cp_Jul.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Cp_Jul.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Cp_Jul.setMinimum(0.0)
         self.doubleSpinBox_Cp_Jul.setMaximum(1000000.0)
@@ -1952,7 +2034,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Cp_Jul, 8, 2, 1, 1)
         self.doubleSpinBox_Hp_Sep = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Hp_Sep.setStyleSheet("")
-        self.doubleSpinBox_Hp_Sep.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Hp_Sep.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Hp_Sep.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Hp_Sep.setMinimum(0.0)
         self.doubleSpinBox_Hp_Sep.setMaximum(1000000.0)
@@ -1961,7 +2043,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Hp_Sep, 10, 1, 1, 1)
         self.doubleSpinBox_Hp_Aug = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Hp_Aug.setStyleSheet("")
-        self.doubleSpinBox_Hp_Aug.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Hp_Aug.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Hp_Aug.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Hp_Aug.setMinimum(0.0)
         self.doubleSpinBox_Hp_Aug.setMaximum(1000000.0)
@@ -1970,7 +2052,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Hp_Aug, 9, 1, 1, 1)
         self.doubleSpinBox_Cp_Sep = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Cp_Sep.setStyleSheet("")
-        self.doubleSpinBox_Cp_Sep.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Cp_Sep.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Cp_Sep.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Cp_Sep.setMinimum(0.0)
         self.doubleSpinBox_Cp_Sep.setMaximum(1000000.0)
@@ -1979,7 +2061,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Cp_Sep, 10, 2, 1, 1)
         self.doubleSpinBox_Hp_Oct = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Hp_Oct.setStyleSheet("")
-        self.doubleSpinBox_Hp_Oct.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Hp_Oct.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Hp_Oct.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Hp_Oct.setMinimum(0.0)
         self.doubleSpinBox_Hp_Oct.setMaximum(1000000.0)
@@ -1988,7 +2070,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Hp_Oct, 11, 1, 1, 1)
         self.doubleSpinBox_Cp_Aug = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Cp_Aug.setStyleSheet("")
-        self.doubleSpinBox_Cp_Aug.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Cp_Aug.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Cp_Aug.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Cp_Aug.setMinimum(0.0)
         self.doubleSpinBox_Cp_Aug.setMaximum(1000000.0)
@@ -1997,7 +2079,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Cp_Aug, 9, 2, 1, 1)
         self.doubleSpinBox_Hp_Nov = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Hp_Nov.setStyleSheet("")
-        self.doubleSpinBox_Hp_Nov.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Hp_Nov.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Hp_Nov.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Hp_Nov.setMinimum(0.0)
         self.doubleSpinBox_Hp_Nov.setMaximum(1000000.0)
@@ -2006,7 +2088,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Hp_Nov, 12, 1, 1, 1)
         self.doubleSpinBox_Cp_Oct = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Cp_Oct.setStyleSheet("")
-        self.doubleSpinBox_Cp_Oct.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Cp_Oct.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Cp_Oct.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Cp_Oct.setMinimum(0.0)
         self.doubleSpinBox_Cp_Oct.setMaximum(1000000.0)
@@ -2015,7 +2097,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Cp_Oct, 11, 2, 1, 1)
         self.doubleSpinBox_Hp_Dec = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Hp_Dec.setStyleSheet("")
-        self.doubleSpinBox_Hp_Dec.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Hp_Dec.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Hp_Dec.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Hp_Dec.setMinimum(0.0)
         self.doubleSpinBox_Hp_Dec.setMaximum(1000000.0)
@@ -2024,7 +2106,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Hp_Dec, 13, 1, 1, 1)
         self.doubleSpinBox_Cp_Nov = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Cp_Nov.setStyleSheet("")
-        self.doubleSpinBox_Cp_Nov.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Cp_Nov.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Cp_Nov.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Cp_Nov.setMinimum(0.0)
         self.doubleSpinBox_Cp_Nov.setMaximum(1000000.0)
@@ -2033,7 +2115,7 @@ class Ui_GHEtool(object):
         self.gridLayout_2.addWidget(self.doubleSpinBox_Cp_Nov, 12, 2, 1, 1)
         self.doubleSpinBox_Cp_Dec = QtWidgets.QDoubleSpinBox(self.frame_thermal_demand)
         self.doubleSpinBox_Cp_Dec.setStyleSheet("")
-        self.doubleSpinBox_Cp_Dec.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.doubleSpinBox_Cp_Dec.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.doubleSpinBox_Cp_Dec.setProperty("showGroupSeparator", True)
         self.doubleSpinBox_Cp_Dec.setMinimum(0.0)
         self.doubleSpinBox_Cp_Dec.setMaximum(1000000.0)
@@ -2053,11 +2135,9 @@ class Ui_GHEtool(object):
         self.comboBox_Unit_peak.setEnabled(True)
         self.comboBox_Unit_peak.setMinimumSize(QtCore.QSize(60, 0))
         self.comboBox_Unit_peak.setMaximumSize(QtCore.QSize(120, 16777215))
-        self.comboBox_Unit_peak.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_Unit_peak.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_Unit_peak.setEditable(False)
         self.comboBox_Unit_peak.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContentsOnFirstShow)
         self.comboBox_Unit_peak.setFrame(True)
@@ -2078,11 +2158,9 @@ class Ui_GHEtool(object):
         self.comboBox_Unit_Load.setEnabled(True)
         self.comboBox_Unit_Load.setMinimumSize(QtCore.QSize(80, 0))
         self.comboBox_Unit_Load.setMaximumSize(QtCore.QSize(120, 16777215))
-        self.comboBox_Unit_Load.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_Unit_Load.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_Unit_Load.setEditable(False)
         self.comboBox_Unit_Load.setMaxVisibleItems(10)
         self.comboBox_Unit_Load.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContentsOnFirstShow)
@@ -2111,26 +2189,30 @@ class Ui_GHEtool(object):
         self.label_51.setObjectName("label_51")
         self.verticalLayout_20.addWidget(self.label_51)
         self.label_data_file = QtWidgets.QLabel(self.scrollAreaWidgetContents)
-        self.label_data_file.setStyleSheet("QLabel {\n"
-"        qproperty-alignment: AlignCenter;\n"
-"    border: 1px solid  rgb(84, 188, 235);\n"
-"    border-top-left-radius: 15px;\n"
-"    border-top-right-radius: 15px;\n"
-"    background-color:  rgb(84, 188, 235);\n"
-"    padding: 5px 0px;\n"
-"    color:  rgb(255, 255, 235);\n"
-"font-weight:500;\n"
-"}")
+        self.label_data_file.setStyleSheet(
+            "QLabel {\n"
+            "        qproperty-alignment: AlignCenter;\n"
+            "    border: 1px solid  rgb(84, 188, 235);\n"
+            "    border-top-left-radius: 15px;\n"
+            "    border-top-right-radius: 15px;\n"
+            "    background-color:  rgb(84, 188, 235);\n"
+            "    padding: 5px 0px;\n"
+            "    color:  rgb(255, 255, 235);\n"
+            "font-weight:500;\n"
+            "}"
+        )
         self.label_data_file.setObjectName("label_data_file")
         self.verticalLayout_20.addWidget(self.label_data_file)
         self.frame_data_file = QtWidgets.QFrame(self.scrollAreaWidgetContents)
-        self.frame_data_file.setStyleSheet("QFrame {\n"
-"    border: 1px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);font: 12pt;}\n"
-"")
+        self.frame_data_file.setStyleSheet(
+            "QFrame {\n"
+            "    border: 1px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);font: 12pt;}\n"
+            ""
+        )
         self.frame_data_file.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_data_file.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_data_file.setObjectName("frame_data_file")
@@ -2145,11 +2227,9 @@ class Ui_GHEtool(object):
         self.horizontalLayout_10.addItem(spacerItem23)
         self.comboBox_SeperatorDataFile = QtWidgets.QComboBox(self.frame_data_file)
         self.comboBox_SeperatorDataFile.setMinimumSize(QtCore.QSize(120, 0))
-        self.comboBox_SeperatorDataFile.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_SeperatorDataFile.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_SeperatorDataFile.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContents)
         self.comboBox_SeperatorDataFile.setObjectName("comboBox_SeperatorDataFile")
         self.comboBox_SeperatorDataFile.addItem("")
@@ -2165,11 +2245,9 @@ class Ui_GHEtool(object):
         self.horizontalLayout_36.addItem(spacerItem24)
         self.comboBox_decimalDataFile = QtWidgets.QComboBox(self.frame_data_file)
         self.comboBox_decimalDataFile.setMinimumSize(QtCore.QSize(120, 0))
-        self.comboBox_decimalDataFile.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_decimalDataFile.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_decimalDataFile.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContents)
         self.comboBox_decimalDataFile.setObjectName("comboBox_decimalDataFile")
         self.comboBox_decimalDataFile.addItem("")
@@ -2198,13 +2276,15 @@ class Ui_GHEtool(object):
         self.horizontalLayout_33 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_33.setObjectName("horizontalLayout_33")
         self.frame_thermalDemands_2 = QtWidgets.QFrame(self.frame_data_file)
-        self.frame_thermalDemands_2.setStyleSheet("QFrame {\n"
-"    border: 0px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);font: 12pt;}\n"
-"")
+        self.frame_thermalDemands_2.setStyleSheet(
+            "QFrame {\n"
+            "    border: 0px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);font: 12pt;}\n"
+            ""
+        )
         self.frame_thermalDemands_2.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_thermalDemands_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_thermalDemands_2.setObjectName("frame_thermalDemands_2")
@@ -2213,13 +2293,15 @@ class Ui_GHEtool(object):
         self.verticalLayout_19.setSpacing(0)
         self.verticalLayout_19.setObjectName("verticalLayout_19")
         self.frame_12 = QtWidgets.QFrame(self.frame_thermalDemands_2)
-        self.frame_12.setStyleSheet("QFrame {\n"
-"    border: 0px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);}\n"
-"")
+        self.frame_12.setStyleSheet(
+            "QFrame {\n"
+            "    border: 0px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);}\n"
+            ""
+        )
         self.frame_12.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_12.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_12.setObjectName("frame_12")
@@ -2237,11 +2319,9 @@ class Ui_GHEtool(object):
         self.comboBox_dataColumn_data_file = QtWidgets.QComboBox(self.frame_12)
         self.comboBox_dataColumn_data_file.setMinimumSize(QtCore.QSize(100, 30))
         self.comboBox_dataColumn_data_file.setMaximumSize(QtCore.QSize(150, 40))
-        self.comboBox_dataColumn_data_file.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_dataColumn_data_file.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_dataColumn_data_file.setEditable(False)
         self.comboBox_dataColumn_data_file.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToMinimumContentsLengthWithIcon)
         self.comboBox_dataColumn_data_file.setObjectName("comboBox_dataColumn_data_file")
@@ -2253,13 +2333,15 @@ class Ui_GHEtool(object):
         self.frame_heatingLoad_data_File = QtWidgets.QFrame(self.frame_data_file)
         self.frame_heatingLoad_data_File.setMinimumSize(QtCore.QSize(0, 25))
         self.frame_heatingLoad_data_File.setMaximumSize(QtCore.QSize(1672341, 35))
-        self.frame_heatingLoad_data_File.setStyleSheet("QFrame {\n"
-"    border: 0px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);}\n"
-"")
+        self.frame_heatingLoad_data_File.setStyleSheet(
+            "QFrame {\n"
+            "    border: 0px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);}\n"
+            ""
+        )
         self.frame_heatingLoad_data_File.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_heatingLoad_data_File.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_heatingLoad_data_File.setLineWidth(0)
@@ -2271,30 +2353,30 @@ class Ui_GHEtool(object):
         self.label_HeatingLoadLine_2.setMinimumSize(QtCore.QSize(0, 30))
         self.label_HeatingLoadLine_2.setMaximumSize(QtCore.QSize(1672341, 30))
         self.label_HeatingLoadLine_2.setStyleSheet("")
-        self.label_HeatingLoadLine_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_HeatingLoadLine_2.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.label_HeatingLoadLine_2.setObjectName("label_HeatingLoadLine_2")
         self.horizontalLayout_22.addWidget(self.label_HeatingLoadLine_2, 0, QtCore.Qt.AlignRight)
         self.comboBox_heatingLoad_data_file = QtWidgets.QComboBox(self.frame_heatingLoad_data_File)
         self.comboBox_heatingLoad_data_file.setMinimumSize(QtCore.QSize(0, 30))
         self.comboBox_heatingLoad_data_file.setMaximumSize(QtCore.QSize(150, 16777215))
-        self.comboBox_heatingLoad_data_file.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_heatingLoad_data_file.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_heatingLoad_data_file.setObjectName("comboBox_heatingLoad_data_file")
         self.horizontalLayout_22.addWidget(self.comboBox_heatingLoad_data_file)
         self.horizontalLayout_33.addWidget(self.frame_heatingLoad_data_File)
         self.frame_coolingLoad_data_file = QtWidgets.QFrame(self.frame_data_file)
         self.frame_coolingLoad_data_file.setMinimumSize(QtCore.QSize(0, 25))
         self.frame_coolingLoad_data_file.setMaximumSize(QtCore.QSize(1672341, 35))
-        self.frame_coolingLoad_data_file.setStyleSheet("QFrame {\n"
-"    border: 0px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);}\n"
-"")
+        self.frame_coolingLoad_data_file.setStyleSheet(
+            "QFrame {\n"
+            "    border: 0px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);}\n"
+            ""
+        )
         self.frame_coolingLoad_data_file.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_coolingLoad_data_file.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_coolingLoad_data_file.setLineWidth(0)
@@ -2306,30 +2388,30 @@ class Ui_GHEtool(object):
         self.label_CoolingLoadLine_2.setMinimumSize(QtCore.QSize(0, 30))
         self.label_CoolingLoadLine_2.setMaximumSize(QtCore.QSize(1672341, 30))
         self.label_CoolingLoadLine_2.setStyleSheet("")
-        self.label_CoolingLoadLine_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_CoolingLoadLine_2.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.label_CoolingLoadLine_2.setObjectName("label_CoolingLoadLine_2")
         self.horizontalLayout_25.addWidget(self.label_CoolingLoadLine_2)
         self.comboBox_coolingLoad_data_file = QtWidgets.QComboBox(self.frame_coolingLoad_data_file)
         self.comboBox_coolingLoad_data_file.setMinimumSize(QtCore.QSize(0, 30))
         self.comboBox_coolingLoad_data_file.setMaximumSize(QtCore.QSize(150, 16777215))
-        self.comboBox_coolingLoad_data_file.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_coolingLoad_data_file.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_coolingLoad_data_file.setObjectName("comboBox_coolingLoad_data_file")
         self.horizontalLayout_25.addWidget(self.comboBox_coolingLoad_data_file)
         self.horizontalLayout_33.addWidget(self.frame_coolingLoad_data_file)
         self.frame_combined_data_file = QtWidgets.QFrame(self.frame_data_file)
         self.frame_combined_data_file.setMinimumSize(QtCore.QSize(0, 25))
         self.frame_combined_data_file.setMaximumSize(QtCore.QSize(1672341, 35))
-        self.frame_combined_data_file.setStyleSheet("QFrame {\n"
-"    border: 0px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);}\n"
-"")
+        self.frame_combined_data_file.setStyleSheet(
+            "QFrame {\n"
+            "    border: 0px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);}\n"
+            ""
+        )
         self.frame_combined_data_file.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_combined_data_file.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_combined_data_file.setLineWidth(0)
@@ -2341,17 +2423,15 @@ class Ui_GHEtool(object):
         self.label_combined_2.setMinimumSize(QtCore.QSize(0, 30))
         self.label_combined_2.setMaximumSize(QtCore.QSize(1672341, 30))
         self.label_combined_2.setStyleSheet("")
-        self.label_combined_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_combined_2.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.label_combined_2.setObjectName("label_combined_2")
         self.horizontalLayout_34.addWidget(self.label_combined_2)
         self.comboBox_combined_data_file = QtWidgets.QComboBox(self.frame_combined_data_file)
         self.comboBox_combined_data_file.setMinimumSize(QtCore.QSize(0, 30))
         self.comboBox_combined_data_file.setMaximumSize(QtCore.QSize(150, 16777215))
-        self.comboBox_combined_data_file.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_combined_data_file.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_combined_data_file.setObjectName("comboBox_combined_data_file")
         self.horizontalLayout_34.addWidget(self.comboBox_combined_data_file)
         self.horizontalLayout_33.addWidget(self.frame_combined_data_file)
@@ -2368,11 +2448,9 @@ class Ui_GHEtool(object):
         self.comboBox_dataUnit_data_file.setEnabled(True)
         self.comboBox_dataUnit_data_file.setMinimumSize(QtCore.QSize(60, 30))
         self.comboBox_dataUnit_data_file.setMaximumSize(QtCore.QSize(150, 16777215))
-        self.comboBox_dataUnit_data_file.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_dataUnit_data_file.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_dataUnit_data_file.setEditable(False)
         self.comboBox_dataUnit_data_file.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContents)
         self.comboBox_dataUnit_data_file.setFrame(True)
@@ -2455,7 +2533,11 @@ class Ui_GHEtool(object):
         self.pushButton_SaveData.setMinimumSize(QtCore.QSize(150, 40))
         self.pushButton_SaveData.setMaximumSize(QtCore.QSize(16777215, 40))
         icon13 = QtGui.QIcon()
-        icon13.addPixmap(QtGui.QPixmap(":/icons/icons/Save_Inv.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon13.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Save_Inv.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.pushButton_SaveData.setIcon(icon13)
         self.pushButton_SaveData.setIconSize(QtCore.QSize(24, 24))
         self.pushButton_SaveData.setObjectName("pushButton_SaveData")
@@ -2496,7 +2578,7 @@ class Ui_GHEtool(object):
         self.verticalLayout_18.setSpacing(0)
         self.verticalLayout_18.setObjectName("verticalLayout_18")
         self.label_Settings = QtWidgets.QLabel(self.scrollAreaWidgetContents_4)
-        self.label_Settings.setStyleSheet("font: 63 16pt \"Lexend SemiBold\";")
+        self.label_Settings.setStyleSheet('font: 63 16pt "Lexend SemiBold";')
         self.label_Settings.setObjectName("label_Settings")
         self.verticalLayout_18.addWidget(self.label_Settings)
         self.label_42 = QtWidgets.QLabel(self.scrollAreaWidgetContents_4)
@@ -2506,25 +2588,29 @@ class Ui_GHEtool(object):
         self.label_42.setObjectName("label_42")
         self.verticalLayout_18.addWidget(self.label_42)
         self.label_Language_Head = QtWidgets.QLabel(self.scrollAreaWidgetContents_4)
-        self.label_Language_Head.setStyleSheet("QLabel {\n"
-"        qproperty-alignment: AlignCenter;\n"
-"    border: 1px solid  rgb(84, 188, 235);\n"
-"    border-top-left-radius: 15px;\n"
-"    border-top-right-radius: 15px;\n"
-"    background-color:  rgb(84, 188, 235);\n"
-"    padding: 5px 0px;\n"
-"    color:  rgb(255, 255, 235);\n"
-"font-weight:500;\n"
-"}")
+        self.label_Language_Head.setStyleSheet(
+            "QLabel {\n"
+            "        qproperty-alignment: AlignCenter;\n"
+            "    border: 1px solid  rgb(84, 188, 235);\n"
+            "    border-top-left-radius: 15px;\n"
+            "    border-top-right-radius: 15px;\n"
+            "    background-color:  rgb(84, 188, 235);\n"
+            "    padding: 5px 0px;\n"
+            "    color:  rgb(255, 255, 235);\n"
+            "font-weight:500;\n"
+            "}"
+        )
         self.label_Language_Head.setObjectName("label_Language_Head")
         self.verticalLayout_18.addWidget(self.label_Language_Head)
         self.frame_6 = QtWidgets.QFrame(self.scrollAreaWidgetContents_4)
-        self.frame_6.setStyleSheet("QFrame {\n"
-"    border: 1px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);}")
+        self.frame_6.setStyleSheet(
+            "QFrame {\n"
+            "    border: 1px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);}"
+        )
         self.frame_6.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_6.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_6.setObjectName("frame_6")
@@ -2537,11 +2623,9 @@ class Ui_GHEtool(object):
         self.horizontalLayout_6.addItem(spacerItem29)
         self.comboBox_Language = QtWidgets.QComboBox(self.frame_6)
         self.comboBox_Language.setMinimumSize(QtCore.QSize(150, 30))
-        self.comboBox_Language.setStyleSheet("QFrame {\n"
-"    border: 1px solid rgb(255, 255, 255);\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"}")
+        self.comboBox_Language.setStyleSheet(
+            "QFrame {\n" "    border: 1px solid rgb(255, 255, 255);\n" "    border-bottom-left-radius: 0px;\n" "    border-bottom-right-radius: 0px;\n" "}"
+        )
         self.comboBox_Language.setObjectName("comboBox_Language")
         self.horizontalLayout_6.addWidget(self.comboBox_Language)
         self.verticalLayout_18.addWidget(self.frame_6)
@@ -2552,25 +2636,29 @@ class Ui_GHEtool(object):
         self.label_50.setObjectName("label_50")
         self.verticalLayout_18.addWidget(self.label_50)
         self.label_Scenario_Head = QtWidgets.QLabel(self.scrollAreaWidgetContents_4)
-        self.label_Scenario_Head.setStyleSheet("QLabel {\n"
-"        qproperty-alignment: AlignCenter;\n"
-"    border: 1px solid  rgb(84, 188, 235);\n"
-"    border-top-left-radius: 15px;\n"
-"    border-top-right-radius: 15px;\n"
-"    background-color:  rgb(84, 188, 235);\n"
-"    padding: 5px 0px;\n"
-"    color:  rgb(255, 255, 235);\n"
-"font-weight:500;\n"
-"}")
+        self.label_Scenario_Head.setStyleSheet(
+            "QLabel {\n"
+            "        qproperty-alignment: AlignCenter;\n"
+            "    border: 1px solid  rgb(84, 188, 235);\n"
+            "    border-top-left-radius: 15px;\n"
+            "    border-top-right-radius: 15px;\n"
+            "    background-color:  rgb(84, 188, 235);\n"
+            "    padding: 5px 0px;\n"
+            "    color:  rgb(255, 255, 235);\n"
+            "font-weight:500;\n"
+            "}"
+        )
         self.label_Scenario_Head.setObjectName("label_Scenario_Head")
         self.verticalLayout_18.addWidget(self.label_Scenario_Head)
         self.frame_10 = QtWidgets.QFrame(self.scrollAreaWidgetContents_4)
-        self.frame_10.setStyleSheet("QFrame {\n"
-"    border: 1px solid #54bceb;\n"
-"    border-bottom-left-radius: 15px;\n"
-"    border-bottom-right-radius: 15px;\n"
-"}\n"
-"QLabel{border: 0px solid rgb(255,255,255);}")
+        self.frame_10.setStyleSheet(
+            "QFrame {\n"
+            "    border: 1px solid #54bceb;\n"
+            "    border-bottom-left-radius: 15px;\n"
+            "    border-bottom-right-radius: 15px;\n"
+            "}\n"
+            "QLabel{border: 0px solid rgb(255,255,255);}"
+        )
         self.frame_10.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_10.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_10.setObjectName("frame_10")
@@ -2596,11 +2684,13 @@ class Ui_GHEtool(object):
         self.label_Status.setObjectName("label_Status")
         self.horizontalLayout_7.addWidget(self.label_Status)
         self.progressBar = QtWidgets.QProgressBar(self.centralwidget)
-        self.progressBar.setStyleSheet("QProgressBar{border: 1px solid white;\n"
-" border-radius: 10px;\n"
-"text-align: center;\n"
-" color: #ffffff;\n"
-"}QProgressBar::chunk{background-color: #54bceb; border-radius: 10px;}")
+        self.progressBar.setStyleSheet(
+            "QProgressBar{border: 1px solid white;\n"
+            " border-radius: 10px;\n"
+            "text-align: center;\n"
+            " color: #ffffff;\n"
+            "}QProgressBar::chunk{background-color: #54bceb; border-radius: 10px;}"
+        )
         self.progressBar.setProperty("value", 24)
         self.progressBar.setObjectName("progressBar")
         self.horizontalLayout_7.addWidget(self.progressBar)
@@ -2614,7 +2704,11 @@ class Ui_GHEtool(object):
         self.pushButton_start_single.setMaximumSize(QtCore.QSize(16777215, 40))
         self.pushButton_start_single.setStyleSheet("")
         icon14 = QtGui.QIcon()
-        icon14.addPixmap(QtGui.QPixmap(":/icons/icons/Start.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon14.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Start.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.pushButton_start_single.setIcon(icon14)
         self.pushButton_start_single.setIconSize(QtCore.QSize(24, 24))
         self.pushButton_start_single.setObjectName("pushButton_start_single")
@@ -2624,7 +2718,11 @@ class Ui_GHEtool(object):
         self.pushButton_start_multiple.setMaximumSize(QtCore.QSize(16777215, 40))
         self.pushButton_start_multiple.setStyleSheet("")
         icon15 = QtGui.QIcon()
-        icon15.addPixmap(QtGui.QPixmap(":/icons/icons/Start_multiple.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon15.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Start_multiple.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.pushButton_start_multiple.setIcon(icon15)
         self.pushButton_start_multiple.setIconSize(QtCore.QSize(24, 24))
         self.pushButton_start_multiple.setObjectName("pushButton_start_multiple")
@@ -2645,19 +2743,23 @@ class Ui_GHEtool(object):
         self.menubar = QtWidgets.QMenuBar(GHEtool)
         self.menubar.setEnabled(True)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1232, 30))
-        self.menubar.setStyleSheet("QMenuBar::item{\n"
-"    background-color: rgb(0, 64, 122);\n"
-"}\n"
-"QMenuBar::item:pressed {    background-color:rgb(84, 188, 235);}\n"
-"QMenuBar::item:selected{    background-color:rgb(84, 188, 235);}\n"
-"QToolTip { color: #fff; background-color: #000; border: none; }")
+        self.menubar.setStyleSheet(
+            "QMenuBar::item{\n"
+            "    background-color: rgb(0, 64, 122);\n"
+            "}\n"
+            "QMenuBar::item:pressed {    background-color:rgb(84, 188, 235);}\n"
+            "QMenuBar::item:selected{    background-color:rgb(84, 188, 235);}\n"
+            "QToolTip { color: #fff; background-color: #000; border: none; }"
+        )
         self.menubar.setNativeMenuBar(True)
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
-        self.menuFile.setStyleSheet("QAction::icon { background-color:rgb(84, 188, 235);\n"
-"selection-background-color: rgb(84, 188, 235);}\n"
-"*{    background-color: rgb(0, 64, 122);}\n"
-"*:hover{background-color: rgb(84, 188, 235);}")
+        self.menuFile.setStyleSheet(
+            "QAction::icon { background-color:rgb(84, 188, 235);\n"
+            "selection-background-color: rgb(84, 188, 235);}\n"
+            "*{    background-color: rgb(0, 64, 122);}\n"
+            "*:hover{background-color: rgb(84, 188, 235);}"
+        )
         self.menuFile.setTearOffEnabled(False)
         self.menuFile.setObjectName("menuFile")
         self.menuCalculation = QtWidgets.QMenu(self.menubar)
@@ -2667,19 +2769,29 @@ class Ui_GHEtool(object):
         self.menuLanguage = QtWidgets.QMenu(self.menuSettings)
         self.menuLanguage.setEnabled(True)
         icon17 = QtGui.QIcon()
-        icon17.addPixmap(QtGui.QPixmap(":/icons/icons/Language.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon17.addPixmap(QtGui.QPixmap(":/icons/icons/Language_Inv.svg"), QtGui.QIcon.Active, QtGui.QIcon.Off)
+        icon17.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Language.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
+        icon17.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Language_Inv.svg"),
+            QtGui.QIcon.Active,
+            QtGui.QIcon.Off,
+        )
         self.menuLanguage.setIcon(icon17)
         self.menuLanguage.setObjectName("menuLanguage")
         self.menuScenario = QtWidgets.QMenu(self.menubar)
         self.menuScenario.setObjectName("menuScenario")
         GHEtool.setMenuBar(self.menubar)
         self.toolBar = QtWidgets.QToolBar(GHEtool)
-        self.toolBar.setStyleSheet("*{\n"
-"    background-color: rgb(0, 64, 122);\n"
-"}\n"
-"*:hover{background-color: rgb(84, 188, 235);}\n"
-"QToolTip { color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);border: 1px solid rgb(84, 188, 235); }")
+        self.toolBar.setStyleSheet(
+            "*{\n"
+            "    background-color: rgb(0, 64, 122);\n"
+            "}\n"
+            "*:hover{background-color: rgb(84, 188, 235);}\n"
+            "QToolTip { color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);border: 1px solid rgb(84, 188, 235); }"
+        )
         self.toolBar.setMovable(False)
         self.toolBar.setObjectName("toolBar")
         GHEtool.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar)
@@ -2693,7 +2805,11 @@ class Ui_GHEtool(object):
         self.actionNew.setEnabled(True)
         icon18 = QtGui.QIcon()
         icon18.addPixmap(QtGui.QPixmap(":/icons/icons/New.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon18.addPixmap(QtGui.QPixmap(":/icons/icons/New_Inv.svg"), QtGui.QIcon.Active, QtGui.QIcon.Off)
+        icon18.addPixmap(
+            QtGui.QPixmap(":/icons/icons/New_Inv.svg"),
+            QtGui.QIcon.Active,
+            QtGui.QIcon.Off,
+        )
         self.actionNew.setIcon(icon18)
         font = QtGui.QFont()
         font.setFamily("Arial")
@@ -2704,7 +2820,11 @@ class Ui_GHEtool(object):
         self.actionSave.setEnabled(True)
         icon19 = QtGui.QIcon()
         icon19.addPixmap(QtGui.QPixmap(":/icons/icons/Save.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon19.addPixmap(QtGui.QPixmap(":/icons/icons/Save_Inv.svg"), QtGui.QIcon.Active, QtGui.QIcon.Off)
+        icon19.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Save_Inv.svg"),
+            QtGui.QIcon.Active,
+            QtGui.QIcon.Off,
+        )
         self.actionSave.setIcon(icon19)
         font = QtGui.QFont()
         font.setFamily("Arial")
@@ -2715,7 +2835,11 @@ class Ui_GHEtool(object):
         self.actionOpen.setEnabled(True)
         icon20 = QtGui.QIcon()
         icon20.addPixmap(QtGui.QPixmap(":/icons/icons/Open.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon20.addPixmap(QtGui.QPixmap(":/icons/icons/Open_Inv.svg"), QtGui.QIcon.Active, QtGui.QIcon.Off)
+        icon20.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Open_Inv.svg"),
+            QtGui.QIcon.Active,
+            QtGui.QIcon.Off,
+        )
         self.actionOpen.setIcon(icon20)
         font = QtGui.QFont()
         font.setFamily("Arial")
@@ -2725,74 +2849,150 @@ class Ui_GHEtool(object):
         self.action_start_multiple = QtWidgets.QAction(GHEtool)
         self.action_start_multiple.setEnabled(True)
         icon21 = QtGui.QIcon()
-        icon21.addPixmap(QtGui.QPixmap(":/icons/icons/Start_multiple_inv.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon21.addPixmap(QtGui.QPixmap(":/icons/icons/Start_multiple.svg"), QtGui.QIcon.Active, QtGui.QIcon.Off)
+        icon21.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Start_multiple_inv.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
+        icon21.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Start_multiple.svg"),
+            QtGui.QIcon.Active,
+            QtGui.QIcon.Off,
+        )
         self.action_start_multiple.setIcon(icon21)
         self.action_start_multiple.setObjectName("action_start_multiple")
         self.actionGerman = QtWidgets.QAction(GHEtool)
         icon22 = QtGui.QIcon()
-        icon22.addPixmap(QtGui.QPixmap(":/icons/icons/Flag_German.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon22.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Flag_German.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.actionGerman.setIcon(icon22)
         self.actionGerman.setObjectName("actionGerman")
         self.actionEnglish = QtWidgets.QAction(GHEtool)
         icon23 = QtGui.QIcon()
-        icon23.addPixmap(QtGui.QPixmap(":/icons/icons/Flag_English.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon23.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Flag_English.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.actionEnglish.setIcon(icon23)
         self.actionEnglish.setObjectName("actionEnglish")
         self.actionUpdate_Scenario = QtWidgets.QAction(GHEtool)
         icon24 = QtGui.QIcon()
-        icon24.addPixmap(QtGui.QPixmap(":/icons/icons/Update_Inv.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon24.addPixmap(QtGui.QPixmap(":/icons/icons/Update.svg"), QtGui.QIcon.Active, QtGui.QIcon.Off)
+        icon24.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Update_Inv.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
+        icon24.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Update.svg"),
+            QtGui.QIcon.Active,
+            QtGui.QIcon.Off,
+        )
         self.actionUpdate_Scenario.setIcon(icon24)
         self.actionUpdate_Scenario.setObjectName("actionUpdate_Scenario")
         self.actionAdd_Scenario = QtWidgets.QAction(GHEtool)
         icon25 = QtGui.QIcon()
-        icon25.addPixmap(QtGui.QPixmap(":/icons/icons/Add_Inv.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon25.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Add_Inv.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         icon25.addPixmap(QtGui.QPixmap(":/icons/icons/Add.svg"), QtGui.QIcon.Active, QtGui.QIcon.Off)
         self.actionAdd_Scenario.setIcon(icon25)
         self.actionAdd_Scenario.setObjectName("actionAdd_Scenario")
         self.actionDelete_scenario = QtWidgets.QAction(GHEtool)
         icon26 = QtGui.QIcon()
-        icon26.addPixmap(QtGui.QPixmap(":/icons/icons/Delete_Inv.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon26.addPixmap(QtGui.QPixmap(":/icons/icons/Delete.svg"), QtGui.QIcon.Active, QtGui.QIcon.Off)
+        icon26.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Delete_Inv.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
+        icon26.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Delete.svg"),
+            QtGui.QIcon.Active,
+            QtGui.QIcon.Off,
+        )
         self.actionDelete_scenario.setIcon(icon26)
         self.actionDelete_scenario.setObjectName("actionDelete_scenario")
         self.actionSave_As = QtWidgets.QAction(GHEtool)
         icon27 = QtGui.QIcon()
-        icon27.addPixmap(QtGui.QPixmap(":/icons/icons/SaveAs.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon27.addPixmap(QtGui.QPixmap(":/icons/icons/Save_As_Inv.svg"), QtGui.QIcon.Active, QtGui.QIcon.Off)
+        icon27.addPixmap(
+            QtGui.QPixmap(":/icons/icons/SaveAs.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
+        icon27.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Save_As_Inv.svg"),
+            QtGui.QIcon.Active,
+            QtGui.QIcon.Off,
+        )
         self.actionSave_As.setIcon(icon27)
         self.actionSave_As.setObjectName("actionSave_As")
         self.actionDutch = QtWidgets.QAction(GHEtool)
         icon28 = QtGui.QIcon()
-        icon28.addPixmap(QtGui.QPixmap(":/icons/icons/Flag_Dutch.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon28.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Flag_Dutch.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.actionDutch.setIcon(icon28)
         self.actionDutch.setObjectName("actionDutch")
         self.actionItalian = QtWidgets.QAction(GHEtool)
         icon29 = QtGui.QIcon()
-        icon29.addPixmap(QtGui.QPixmap(":/icons/icons/Flag_Italian.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon29.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Flag_Italian.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.actionItalian.setIcon(icon29)
         self.actionItalian.setObjectName("actionItalian")
         self.actionFrench = QtWidgets.QAction(GHEtool)
         icon30 = QtGui.QIcon()
-        icon30.addPixmap(QtGui.QPixmap(":/icons/icons/Flag_French.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon30.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Flag_French.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.actionFrench.setIcon(icon30)
         self.actionFrench.setObjectName("actionFrench")
         self.actionRename_scenario = QtWidgets.QAction(GHEtool)
         icon31 = QtGui.QIcon()
-        icon31.addPixmap(QtGui.QPixmap(":/icons/icons/Rename_Inv.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon31.addPixmap(QtGui.QPixmap(":/icons/icons/Rename.svg"), QtGui.QIcon.Active, QtGui.QIcon.Off)
+        icon31.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Rename_Inv.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
+        icon31.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Rename.svg"),
+            QtGui.QIcon.Active,
+            QtGui.QIcon.Off,
+        )
         self.actionRename_scenario.setIcon(icon31)
         self.actionRename_scenario.setObjectName("actionRename_scenario")
         self.action_start_single = QtWidgets.QAction(GHEtool)
         icon32 = QtGui.QIcon()
-        icon32.addPixmap(QtGui.QPixmap(":/icons/icons/Start_inv.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon32.addPixmap(QtGui.QPixmap(":/icons/icons/Start.svg"), QtGui.QIcon.Active, QtGui.QIcon.Off)
+        icon32.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Start_inv.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
+        icon32.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Start.svg"),
+            QtGui.QIcon.Active,
+            QtGui.QIcon.Off,
+        )
         self.action_start_single.setIcon(icon32)
         self.action_start_single.setObjectName("action_start_single")
         self.actionSpanish = QtWidgets.QAction(GHEtool)
         icon33 = QtGui.QIcon()
-        icon33.addPixmap(QtGui.QPixmap(":/icons/icons/Flag_Spain.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon33.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Flag_Spain.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.actionSpanish.setIcon(icon33)
         self.actionSpanish.setObjectName("actionSpanish")
         self.actionInputChanged = QtWidgets.QAction(GHEtool)
@@ -2803,7 +3003,11 @@ class Ui_GHEtool(object):
         self.actionUpdateBoreholeGraph.setObjectName("actionUpdateBoreholeGraph")
         self.actionGalician = QtWidgets.QAction(GHEtool)
         icon34 = QtGui.QIcon()
-        icon34.addPixmap(QtGui.QPixmap(":/icons/icons/Flag_Galicia.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon34.addPixmap(
+            QtGui.QPixmap(":/icons/icons/Flag_Galicia.svg"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.actionGalician.setIcon(icon34)
         self.actionGalician.setObjectName("actionGalician")
         self.menuFile.addAction(self.actionNew)
@@ -2851,108 +3055,108 @@ class Ui_GHEtool(object):
         self.pushButton_AddScenario.clicked.connect(self.actionAdd_Scenario.trigger)
         self.pushButton_DeleteScenario.clicked.connect(self.actionDelete_scenario.trigger)
         self.pushButton_SaveScenario.clicked.connect(self.actionUpdate_Scenario.trigger)
-        self.list_widget_scenario.itemDoubleClicked['QListWidgetItem*'].connect(self.actionRename_scenario.trigger)
-        self.checkBox_Import.toggled['bool'].connect(self.toolBox.setVisible)
-        self.checkBox_Import.stateChanged['int'].connect(self.toolBox.setCurrentIndex)
+        self.list_widget_scenario.itemDoubleClicked["QListWidgetItem*"].connect(self.actionRename_scenario.trigger)
+        self.checkBox_Import.toggled["bool"].connect(self.toolBox.setVisible)
+        self.checkBox_Import.stateChanged["int"].connect(self.toolBox.setCurrentIndex)
         self.pushButton_start_single.clicked.connect(self.action_start_single.trigger)
-        self.checkBox_AutoSaving.toggled['bool'].connect(self.pushButton_SaveScenario.setHidden)
-        self.comboBox_Rb_method.currentIndexChanged['int'].connect(self.actionInputChanged.trigger)
-        self.comboBox_aim.currentIndexChanged['int'].connect(self.actionInputChanged.trigger)
-        self.comboBox_depth_Method.currentIndexChanged['int'].connect(self.actionInputChanged.trigger)
-        self.comboBox_Size_Method.currentIndexChanged['int'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_H.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_B.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_B_max.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_k_s.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Tg.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.spinBox_N_1.valueChanged['int'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_W_max.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.spinBox_N_2.valueChanged['int'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_L_max.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_TMin.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_TMax.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.spinBox_Years.valueChanged['int'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Rb.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_fluid_lambda.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_fluid_mass_flow_rate.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_fluid_density.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_fluid_thermal_capacity.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_fluid_viscosity.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.spinBox_number_pipes.valueChanged['int'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_grout_conductivity.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_pipe_conductivity.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_pipe_inner_radius.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_pipe_outer_radius.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_pipe_distance.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_borehole_radius.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_pipe_roughness.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_borehole_burial_depth.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Hp_Jan.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Hp_Feb.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Hp_Mar.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Hp_Apr.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Hp_May.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Hp_Jun.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Hp_Jul.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Hp_Aug.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Hp_Sep.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Hp_Oct.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Hp_Nov.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Hp_Dec.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Cp_Jan.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Cp_Feb.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Cp_Mar.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Cp_Apr.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Cp_May.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Cp_Jun.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Cp_Jul.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Cp_Aug.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Cp_Sep.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Cp_Oct.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Cp_Nov.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_Cp_Dec.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_HL_Jan.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_HL_Feb.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_HL_Mar.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_HL_Apr.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_HL_May.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_HL_Jun.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_HL_Jul.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_HL_Aug.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_HL_Sep.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_HL_Oct.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_HL_Nov.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_HL_Dec.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_CL_Jan.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_CL_Feb.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_CL_Mar.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_CL_Apr.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_CL_May.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_CL_Jun.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_CL_Jul.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_CL_Aug.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_CL_Sep.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_CL_Oct.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_CL_Nov.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.doubleSpinBox_CL_Dec.valueChanged['double'].connect(self.actionInputChanged.trigger)
-        self.pushButton_Unit.toggled['bool'].connect(self.actionInputChanged.trigger)
-        self.spinBox_number_pipes.valueChanged['int'].connect(self.actionCheckUDistance.trigger)
-        self.doubleSpinBox_pipe_outer_radius.valueChanged['double'].connect(self.actionCheckUDistance.trigger)
-        self.doubleSpinBox_borehole_radius.valueChanged['double'].connect(self.actionCheckUDistance.trigger)
-        self.comboBox_SeperatorDataFile.currentIndexChanged['int'].connect(self.actionInputChanged.trigger)
-        self.lineEdit_filename_data_file.textChanged['QString'].connect(self.actionInputChanged.trigger)
-        self.comboBox_heatingLoad_data_file.currentIndexChanged['int'].connect(self.actionInputChanged.trigger)
-        self.comboBox_coolingLoad_data_file.currentIndexChanged['int'].connect(self.actionInputChanged.trigger)
-        self.comboBox_combined_data_file.currentIndexChanged['int'].connect(self.actionInputChanged.trigger)
-        self.comboBox_dataUnit_data_file.currentIndexChanged['int'].connect(self.actionInputChanged.trigger)
-        self.comboBox_dataColumn_data_file.currentIndexChanged['int'].connect(self.actionInputChanged.trigger)
-        self.comboBox_decimalDataFile.currentIndexChanged['int'].connect(self.actionInputChanged.trigger)
-        self.spinBox_number_pipes.valueChanged['int'].connect(self.actionUpdateBoreholeGraph.trigger)
-        self.doubleSpinBox_pipe_inner_radius.valueChanged['double'].connect(self.actionUpdate_Scenario.trigger)
-        self.doubleSpinBox_pipe_outer_radius.valueChanged['double'].connect(self.actionUpdateBoreholeGraph.trigger)
-        self.doubleSpinBox_borehole_radius.valueChanged['double'].connect(self.actionUpdateBoreholeGraph.trigger)
-        self.doubleSpinBox_pipe_distance.valueChanged['double'].connect(self.actionUpdateBoreholeGraph.trigger)
-        self.doubleSpinBox_pipe_inner_radius.valueChanged['double'].connect(self.actionUpdateBoreholeGraph.trigger)
+        self.checkBox_AutoSaving.toggled["bool"].connect(self.pushButton_SaveScenario.setHidden)
+        self.comboBox_Rb_method.currentIndexChanged["int"].connect(self.actionInputChanged.trigger)
+        self.comboBox_aim.currentIndexChanged["int"].connect(self.actionInputChanged.trigger)
+        self.comboBox_depth_Method.currentIndexChanged["int"].connect(self.actionInputChanged.trigger)
+        self.comboBox_Size_Method.currentIndexChanged["int"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_H.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_B.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_B_max.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_k_s.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Tg.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.spinBox_N_1.valueChanged["int"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_W_max.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.spinBox_N_2.valueChanged["int"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_L_max.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_TMin.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_TMax.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.spinBox_Years.valueChanged["int"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Rb.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_fluid_lambda.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_fluid_mass_flow_rate.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_fluid_density.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_fluid_thermal_capacity.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_fluid_viscosity.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.spinBox_number_pipes.valueChanged["int"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_grout_conductivity.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_pipe_conductivity.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_pipe_inner_radius.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_pipe_outer_radius.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_pipe_distance.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_borehole_radius.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_pipe_roughness.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_borehole_burial_depth.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Hp_Jan.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Hp_Feb.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Hp_Mar.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Hp_Apr.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Hp_May.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Hp_Jun.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Hp_Jul.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Hp_Aug.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Hp_Sep.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Hp_Oct.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Hp_Nov.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Hp_Dec.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Cp_Jan.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Cp_Feb.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Cp_Mar.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Cp_Apr.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Cp_May.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Cp_Jun.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Cp_Jul.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Cp_Aug.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Cp_Sep.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Cp_Oct.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Cp_Nov.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_Cp_Dec.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_HL_Jan.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_HL_Feb.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_HL_Mar.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_HL_Apr.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_HL_May.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_HL_Jun.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_HL_Jul.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_HL_Aug.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_HL_Sep.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_HL_Oct.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_HL_Nov.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_HL_Dec.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_CL_Jan.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_CL_Feb.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_CL_Mar.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_CL_Apr.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_CL_May.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_CL_Jun.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_CL_Jul.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_CL_Aug.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_CL_Sep.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_CL_Oct.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_CL_Nov.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.doubleSpinBox_CL_Dec.valueChanged["double"].connect(self.actionInputChanged.trigger)
+        self.pushButton_Unit.toggled["bool"].connect(self.actionInputChanged.trigger)
+        self.spinBox_number_pipes.valueChanged["int"].connect(self.actionCheckUDistance.trigger)
+        self.doubleSpinBox_pipe_outer_radius.valueChanged["double"].connect(self.actionCheckUDistance.trigger)
+        self.doubleSpinBox_borehole_radius.valueChanged["double"].connect(self.actionCheckUDistance.trigger)
+        self.comboBox_SeperatorDataFile.currentIndexChanged["int"].connect(self.actionInputChanged.trigger)
+        self.lineEdit_filename_data_file.textChanged["QString"].connect(self.actionInputChanged.trigger)
+        self.comboBox_heatingLoad_data_file.currentIndexChanged["int"].connect(self.actionInputChanged.trigger)
+        self.comboBox_coolingLoad_data_file.currentIndexChanged["int"].connect(self.actionInputChanged.trigger)
+        self.comboBox_combined_data_file.currentIndexChanged["int"].connect(self.actionInputChanged.trigger)
+        self.comboBox_dataUnit_data_file.currentIndexChanged["int"].connect(self.actionInputChanged.trigger)
+        self.comboBox_dataColumn_data_file.currentIndexChanged["int"].connect(self.actionInputChanged.trigger)
+        self.comboBox_decimalDataFile.currentIndexChanged["int"].connect(self.actionInputChanged.trigger)
+        self.spinBox_number_pipes.valueChanged["int"].connect(self.actionUpdateBoreholeGraph.trigger)
+        self.doubleSpinBox_pipe_inner_radius.valueChanged["double"].connect(self.actionUpdate_Scenario.trigger)
+        self.doubleSpinBox_pipe_outer_radius.valueChanged["double"].connect(self.actionUpdateBoreholeGraph.trigger)
+        self.doubleSpinBox_borehole_radius.valueChanged["double"].connect(self.actionUpdateBoreholeGraph.trigger)
+        self.doubleSpinBox_pipe_distance.valueChanged["double"].connect(self.actionUpdateBoreholeGraph.trigger)
+        self.doubleSpinBox_pipe_inner_radius.valueChanged["double"].connect(self.actionUpdateBoreholeGraph.trigger)
         QtCore.QMetaObject.connectSlotsByName(GHEtool)
         GHEtool.setTabOrder(self.comboBox_aim, self.doubleSpinBox_H)
         GHEtool.setTabOrder(self.doubleSpinBox_H, self.doubleSpinBox_B)
@@ -2974,7 +3178,10 @@ class Ui_GHEtool(object):
         GHEtool.setTabOrder(self.doubleSpinBox_fluid_lambda, self.doubleSpinBox_fluid_mass_flow_rate)
         GHEtool.setTabOrder(self.doubleSpinBox_fluid_mass_flow_rate, self.doubleSpinBox_fluid_density)
         GHEtool.setTabOrder(self.doubleSpinBox_fluid_density, self.doubleSpinBox_fluid_thermal_capacity)
-        GHEtool.setTabOrder(self.doubleSpinBox_fluid_thermal_capacity, self.doubleSpinBox_fluid_viscosity)
+        GHEtool.setTabOrder(
+            self.doubleSpinBox_fluid_thermal_capacity,
+            self.doubleSpinBox_fluid_viscosity,
+        )
         GHEtool.setTabOrder(self.doubleSpinBox_fluid_viscosity, self.spinBox_number_pipes)
         GHEtool.setTabOrder(self.spinBox_number_pipes, self.doubleSpinBox_grout_conductivity)
         GHEtool.setTabOrder(self.doubleSpinBox_grout_conductivity, self.doubleSpinBox_pipe_conductivity)
@@ -3101,12 +3308,9 @@ class Ui_GHEtool(object):
         item = self.list_widget_scenario.item(0)
         item.setText(_translate("GHEtool", "Scenario: 1"))
         self.list_widget_scenario.setSortingEnabled(__sortingEnabled)
-        self.pushButton_General.setText(_translate("GHEtool", "Borehole \n"
-"and earth"))
-        self.pushButton_borehole_resistance.setText(_translate("GHEtool", "Borehole\n"
-"resistance"))
-        self.pushButton_thermalDemands.setText(_translate("GHEtool", "Thermal \n"
-"demands"))
+        self.pushButton_General.setText(_translate("GHEtool", "Borehole \n" "and earth"))
+        self.pushButton_borehole_resistance.setText(_translate("GHEtool", "Borehole\n" "resistance"))
+        self.pushButton_thermalDemands.setText(_translate("GHEtool", "Thermal \n" "demands"))
         self.pushButton_Results.setText(_translate("GHEtool", "Results"))
         self.pushButton_Settings.setText(_translate("GHEtool", "Settings"))
         self.label_Borehole_earth.setText(_translate("GHEtool", "Borehole and earth"))
@@ -3136,15 +3340,23 @@ class Ui_GHEtool(object):
         self.label_TempMin.setText(_translate("GHEtool", "Minimal temperature [°C]: "))
         self.label_TempMax.setText(_translate("GHEtool", "Maximal temperature [°C]: "))
         self.label_SimulationTime.setText(_translate("GHEtool", "Simulation period [yrs]: "))
-        self.label_WarningCustomBorefield.setText(_translate("GHEtool", "With the selected values a customized bore field will be calculated. This will dramatically increase the calculation time."))
+        self.label_WarningCustomBorefield.setText(
+            _translate(
+                "GHEtool",
+                "With the selected values a customized bore field will be calculated. This will dramatically increase the calculation time.",
+            )
+        )
         self.pushButton_NextGeneral.setText(_translate("GHEtool", "  next  "))
         self.label_Borehole_Resistance.setText(_translate("GHEtool", "Equivalent borehole resistance"))
         self.label_Borehole_Resistance_Head.setText(_translate("GHEtool", "Equivalent borehole resistance"))
         self.label_Rb_calculation_method.setText(_translate("GHEtool", "Calculation method:"))
         self.label_BoreholeResistance.setText(_translate("GHEtool", "Equivalent borehole resistance [mK/W]: "))
-        self.comboBox_Rb_method.setToolTip(_translate("GHEtool", "Profile meanss .....\n"
-"depth means ....\n"
-"sizing means ...."))
+        self.comboBox_Rb_method.setToolTip(
+            _translate(
+                "GHEtool",
+                "Profile meanss .....\n" "depth means ....\n" "sizing means ....",
+            )
+        )
         self.comboBox_Rb_method.setItemText(0, _translate("GHEtool", "Known constant value"))
         self.comboBox_Rb_method.setItemText(1, _translate("GHEtool", "Unknown constant value"))
         self.comboBox_Rb_method.setItemText(2, _translate("GHEtool", "During calculation updating value"))
@@ -3178,11 +3390,11 @@ class Ui_GHEtool(object):
         self.label_Filename.setText(_translate("GHEtool", "Filename: "))
         self.pushButton_loadCsv.setText(_translate("GHEtool", "..."))
         self.label_Seperator.setText(_translate("GHEtool", "Seperator in CSV-file:"))
-        self.comboBox_Seperator.setItemText(0, _translate("GHEtool", "Semicolon \';\'"))
-        self.comboBox_Seperator.setItemText(1, _translate("GHEtool", "Comma \',\'"))
+        self.comboBox_Seperator.setItemText(0, _translate("GHEtool", "Semicolon ';'"))
+        self.comboBox_Seperator.setItemText(1, _translate("GHEtool", "Comma ','"))
         self.label_decimal.setText(_translate("GHEtool", "Decimal sign in CSV-file:"))
-        self.comboBox_decimal.setItemText(0, _translate("GHEtool", "Point \'.\'"))
-        self.comboBox_decimal.setItemText(1, _translate("GHEtool", "Comma \',\'"))
+        self.comboBox_decimal.setItemText(0, _translate("GHEtool", "Point '.'"))
+        self.comboBox_decimal.setItemText(1, _translate("GHEtool", "Comma ','"))
         self.label_SheetName.setText(_translate("GHEtool", "Sheet Name"))
         self.comboBox_sheetName.setProperty("placeholderText", _translate("GHEtool", "choose your excel sheet name "))
         self.pushButton_load.setText(_translate("GHEtool", "Load"))
@@ -3206,7 +3418,10 @@ class Ui_GHEtool(object):
         self.comboBox_dataUnit.setItemText(1, _translate("GHEtool", "kW"))
         self.comboBox_dataUnit.setItemText(2, _translate("GHEtool", "MW"))
         self.pushButton_calculate.setText(_translate("GHEtool", "Calculate"))
-        self.toolBox.setItemText(self.toolBox.indexOf(self.page_DataLocation), _translate("GHEtool", "Data location in file"))
+        self.toolBox.setItemText(
+            self.toolBox.indexOf(self.page_DataLocation),
+            _translate("GHEtool", "Data location in file"),
+        )
         self.label_ThermalDemands.setText(_translate("GHEtool", "Thermal demands"))
         self.label_Oct.setText(_translate("GHEtool", "October"))
         self.label_Aug.setText(_translate("GHEtool", "August"))
@@ -3241,11 +3456,11 @@ class Ui_GHEtool(object):
         self.pushButton_Unit.setText(_translate("GHEtool", "OK"))
         self.label_data_file.setText(_translate("GHEtool", "Select data file"))
         self.label_SeperatorDataFile.setText(_translate("GHEtool", "Seperator in CSV-file:"))
-        self.comboBox_SeperatorDataFile.setItemText(0, _translate("GHEtool", "Semicolon \';\'"))
-        self.comboBox_SeperatorDataFile.setItemText(1, _translate("GHEtool", "Comma \',\'"))
+        self.comboBox_SeperatorDataFile.setItemText(0, _translate("GHEtool", "Semicolon ';'"))
+        self.comboBox_SeperatorDataFile.setItemText(1, _translate("GHEtool", "Comma ','"))
         self.label_decimalDataFile.setText(_translate("GHEtool", "Decimal sign in CSV-file:"))
-        self.comboBox_decimalDataFile.setItemText(0, _translate("GHEtool", "Point \'.\'"))
-        self.comboBox_decimalDataFile.setItemText(1, _translate("GHEtool", "Comma \',\'"))
+        self.comboBox_decimalDataFile.setItemText(0, _translate("GHEtool", "Point '.'"))
+        self.comboBox_decimalDataFile.setItemText(1, _translate("GHEtool", "Comma ','"))
         self.label_Filename_2.setText(_translate("GHEtool", "Filename: "))
         self.pushButton_data_file_select.setText(_translate("GHEtool", "..."))
         self.label_dataColumn_2.setText(_translate("GHEtool", "Thermal demands: "))
@@ -3265,13 +3480,23 @@ class Ui_GHEtool(object):
         self.label_Size.setText(_translate("GHEtool", "Size"))
         self.pushButton_SaveData.setText(_translate("GHEtool", "Save results"))
         self.pushButton_SaveFigure.setText(_translate("GHEtool", "Save figure"))
-        self.label_WarningDepth.setText(_translate("GHEtool", "The calculated size is below the suggested minimum of 15 m. The calculation may be incorrect."))
+        self.label_WarningDepth.setText(
+            _translate(
+                "GHEtool",
+                "The calculated size is below the suggested minimum of 15 m. The calculation may be incorrect.",
+            )
+        )
         self.label_Settings.setText(_translate("GHEtool", "Settings"))
         self.label_Language_Head.setText(_translate("GHEtool", "Language"))
         self.label_Language.setText(_translate("GHEtool", "Language"))
         self.label_Scenario_Head.setText(_translate("GHEtool", "Scenario saving settings"))
         self.checkBox_AutoSaving.setText(_translate("GHEtool", "Automatic saving"))
-        self.label_Scenario_Hint.setText(_translate("GHEtool", "If Auto saving is selected the scenario will automatically saved if a scenario is changed. Otherwise the scenario has to be saved with the Update scenario butten in the upper left corner if the changes should not be lost. "))
+        self.label_Scenario_Hint.setText(
+            _translate(
+                "GHEtool",
+                "If Auto saving is selected the scenario will automatically saved if a scenario is changed. Otherwise the scenario has to be saved with the Update scenario butten in the upper left corner if the changes should not be lost. ",
+            )
+        )
         self.label_Status.setText(_translate("GHEtool", "Progress: "))
         self.pushButton_start_single.setText(_translate("GHEtool", "Calculate current scenario"))
         self.pushButton_start_multiple.setText(_translate("GHEtool", "Calculate all scenarios"))
@@ -3320,5 +3545,6 @@ class Ui_GHEtool(object):
         self.actionUpdateBoreholeGraph.setText(_translate("GHEtool", "UpdateBoreholeGraph"))
         self.actionGalician.setText(_translate("GHEtool", "Galician"))
         self.actionGalician.setShortcut(_translate("GHEtool", "Ctrl+Alt+A"))
+
 
 from .icons_rc import *

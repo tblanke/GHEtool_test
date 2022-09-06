@@ -11,27 +11,25 @@ if __name__ == "__main__":
     data = GroundData(110, 6, 3, 10, 0.2, 10, 12, 2.4 * 10**6)
 
     # monthly loading values
-    peak_cooling = np.array([0., 0, 34., 69., 133., 187., 213., 240., 160., 37., 0., 0.])  # Peak cooling in kW
-    peak_heating = np.array([160., 142, 102., 55., 0., 0., 0., 0., 40.4, 85., 119., 136.])  # Peak heating in kW
+    peak_cooling = np.array([0.0, 0, 34.0, 69.0, 133.0, 187.0, 213.0, 240.0, 160.0, 37.0, 0.0, 0.0])  # Peak cooling in kW
+    peak_heating = np.array([160.0, 142, 102.0, 55.0, 0.0, 0.0, 0.0, 0.0, 40.4, 85.0, 119.0, 136.0])  # Peak heating in kW
 
     # annual heating and cooling load
-    annual_heating_load = 300 * 10 ** 3  # kWh
-    annual_cooling_load = 160 * 10 ** 3  # kWh
+    annual_heating_load = 300 * 10**3  # kWh
+    annual_cooling_load = 160 * 10**3  # kWh
 
     # percentage of annual load per month (15.5% for January ...)
-    monthly_load_heating_percentage = np.array([0.155, 0.148, 0.125, .099, .064, 0., 0., 0., 0.061, 0.087, 0.117, 0.144])
-    monthly_load_cooling_percentage = np.array([0.025, 0.05, 0.05, .05, .075, .1, .2, .2, .1, .075, .05, .025])
+    monthly_load_heating_percentage = np.array([0.155, 0.148, 0.125, 0.099, 0.064, 0.0, 0.0, 0.0, 0.061, 0.087, 0.117, 0.144])
+    monthly_load_cooling_percentage = np.array([0.025, 0.05, 0.05, 0.05, 0.075, 0.1, 0.2, 0.2, 0.1, 0.075, 0.05, 0.025])
 
     # resulting load per month
     monthly_load_heating = annual_heating_load * monthly_load_heating_percentage  # kWh
     monthly_load_cooling = annual_cooling_load * monthly_load_cooling_percentage  # kWh
 
     # create the borefield object
-    borefield = Borefield(simulation_period=20,
-                          peak_heating=peak_heating,
-                          peak_cooling=peak_cooling,
-                          baseload_heating=monthly_load_heating,
-                          baseload_cooling=monthly_load_cooling)
+    borefield = Borefield(
+        simulation_period=20, peak_heating=peak_heating, peak_cooling=peak_cooling, baseload_heating=monthly_load_heating, baseload_cooling=monthly_load_cooling
+    )
 
     borefield.set_ground_parameters(data)
 
@@ -47,8 +45,7 @@ if __name__ == "__main__":
     max_depth = 250  # m
 
     # size by length and width
-    result = borefield.size_by_length_and_width(max_depth, max_width, max_length, min_spacing,
-                                                max_spacing)
+    result = borefield.size_by_length_and_width(max_depth, max_width, max_length, min_spacing, max_spacing)
     # print the possible solutions
     if not result:
         print("There are no possible solutions!")

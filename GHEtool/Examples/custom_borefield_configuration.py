@@ -24,16 +24,16 @@ if __name__ == "__main__":
     data = GroundData(110, 6, 3, 10, 0.12, 10, 12, 2.4 * 10**6)
 
     # Monthly loading values
-    peak_cooling = np.array([0., 0, 3.4, 6.9, 13., 18., 21., 50., 16., 3.7, 0., 0.])  # Peak cooling in kW
-    peak_heating = np.array([60., 42., 10., 5., 0., 0., 0., 0., 4.4, 8.5, 19., 36.])  # Peak heating in kW
+    peak_cooling = np.array([0.0, 0, 3.4, 6.9, 13.0, 18.0, 21.0, 50.0, 16.0, 3.7, 0.0, 0.0])  # Peak cooling in kW
+    peak_heating = np.array([60.0, 42.0, 10.0, 5.0, 0.0, 0.0, 0.0, 0.0, 4.4, 8.5, 19.0, 36.0])  # Peak heating in kW
 
     # annual heating and cooling load
-    annual_heating_load = 30 * 10 ** 3  # kWh
-    annual_cooling_load = 16 * 10 ** 3  # kWh
+    annual_heating_load = 30 * 10**3  # kWh
+    annual_cooling_load = 16 * 10**3  # kWh
 
     # percentage of annual load per month (15.5% for January ...)
-    monthly_load_heating_percentage = np.array([0.155, 0.148, 0.125, .099, .064, 0., 0., 0., 0.061, 0.087, 0.117, 0.144])
-    monthly_load_cooling_percentage = np.array([0.025, 0.05, 0.05, .05, .075, .1, .2, .2, .1, .075, .05, .025])
+    monthly_load_heating_percentage = np.array([0.155, 0.148, 0.125, 0.099, 0.064, 0.0, 0.0, 0.0, 0.061, 0.087, 0.117, 0.144])
+    monthly_load_cooling_percentage = np.array([0.025, 0.05, 0.05, 0.05, 0.075, 0.1, 0.2, 0.2, 0.1, 0.075, 0.05, 0.025])
 
     # resulting load per month
     monthly_load_heating = annual_heating_load * monthly_load_heating_percentage  # kWh
@@ -41,11 +41,9 @@ if __name__ == "__main__":
 
     # create the borefield object
 
-    borefield = Borefield(simulation_period=20,
-                          peak_heating=peak_heating,
-                          peak_cooling=peak_cooling,
-                          baseload_heating=monthly_load_heating,
-                          baseload_cooling=monthly_load_cooling)
+    borefield = Borefield(
+        simulation_period=20, peak_heating=peak_heating, peak_cooling=peak_cooling, baseload_heating=monthly_load_heating, baseload_cooling=monthly_load_cooling
+    )
 
     borefield.set_ground_parameters(data)
 
@@ -54,7 +52,7 @@ if __name__ == "__main__":
     borefield.set_min_ground_temperature(0)  # minimum temperature
 
     # create custom borefield based on pygfunction
-    custom_field = gt.boreholes.L_shaped_field(N_1=4, N_2=5, B_1=5., B_2=5., H=100., D=4, r_b=0.05)
+    custom_field = gt.boreholes.L_shaped_field(N_1=4, N_2=5, B_1=5.0, B_2=5.0, H=100.0, D=4, r_b=0.05)
     borefield.create_custom_dataset(custom_field, "customfield")
 
     # set the custom dataset
@@ -68,7 +66,11 @@ if __name__ == "__main__":
     print("The borehole depth is: ", depth, "m")
 
     # print imbalance
-    print("The borefield imbalance is: ", borefield.imbalance, "kWh/y. (A negative imbalance means the the field is heat extraction dominated so it cools down year after year.)") # print imbalance
+    print(
+        "The borefield imbalance is: ",
+        borefield.imbalance,
+        "kWh/y. (A negative imbalance means the the field is heat extraction dominated so it cools down year after year.)",
+    )  # print imbalance
 
     # plot temperature profile for the calculated depth
     borefield.print_temperature_profile(legend=True)

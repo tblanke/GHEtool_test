@@ -14,50 +14,54 @@ from GHEtool import Borefield, FluidData, GroundData, PipeData
 
 if __name__ == "__main__":
     # relevant borefield data for the calculations
-    data = GroundData(110,           # depth (m)
-                      6,             # borehole spacing (m)
-                      3,             # conductivity of the soil (W/mK)
-                      10,            # Ground temperature at infinity (degrees C)
-                      0.2,           # equivalent borehole resistance (K/W)
-                      12,            # width of rectangular field (#)
-                      10,            # length of rectangular field (#)
-                      2.4 * 10**6)   # ground volumetric heat capacity (J/m3K)
+    data = GroundData(
+        110,  # depth (m)
+        6,  # borehole spacing (m)
+        3,  # conductivity of the soil (W/mK)
+        10,  # Ground temperature at infinity (degrees C)
+        0.2,  # equivalent borehole resistance (K/W)
+        12,  # width of rectangular field (#)
+        10,  # length of rectangular field (#)
+        2.4 * 10**6,
+    )  # ground volumetric heat capacity (J/m3K)
 
     # monthly loading values
-    peak_cooling = np.array([0., 0, 34., 69., 133., 187., 213., 240., 160., 37., 0., 0.])  # Peak cooling in kW
-    peak_heating = np.array([160., 142, 102., 55., 0., 0., 0., 0., 40.4, 85., 119., 136.])  # Peak heating in kW
+    peak_cooling = np.array([0.0, 0, 34.0, 69.0, 133.0, 187.0, 213.0, 240.0, 160.0, 37.0, 0.0, 0.0])  # Peak cooling in kW
+    peak_heating = np.array([160.0, 142, 102.0, 55.0, 0.0, 0.0, 0.0, 0.0, 40.4, 85.0, 119.0, 136.0])  # Peak heating in kW
 
     # annual heating and cooling load
-    annual_heating_load = 300 * 10 ** 3  # kWh
-    annual_cooling_load = 160 * 10 ** 3  # kWh
+    annual_heating_load = 300 * 10**3  # kWh
+    annual_cooling_load = 160 * 10**3  # kWh
 
     # percentage of annual load per month (15.5% for January ...)
-    monthly_load_heating_percentage = np.array([0.155, 0.148, 0.125, .099, .064, 0., 0., 0., 0.061, 0.087, 0.117, 0.144])
-    monthly_load_cooling_percentage = np.array([0.025, 0.05, 0.05, .05, .075, .1, .2, .2, .1, .075, .05, .025])
+    monthly_load_heating_percentage = np.array([0.155, 0.148, 0.125, 0.099, 0.064, 0.0, 0.0, 0.0, 0.061, 0.087, 0.117, 0.144])
+    monthly_load_cooling_percentage = np.array([0.025, 0.05, 0.05, 0.05, 0.075, 0.1, 0.2, 0.2, 0.1, 0.075, 0.05, 0.025])
 
     # resulting load per month
-    monthly_load_heating = annual_heating_load * monthly_load_heating_percentage   # kWh
-    monthly_load_cooling = annual_cooling_load * monthly_load_cooling_percentage   # kWh
+    monthly_load_heating = annual_heating_load * monthly_load_heating_percentage  # kWh
+    monthly_load_cooling = annual_cooling_load * monthly_load_cooling_percentage  # kWh
 
     # create the borefield object
-    borefield = Borefield(simulation_period=20,
-                          peak_heating=peak_heating,
-                          peak_cooling=peak_cooling,
-                          baseload_heating=monthly_load_heating,
-                          baseload_cooling=monthly_load_cooling)
+    borefield = Borefield(
+        simulation_period=20, peak_heating=peak_heating, peak_cooling=peak_cooling, baseload_heating=monthly_load_heating, baseload_cooling=monthly_load_cooling
+    )
 
     borefield.set_ground_parameters(data)
 
     # set temperature boundaries
-    borefield.set_max_ground_temperature(16)   # maximum temperature
-    borefield.set_min_ground_temperature(0)    # minimum temperature
+    borefield.set_max_ground_temperature(16)  # maximum temperature
+    borefield.set_min_ground_temperature(0)  # minimum temperature
 
     # size borefield
     depth = borefield.size(100)
     print("The borehole depth is: ", depth, "m")
 
     # print imbalance
-    print("The borefield imbalance is: ", borefield.imbalance, "kWh/y. (A negative imbalance means the the field is heat extraction dominated so it cools down year after year.)") # print imbalance
+    print(
+        "The borefield imbalance is: ",
+        borefield.imbalance,
+        "kWh/y. (A negative imbalance means the the field is heat extraction dominated so it cools down year after year.)",
+    )  # print imbalance
 
     # plot temperature profile for the calculated depth
     borefield.print_temperature_profile(legend=True)
