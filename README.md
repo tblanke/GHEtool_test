@@ -7,6 +7,7 @@
 [![DOI](https://joss.theoj.org/papers/10.21105/joss.04406/status.svg?style=flat-square)](https://doi.org/10.21105/joss.04406)
 [![codecov](https://codecov.io/github/tblanke/GHEtool_test/branch/main/graph/badge.svg)](https://app.codecov.io/github/tblanke/GHEtool_test)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat-square&labelColor=ef8336)](https://pycqa.github.io/isort/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
 
 ## What is *GHEtool*?
 <img src="https://raw.githubusercontent.com/wouterpeere/GHEtool/main/GHEtool/gui/Icon.png" width="110" align="left">
