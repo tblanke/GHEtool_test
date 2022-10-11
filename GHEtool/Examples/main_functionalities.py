@@ -10,7 +10,7 @@ This file contains all the main functionalities of GHEtool being:
 import numpy as np
 
 # import all the relevant functions
-from GHEtool import Borefield, FluidData, GroundData, PipeData
+from GHEtool import Borefield, FluidData, GroundData, MultipleUPPipeData, CoaxialPipe
 
 if __name__ == "__main__":
     # relevant borefield data for the calculations
@@ -82,8 +82,27 @@ if __name__ == "__main__":
     # note that the original Rb* value will be overwritten!
 
     # this requires pipe and fluid data
-    fluid_data = FluidData(0.2, 0.568, 998, 4180, 1e-3)
-    pipe_data = PipeData(1, 0.015, 0.02, 0.4, 0.05, 0.075, 2)
+    fluid_data = FluidData(mass_flow_rate=0.2,conductivity_fluid= 0.568, density= 998, heat_capacity= 4180, viscosity= 1e-3)
+    pipe_data = MultipleUPPipeData(conductivity_grout= 1, inner_radius= 0.015, outer_radius= 0.02, conductivity_pipe= 0.4, pipe_distance= 0.05, borehole_radius= 0.075,
+     number_of_pipes=2)
+    borefield.set_fluid_parameters(fluid_data)
+    borefield.set_pipe_parameters(pipe_data)
+
+    # disable the use of constant_Rb with the setup, in order to plot the profile correctly
+    # when it is given as an argument to the size function, it will size correctly, but the plot will be with
+    # constant Rb* since it has not been changed in the setup function
+    borefield.sizing_setup(use_constant_Rb=False)
+    depth = borefield.size(100)
+    print("The borehole depth is: ", str(round(depth, 2)), "m for a sizing with dynamic Rb*.")
+    borefield.print_temperature_profile(legend=True)
+
+    # size with a dynamic Rb* value
+    # note that the original Rb* value will be overwritten!
+
+    # this requires pipe and fluid data
+    fluid_data = FluidData(mass_flow_rate=0.5, conductivity_fluid=0.568, density=998, heat_capacity=4180, viscosity=1e-3)
+    pipe_data = CoaxialPipe(conductivity_grout=1, inner_radius=0.015, outer_radius=0.02, conductivity_pipe=0.4, pipe_distance=0.05, borehole_radius=0.075,
+                         conductivity_outer_pipe=40, borehole_pipe_inner_radius=0.065)
     borefield.set_fluid_parameters(fluid_data)
     borefield.set_pipe_parameters(pipe_data)
 
