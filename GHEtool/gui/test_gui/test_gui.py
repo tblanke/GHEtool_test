@@ -44,12 +44,12 @@ def test_gui_values(qtbot):
                 val = option.get_value() + option.step
                 option.set_value(val)
                 assert isclose(option.get_value(), val)
+                option.set_value(option.default_value)
         if isinstance(option, ListBox) or isinstance(option, ButtonBox):
             option.set_value(0)
             assert option.get_value() == 0
             option.set_value(1)
             assert option.get_value() == 1
-
 
     list_columns: List[str] = ['Heating', 'Cooling']
 
