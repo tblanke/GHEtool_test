@@ -101,8 +101,54 @@ if __name__ == "__main__":
 
     # this requires pipe and fluid data
     fluid_data = FluidData(mass_flow_rate=0.5, conductivity_fluid=0.568, density=998, heat_capacity=4180, viscosity=1e-3)
-    pipe_data = CoaxialPipe(conductivity_grout=1, inner_radius=0.015, outer_radius=0.02, conductivity_pipe=0.4, pipe_distance=0.05, borehole_radius=0.075,
-                         conductivity_outer_pipe=40, borehole_pipe_inner_radius=0.065)
+    pipe_data = CoaxialPipe(inner_radius_inner_pipe=0.015, outer_radius_inner_pipe=0.02, conductivity_inner_pipe=0.4,
+                            inner_radius_outer_pipe=0.065, outer_radius_outer_pipe=0.075, conductivity_outer_pipe=40)
+    borefield.set_fluid_parameters(fluid_data)
+    borefield.set_pipe_parameters(pipe_data)
+
+    # disable the use of constant_Rb with the setup, in order to plot the profile correctly
+    # when it is given as an argument to the size function, it will size correctly, but the plot will be with
+    # constant Rb* since it has not been changed in the setup function
+    borefield.sizing_setup(use_constant_Rb=False)
+    depth = borefield.size(100)
+    print("The borehole depth is: ", str(round(depth, 2)), "m for a sizing with dynamic Rb*.")
+    borefield.print_temperature_profile(legend=True)
+
+    # disable the use of constant_Rb with the setup, in order to plot the profile correctly
+    # when it is given as an argument to the size function, it will size correctly, but the plot will be with
+    # constant Rb* since it has not been changed in the setup function
+    borefield.sizing_setup(use_constant_Rb=False)
+    depth = borefield.size(100)
+    print("The borehole depth is: ", str(round(depth, 2)), "m for a sizing with dynamic Rb*.")
+    borefield.print_temperature_profile(legend=True)
+
+    # size with a dynamic Rb* value
+    # note that the original Rb* value will be overwritten!
+
+    # this requires pipe and fluid data
+    fluid_data = FluidData(mass_flow_rate=0.5, conductivity_fluid=0.568, density=998, heat_capacity=4180, viscosity=1e-3)
+    pipe_data = CoaxialPipe(inner_radius_inner_pipe=0.015, outer_radius_inner_pipe=0.02, conductivity_inner_pipe=0.4,
+                            inner_radius_outer_pipe=0.065, outer_radius_outer_pipe=0.075, conductivity_outer_pipe=40,
+                            borehole_radius=0.08, conductivity_grout=0.1)
+    borefield.set_fluid_parameters(fluid_data)
+    borefield.set_pipe_parameters(pipe_data)
+
+    # disable the use of constant_Rb with the setup, in order to plot the profile correctly
+    # when it is given as an argument to the size function, it will size correctly, but the plot will be with
+    # constant Rb* since it has not been changed in the setup function
+    borefield.sizing_setup(use_constant_Rb=False)
+    depth = borefield.size(100)
+    print("The borehole depth is: ", str(round(depth, 2)), "m for a sizing with dynamic Rb*.")
+    borefield.print_temperature_profile(legend=True)
+
+    # size with a dynamic Rb* value
+    # note that the original Rb* value will be overwritten!
+
+    # this requires pipe and fluid data
+    fluid_data = FluidData(mass_flow_rate=0.5, conductivity_fluid=0.568, density=998, heat_capacity=4180, viscosity=1e-3)
+    pipe_data = CoaxialPipe(inner_radius_inner_pipe=0.015, outer_radius_inner_pipe=0.02, conductivity_inner_pipe=0.4,
+                            inner_radius_outer_pipe=0.065, outer_radius_outer_pipe=0.075, conductivity_outer_pipe=40,
+                            inner_pipe_roughness=1e-6, outer_pipe_roughness=0.001)
     borefield.set_fluid_parameters(fluid_data)
     borefield.set_pipe_parameters(pipe_data)
 

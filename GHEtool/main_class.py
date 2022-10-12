@@ -11,6 +11,7 @@ from scipy import interpolate
 from scipy.signal import convolve
 
 from typing import Optional, Tuple, List
+from dataclasses import dataclass
 
 from GHEtool.VariableClasses.VariableClasses import *
 
@@ -30,8 +31,6 @@ def timeValues():
     load_agg = gt.load_aggregation.ClaessonJaved(dt, t_max)
 
     return load_agg.get_times_for_simulation()
-
-from dataclasses import dataclass
 
 
 @dataclass(**{'slots': True} if sys.version_info.minor > 9 else {})
@@ -74,7 +73,7 @@ class Borefield:
                 'k_f', 'mfr', 'Cp', 'mu', 'rho', 'use_constant_Rb', 'h_f', 'R_f', 'R_p', 'printing', 'combo', \
                 'r_in', 'r_out', 'k_p', 'D_s', 'r_b', 'number_of_pipes', 'epsilon', 'k_g', 'pos', 'D', \
                 'L2_sizing', 'L3_sizing', 'L4_sizing', 'quadrant_sizing', 'H_init', 'use_precalculated_data', 'convergence', 'print_setting', 'pipe_data', \
-                'fluid_data'
+                'fluid_data', 'resistances'
 
     def __init__(self, simulation_period: int = 20, number_of_boreholes: int = None, peak_heating: list = None,
                  peak_cooling: list = None, baseload_heating: list = None, baseload_cooling: list = None, investement_cost: list = None,
@@ -115,13 +114,13 @@ class Borefield:
         #
         self.monthly_load = np.array([])
         self.H_init: float = 0.
-        self.convergence = 0
+        self.convergence: int = 0
 
-        self.gfunction_interpolation_array = np.array([])
+        self.gfunction_interpolation_array = np.empty(0)
 
         # initialize variables for temperature plotting
         self.results_peak_heating = np.array([])  # list with the minimum temperatures due to the peak heating
-        self.results_peak_cooling = np.array([]) # list with the maximum temperatures due to peak cooling
+        self.results_peak_cooling = np.array([])  # list with the maximum temperatures due to peak cooling
         self.temperature_result = np.array([])  # list with the temperatures with an hourly profile
         self.Tb = np.array([])  # list of borehole wall temperatures
 
@@ -178,13 +177,15 @@ class Borefield:
         self.alpha = 0.  # ground diffusivity (m2/s)
         self.number_of_boreholes = 0  # number of total boreholes #
 
+        self.Tf_H: float = 0
+        self.Tf_C: float = 16
+
         # initiate fluid parameters
         self.fluid_data: Optional[FluidData] = None
-        self.fluid_data_available: bool = False  # needs to be True in order to calculate Rb*
 
         # initiate borehole parameters
         self.pipe_data: Optional[PipeData] = None
-        self.pipe_data_available: bool = False  # needs to be True in order to calculate Rb*
+        self.resistances: List[float] = []
 
         # initiate different sizing
         self.L2_sizing: bool = True
@@ -349,50 +350,36 @@ class Borefield:
 
     def set_fluid_parameters(self, data: FluidData) -> None:
         """
-        This function sets the relevant fluid characteristics.
-
+        This function sets the relevant fluid characteristics.\n
         :return None
         """
         self.fluid_data = data
-        self.set_mass_flow_rate(data.mfr)
-        self.fluid_data_available = True
+        self.calculate_resistances()
 
     def set_pipe_parameters(self, data: PipeData) -> None:
         """
-        This function sets the pipe parameters.
-
+        This function sets the pipe parameters.\n
         :return None
         """
         self.pipe_data = data
         # calculates the position of the pipes based on an axis-symmetrical positioning
         self.pos: List[Tuple[float]] = self._axis_symmetrical_pipe
 
-        self.pipe_data_available = True
+        self.calculate_resistances()
 
     def set_max_ground_temperature(self, temp: float) -> None:
         """
-        This function sets the maximal ground temperature to temp.
-
+        This function sets the maximal ground temperature to temp. \n
         :return None
         """
         self.Tf_H: float = temp
 
     def set_min_ground_temperature(self, temp: float) -> None:
         """
-        This function sets the minimal ground temperature to temp.
-
+        This function sets the minimal ground temperature to temp.\n
         :return None
         """
         self.Tf_C: float = temp
-
-    def set_mass_flow_rate(self, mfr: float) -> None:
-        """
-        This function sets the mass flow rate per borehole.
-
-        :return None
-        """
-        self.mfr = mfr
-
 
     @property
     def _Rb(self) -> float:
@@ -427,6 +414,36 @@ class Borefield:
         # avg ground temperature is (Tg + gradient + Tg) / 2
         return self.Tg + H * self.flux / self.k_s / 2
 
+    def calculate_resistances(self):
+        # check if all data is available
+        if self.pipe_data is None or self.fluid_data is None:
+            return
+        if self.pipe_data.__class__ == PipeData or isinstance(self.pipe_data, MultipleUPPipeData):
+            # initiate pipe
+            R_p: float = gt.pipes.conduction_thermal_resistance_circular_pipe(self.pipe_data.r_in, self.pipe_data.r_out, self.pipe_data.k_p)
+            h_f: float = gt.pipes.convective_heat_transfer_coefficient_circular_pipe(self.fluid_data.mfr / self.pipe_data.number_of_pipes, self.pipe_data.r_in,
+                                                                                     self.fluid_data.mu,
+                                                                                     self.fluid_data.rho, self.fluid_data.k_f, self.fluid_data.Cp,
+                                                                                     self.pipe_data.epsilon)
+            R_f: float = 1. / (h_f * 2 * pi * self.pipe_data.r_in)
+            self.resistances = [R_f+R_p]
+        if isinstance(self.pipe_data, CoaxialPipe):
+            h_f_inner = gt.pipes.convective_heat_transfer_coefficient_circular_pipe(self.fluid_data.mfr, self.pipe_data.r_in, self.fluid_data.mu,
+                                                                                    self.fluid_data.rho, self.fluid_data.k_f, self.fluid_data.Cp,
+                                                                                    self.pipe_data.epsilon)
+            epsilon = (self.pipe_data.epsilon * self.pipe_data.r_out + self.pipe_data.epsilon_outer * self.pipe_data.r_in_out) / (self.pipe_data.r_out +
+                                                                                                                                  self.pipe_data.r_in_out)
+            h_f_outer = gt.pipes.convective_heat_transfer_coefficient_concentric_annulus(self.fluid_data.mfr, self.pipe_data.r_out, self.pipe_data.r_in_out,
+                                                                                         self.fluid_data.mu,
+                                                                                         self.fluid_data.rho, self.fluid_data.k_f, self.fluid_data.Cp,
+                                                                                         epsilon)
+            R_inner_pipe = gt.pipes.conduction_thermal_resistance_circular_pipe(self.pipe_data.r_in, self.pipe_data.r_out, self.pipe_data.k_p)
+            R_f_inner = 1. / (h_f_inner * 2 * pi * self.pipe_data.r_in)
+            R_f_outer_in = 1. / (h_f_outer[0] * 2 * pi * (self.pipe_data.r_in_out - self.pipe_data.r_out))
+            R_f_outer_out = 1. / (h_f_outer[1] * 2 * pi * (self.pipe_data.r_in_out - self.pipe_data.r_out))
+            R_outer_pipe = gt.pipes.conduction_thermal_resistance_circular_pipe(self.pipe_data.r_in_out, self.pipe_data.r_out_out, self.pipe_data.k_o)
+            self.resistances = [R_f_inner+R_f_outer_in+R_inner_pipe, R_outer_pipe+R_f_outer_out]
+
     def calculate_Rb(self) -> float:
         """
         This function returns the calculated equivalent borehole thermal resistance Rb* value.
@@ -434,37 +451,21 @@ class Borefield:
         :return: the borehole equivalent thermal resistance
         """
         # check if all data is available
-        if not self.pipe_data_available or not self.fluid_data_available:
+        if self.pipe_data is None or self.fluid_data is None:
             print("Please make sure you set al the pipe and fluid data.")
             raise ValueError
 
         # initiate temporary borefield
         borehole = gt.boreholes.Borehole(self.H, self.pipe_data.D, self.pipe_data.r_b, 0, 0)
         if self.pipe_data.__class__ == PipeData or isinstance(self.pipe_data, MultipleUPPipeData):
-            # initiate pipe
-            R_p: float = gt.pipes.conduction_thermal_resistance_circular_pipe(self.pipe_data.r_in, self.pipe_data.r_out, self.pipe_data.k_p)
-            h_f: float = gt.pipes.convective_heat_transfer_coefficient_circular_pipe(self.fluid_data.mfr / self.pipe_data.number_of_pipes, self.pipe_data.r_in, self.fluid_data.mu,
-                                                                                     self.fluid_data.rho, self.fluid_data.k_f, self.fluid_data.Cp,
-                                                                                     self.pipe_data.epsilon)
-            R_f: float = 1. / (h_f * 2 * pi * self.pipe_data.r_in)
             pipe = gt.pipes.MultipleUTube(self.pos, self.pipe_data.r_in, self.pipe_data.r_out, borehole, self.k_s, self.pipe_data.k_g,
-                                          R_p + R_f, self.pipe_data.number_of_pipes, J=2)
+                                          self.resistances[0], self.pipe_data.number_of_pipes, J=2)
         elif isinstance(self.pipe_data, CoaxialPipe):
-            h_f_inner = gt.pipes.convective_heat_transfer_coefficient_circular_pipe(self.fluid_data.mfr, self.pipe_data.r_in, self.fluid_data.mu,
-                                                                                          self.fluid_data.rho, self.fluid_data.k_f, self.fluid_data.Cp,
-                                                                                          self.pipe_data.epsilon)
-            h_f_outer = gt.pipes.convective_heat_transfer_coefficient_concentric_annulus(self.fluid_data.mfr, self.pipe_data.r_out, self.pipe_data.r_in_b,
-                                                                                         self.fluid_data.mu,
-                                                                                          self.fluid_data.rho, self.fluid_data.k_f, self.fluid_data.Cp,
-                                                                                          self.pipe_data.epsilon)
-            R_inner_pipe = gt.pipes.conduction_thermal_resistance_circular_pipe(self.pipe_data.r_in, self.pipe_data.r_out, self.pipe_data.k_p)
-            R_f_inner = 1. / (h_f_inner * 2 * pi * self.pipe_data.r_in)
-            R_f_outer_in = 1. / (h_f_outer[0] * 2 * pi * (self.pipe_data.r_in_b-self.pipe_data.r_out))
-            R_f_outer_out = 1. / (h_f_outer[1] * 2 * pi * (self.pipe_data.r_in_b - self.pipe_data.r_out))
-            R_outer_pipe = gt.pipes.conduction_thermal_resistance_circular_pipe(self.pipe_data.r_in_b, self.pipe_data.r_b, self.pipe_data.k_o)
-            pipe = gt.pipes.Coaxial(pos=self.pos,r_in= np.array([self.pipe_data.r_in, self.pipe_data.r_in_b]),
-                                    r_out=np.array([self.pipe_data.r_out, self.pipe_data.r_b]), borehole= borehole, k_s= self.k_s,k_g= self.pipe_data.k_g,
-                                    R_ff=R_f_inner+R_f_outer_in+R_inner_pipe, R_fp=R_outer_pipe+R_f_outer_out, J=2)
+            pipe = gt.pipes.Coaxial(pos=self.pos, r_in=np.array([self.pipe_data.r_in_out, self.pipe_data.r_in]) if self.pipe_data.is_annulus_inlet else np.array([
+                self.pipe_data.r_in, self.pipe_data.r_in_out]),
+                                    r_out=np.array([self.pipe_data.r_out_out, self.pipe_data.r_out]) if self.pipe_data.is_annulus_inlet else np.array([self.pipe_data.r_out, self.pipe_data.r_out_out]),
+                                    borehole= borehole, k_s= self.k_s, k_g= self.pipe_data.k_g,
+                                    R_ff= self.resistances[0], R_fp=self.resistances[1], J=2)
         else:
             raise ValueError("Please make sure you set al the pipe and fluid data.")
         try:
@@ -618,9 +619,9 @@ class Borefield:
         # sizes according to the correct algorithm
         if self.L2_sizing:
             depth = self.size_L2(self.H_init, self.quadrant_sizing)
-        if self.L3_sizing:
+        elif self.L3_sizing:
             depth = self.size_L3(self.H_init, self.quadrant_sizing)
-        if self.L4_sizing:
+        else:
             depth = self.size_L4(self.H_init, self.quadrant_sizing)
 
         # reset initial parameters
@@ -1226,11 +1227,10 @@ class Borefield:
 
     def gfunction(self, time_value: list, H: float) -> np.ndarray:
         """
-        This function calculated the g-function based on interpolation of the precalculated data.
-
+        This function calculated the g-function based on interpolation of the precalculated data.\n
         :param time_value: list of seconds at which the gfunctions should be evaluated
         :param H: depth at which the gfunctions should be evaluated
-        :return: np.array of gfunction values
+        :return: array of gfunction values
         """
 
         # check for value of H < 1
@@ -1250,7 +1250,7 @@ class Borefield:
 
                 # check if variable Tg is taken into account
                 if not self.use_constant_Tg:
-                    warnings.warn("Your sizing makes use of a variable ground temperature. When your field is limited by the",
+                    warnings.warn("Your sizing makes use of a variable ground temperature. When your field is limited by the"
                                   "maximum temperature, it will try to increase the size by making the field deeper in order to cope"
                                   "with this limitation. This however increases the average temperature, making the limit even"
                                   "worse. Debug tip: Please check this by trying to size your field with a constant temperature.")
@@ -1746,9 +1746,7 @@ class Borefield:
 
         # get all the solutions
         lengths = list(results.keys())
-        lengths.sort()
-        # reverse for decending order
-        lengths[::-1]
+        lengths.sort(reverse=True)  # reverse for decending order
 
         # cut to right length
         lengths = lengths[0:nb_of_options]
@@ -1847,8 +1845,7 @@ class Borefield:
                                  L2_sizing: bool = True, use_constant_Rb: bool = False) -> list:
         """
         Function to size the minimal number of borefield by borefield length and width on a fast and not robust way.
-        There are possible solution that can not be found.
-
+        There are possible solution that can not be found.\n
         :param H_max: maximal borehole depth [m]
         :param l_1: maximal width of borehole field [m]
         :param l_2: maximal length of borehole field [m]

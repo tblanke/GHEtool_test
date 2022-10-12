@@ -1,6 +1,6 @@
-
 from typing import Optional
 from abc import ABC
+
 
 class GroundData:
     __slots__ = 'H', 'B', 'k_s', 'Tg', 'Rb', 'N_1', 'N_2', 'flux', 'volumetric_heat_capacity', 'alpha'
@@ -46,7 +46,7 @@ class FluidData:
 
     __slots__ = 'k_f', 'rho', 'Cp', 'mu', 'mfr'
 
-    def __init__(self, *, mass_flow_rate: float, conductivity_fluid: float, density: float, heat_capacity: float, viscosity: float) -> None:
+    def __init__(self, mass_flow_rate: float, conductivity_fluid: float, density: float, heat_capacity: float, viscosity: float) -> None:
         """
         Data for storage of ground data
 
@@ -77,10 +77,9 @@ class PipeData(ABC):
     __slots__ = 'r_in', 'r_out', 'k_p', 'D_s', 'r_b', 'number_of_pipes', 'epsilon', 'k_g', 'D'
 
     def __init__(self, conductivity_grout: float, inner_radius: float, outer_radius: float, conductivity_pipe: float, pipe_distance: float,
-                 borehole_radius: float, number_of_pipes, pipe_roughness: float = 1e-6, burial_depth: float = 4) -> None:
+                 borehole_radius: float, number_of_pipes: int, pipe_roughness: float = 1e-6, burial_depth: float = 4) -> None:
         """
-        Data for storage of ground data
-
+        Data for storage of pipe data \n
         :param conductivity_grout: Grout thermal conductivity [W/mK]
         :param inner_radius: Inner pipe radius [m]
         :param outer_radius: Outer pipe radius [m]
@@ -119,26 +118,35 @@ class MultipleUPPipeData(PipeData):
 
 class CoaxialPipe(PipeData):
 
-    __slots__ = PipeData.__slots__ + ('r_in_b', 'k_o')
+    __slots__ = PipeData.__slots__ + ('r_in_out', 'r_out_out', 'k_o', 'epsilon_outer', 'is_annulus_inlet')
 
-    def __init__(self, conductivity_grout: float, inner_radius: float, outer_radius: float, conductivity_pipe: float, pipe_distance: float,
-                 borehole_radius: float, borehole_pipe_inner_radius: float, conductivity_outer_pipe: float, pipe_roughness: float = 1e-6,
-                 burial_depth: float = 4) -> None:
+    def __init__(self, inner_radius_inner_pipe: float, outer_radius_inner_pipe: float, conductivity_inner_pipe: float,
+                 inner_radius_outer_pipe: float, outer_radius_outer_pipe: float, conductivity_outer_pipe: float,
+                 borehole_radius: Optional[float] = None, conductivity_grout: Optional[float] = None, inner_pipe_roughness: float = 1e-6,
+                 outer_pipe_roughness: float = 1e-6, burial_depth: float = 4, is_annulus_inlet: bool = True) -> None:
         """
-        Data for storage of ground data
-
-        :param conductivity_grout: Grout thermal conductivity [W/mK]
-        :param inner_radius: Inner pipe radius [m]
-        :param outer_radius: Outer pipe radius [m]
-        :param conductivity_pipe: Pipe thermal conductivity [W/mK]
-        :param pipe_distance: Distance of the pipe until center [m]
-        :param borehole_radius: Borehole radius [m]
-        :param pipe_roughness: Pipe roughness [m]
-        :param burial_depth: burial depth [m]
+        Data for storage of coaxial pipe data \n
+        :param inner_radius_inner_pipe: Inner pipe inner radius [m]
+        :param outer_radius_inner_pipe: Inner pipe outer radius [m]
+        :param conductivity_inner_pipe: Inner Pipe thermal conductivity [W/mK]
+        :param inner_radius_outer_pipe: Outer pipe inner radius [m]
+        :param outer_radius_outer_pipe: Outer pipe outer radius [m]
+        :param conductivity_inner_pipe: Outer Pipe thermal conductivity [W/mK]
+        :param borehole_radius: Borehole radius (default=outer_radius_outer_pipe) [m]
+        :param conductivity_grout: Grout thermal conductivity (default=0.1) [W/mK]
+        :param inner_pipe_roughness: Inner pipe roughness (default=1e-6) [m]
+        :param outer_pipe_roughness: Outer pipe roughness (default=1e-6) [m]
+        :param burial_depth: burial depth (default=4) [m]
+        :param is_annulus_inlet: is the annulus the inlet (downwards) pipe (default = True)
         :return: None
         """
         # check if pipe data is valid
-        super().__init__(conductivity_grout, inner_radius, outer_radius, conductivity_pipe, pipe_distance, borehole_radius, 0, pipe_roughness,
-                         burial_depth)
-        self.r_in_b: float = borehole_pipe_inner_radius
+        borehole_radius = outer_radius_outer_pipe if borehole_radius is None else borehole_radius
+        conductivity_grout = 0.1 if conductivity_grout is None else conductivity_grout
+        super().__init__(conductivity_grout, inner_radius_inner_pipe, outer_radius_inner_pipe, conductivity_inner_pipe, 0, borehole_radius, 0,
+                         inner_pipe_roughness, burial_depth)
+        self.r_in_out: float = inner_radius_outer_pipe
+        self.r_out_out: float = outer_radius_outer_pipe
         self.k_o: float = conductivity_outer_pipe
+        self.epsilon_outer: float = outer_pipe_roughness
+        self.is_annulus_inlet: bool = is_annulus_inlet
