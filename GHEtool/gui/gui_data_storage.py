@@ -2,7 +2,7 @@ from typing import Optional
 
 import pandas as pd
 
-from GHEtool import Borefield, FluidData, GroundData, PipeData
+from GHEtool import Borefield, FluidData, GroundData, PipeData, MultipleUPPipeData, CoaxialPipe
 from GHEtool.gui.gui_structure import GuiStructure
 
 
@@ -31,16 +31,22 @@ class DataStorage:
                                                   self._calculate_flux())
         self.fluid_data: FluidData = FluidData(self.option_fluid_mass_flow, self.option_fluid_conductivity, self.option_fluid_density,
                                                self.option_fluid_capacity, self.option_fluid_viscosity)
-        self.pipe_data: PipeData = PipeData(self.option_pipe_grout_conductivity, self.option_pipe_inner_radius, self.option_pipe_outer_radius,
-                                            self.option_pipe_conductivity, self.option_pipe_distance, self.option_pipe_borehole_radius,
-                                            self.option_pipe_number, self.option_pipe_roughness, self.option_pipe_depth)
+        if self.option_pipe_design == 1:
+            self.pipe_data: PipeData = MultipleUPPipeData(self.option_pipe_grout_conductivity, self.option_pipe_inner_radius, self.option_pipe_outer_radius,
+                                                          self.option_pipe_conductivity, self.option_pipe_distance, self.option_pipe_borehole_radius,
+                                                          self.option_pipe_number, self.option_pipe_roughness, self.option_pipe_depth)
+        else:
+            self.pipe_data = CoaxialPipe(self.option_inner_pipe_inner_radius, self.option_inner_pipe_outer_radius, self.option_inner_pipe_conductivity,
+                                         self.option_outer_pipe_inner_radius, self.option_outer_pipe_outer_radius, self.option_outer_pipe_conductivity,
+                                         self.option_pipe_borehole_radius_coax, self.option_pipe_grout_conductivity, self.option_inner_pipe_roughness,
+                                         self.option_outer_pipe_roughness, self.option_pipe_depth)
 
     def _calculate_flux(self) -> float:
         """ This function calculates the flux"""
         return 2 * self.option_temp_gradient * self.option_conductivity / 100
 
     def set_values(self, gui_structure: GuiStructure):
-        [option.set_value(getattr(self, name)) for option, name in gui_structure.list_of_options]
+        [option.set_value(getattr(self, name)) for option, name in gui_structure.list_of_options if hasattr(self, name)]
         [aim.widget.setChecked(False) for aim, _ in gui_structure.list_of_aims]
         [aim.widget.click() for aim, name in gui_structure.list_of_aims if getattr(self, name)]
 

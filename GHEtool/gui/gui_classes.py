@@ -406,6 +406,7 @@ class ButtonBox(Option):
         :return: return value of option
         """
         for idx, button in enumerate(self.widget):
+            # print(f'{self.label_text}, {idx}, {button.isChecked()}')
             if button.isChecked():
                 return idx
         return -1
@@ -828,6 +829,7 @@ class Category:
         self.label.show()
         for option in self.list_of_options:
             option.show()
+        [option.init_links() for option in self.list_of_options if hasattr(option, 'init_links')]
 
     def is_hidden(self) -> bool:
         return self.frame.isHidden()

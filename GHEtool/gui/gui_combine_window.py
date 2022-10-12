@@ -162,16 +162,14 @@ class MainWindow(QtWidgets_QMainWindow, UiGhetool):
         set links of buttons and actions to function
         :return: None
         """
-        for option, name in self.gui_structure.list_of_options:
-            option.change_event(self.change)
-        for option, name in self.gui_structure.list_of_aims:
-            option.change_event(self.change)
+        [option.change_event(self.change) for option, name in self.gui_structure.list_of_options]
+        [option.change_event(self.change) for option, name in self.gui_structure.list_of_aims]
 
         self.gui_structure.function_save_figure.change_event(self.save_figure)
         self.gui_structure.function_save_results.change_event(self.save_data)
         self.gui_structure.option_auto_saving.change_event(self.change_auto_save)
-        for option, function_to_be_called in self.gui_structure.list_of_result_plot_options:
-            option.change_event(ft_partial(self.update_graph, option, function_to_be_called))
+        [option.change_event(ft_partial(self.update_graph, option, function_to_be_called)) for option, function_to_be_called in
+         self.gui_structure.list_of_result_plot_options]
         self.gui_structure.option_language.change_event(self.change_language)
         self.gui_structure.page_result.button.clicked.connect(self.display_results)
         self.actionAdd_Scenario.triggered.connect(self.add_scenario)
@@ -716,7 +714,12 @@ class MainWindow(QtWidgets_QMainWindow, UiGhetool):
         # activate checking for changed
         self.checking: bool = True
         # refresh results if results page is selected
-        self.gui_structure.page_result.button.click() if self.stackedWidget.currentWidget() == self.gui_structure.page_result.page else None
+        if self.stackedWidget.currentWidget() == self.gui_structure.page_result.page:
+            self.gui_structure.page_result.button.click()
+            return
+        # refresh graph if resistance page is selected
+        if self.stackedWidget.currentWidget() == self.gui_structure.page_borehole_resistance.page:
+            self.gui_structure.page_borehole_resistance.button.click()
 
     def check_values(self) -> bool:
         if not all(option.check_value() for option, _ in self.gui_structure.list_of_options):

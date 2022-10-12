@@ -341,10 +341,99 @@ class GuiStructure:
         self.category_pipe_data = Category(page=self.page_borehole_resistance, label="Pipe data")
         self.category_pipe_data.activate_graphic_left()
         self.option_method_rb_calc.add_link_2_show(self.category_pipe_data, on_index=1)
+        self.option_method_rb_calc.add_link_2_show(self.category_pipe_data, on_index=2)
+        self.option_pipe_design = ButtonBox(category=self.category_pipe_data, label='What is the borehole pipe design?', default_index=0, entries=['U-pipe',
+                                                                                                                                                   'Coaxial'])
+
+        self.option_inner_pipe_inner_radius = FloatBox(
+            category=self.category_pipe_data,
+            label="Inner pipe inner radius [m]: ",
+            default_value=0.02,
+            decimal_number=4,
+            minimal_value=0,
+            maximal_value=10000,
+            step=0.001,
+        )
+        self.option_pipe_design.add_link_2_show(self.option_inner_pipe_inner_radius, on_index=1)
+        self.option_inner_pipe_outer_radius = FloatBox(
+            category=self.category_pipe_data,
+            label="Inner pipe outer radius [m]: ",
+            default_value=0.022,
+            decimal_number=4,
+            minimal_value=0,
+            maximal_value=10000,
+            step=0.001,
+        )
+        self.option_pipe_design.add_link_2_show(self.option_inner_pipe_outer_radius, on_index=1)
+
+        self.option_inner_pipe_outer_radius.change_event(self.option_inner_pipe_inner_radius.widget.setMaximum)
+        self.option_inner_pipe_inner_radius.change_event(self.option_inner_pipe_outer_radius.widget.setMinimum)
+
+        self.option_outer_pipe_inner_radius = FloatBox(
+            category=self.category_pipe_data,
+            label="Outer pipe inner radius [m]: ",
+            default_value=0.065,
+            decimal_number=4,
+            minimal_value=0,
+            maximal_value=10000,
+            step=0.001,
+        )
+        self.option_pipe_design.add_link_2_show(self.option_outer_pipe_inner_radius, on_index=1)
+        self.option_outer_pipe_inner_radius.change_event(self.option_inner_pipe_outer_radius.widget.setMaximum)
+        self.option_inner_pipe_outer_radius.change_event(self.option_outer_pipe_inner_radius.widget.setMinimum)
+        self.option_outer_pipe_outer_radius = FloatBox(
+            category=self.category_pipe_data,
+            label="Outer pipe outer radius [m]: ",
+            default_value=0.07,
+            decimal_number=4,
+            minimal_value=0,
+            maximal_value=10000,
+            step=0.001,
+        )
+        self.option_pipe_design.add_link_2_show(self.option_outer_pipe_outer_radius, on_index=1)
+
+        self.option_outer_pipe_outer_radius.change_event(self.option_outer_pipe_inner_radius.widget.setMaximum)
+        self.option_outer_pipe_inner_radius.change_event(self.option_outer_pipe_outer_radius.widget.setMinimum)
+
+        self.option_pipe_borehole_radius_coax = FloatBox(
+            category=self.category_pipe_data,
+            label="Borehole radius [m]: ",
+            default_value=0.075,
+            decimal_number=4,
+            minimal_value=0,
+            maximal_value=10000,
+            step=0.001,
+        )
+        self.option_pipe_design.add_link_2_show(self.option_pipe_borehole_radius_coax, on_index=1)
+
+        self.option_pipe_borehole_radius_coax.change_event(self.option_outer_pipe_outer_radius.widget.setMaximum)
+        self.option_outer_pipe_outer_radius.change_event(self.option_pipe_borehole_radius_coax.widget.setMinimum)
+
+        self.option_inner_pipe_conductivity = FloatBox(
+            category=self.category_pipe_data,
+            label="Inner pipe thermal conductivity [W/mK]: ",
+            default_value=0.42,
+            decimal_number=3,
+            minimal_value=0,
+            maximal_value=10000,
+            step=0.1,
+        )
+        self.option_pipe_design.add_link_2_show(self.option_inner_pipe_conductivity, on_index=1)
+        self.option_outer_pipe_conductivity = FloatBox(
+            category=self.category_pipe_data,
+            label="Outer pipe thermal conductivity [W/mK]: ",
+            default_value=40,
+            decimal_number=3,
+            minimal_value=0,
+            maximal_value=10000,
+            step=0.1,
+        )
+        self.option_pipe_design.add_link_2_show(self.option_outer_pipe_conductivity, on_index=1)
 
         self.option_pipe_number = IntBox(
             category=self.category_pipe_data, label="Number of pipes [#]: ", default_value=2, minimal_value=1, maximal_value=99
         )
+        self.option_pipe_design.add_link_2_show(self.option_pipe_number, on_index=0)
         self.option_pipe_grout_conductivity = FloatBox(
             category=self.category_pipe_data,
             label="Grout thermal conductivity [W/mK]: ",
@@ -363,6 +452,7 @@ class GuiStructure:
             maximal_value=10000,
             step=0.1,
         )
+        self.option_pipe_design.add_link_2_show(self.option_pipe_conductivity, on_index=0)
         self.option_pipe_inner_radius = FloatBox(
             category=self.category_pipe_data,
             label="Inner pipe radius [m]: ",
@@ -372,6 +462,7 @@ class GuiStructure:
             maximal_value=10000,
             step=0.001,
         )
+        self.option_pipe_design.add_link_2_show(self.option_pipe_inner_radius, on_index=0)
         self.option_pipe_outer_radius = FloatBox(
             category=self.category_pipe_data,
             label="Outer pipe radius [m]: ",
@@ -381,6 +472,7 @@ class GuiStructure:
             maximal_value=10000,
             step=0.001,
         )
+        self.option_pipe_design.add_link_2_show(self.option_pipe_outer_radius, on_index=0)
         self.option_pipe_outer_radius.change_event(self.option_pipe_inner_radius.widget.setMaximum)
         self.option_pipe_inner_radius.change_event(self.option_pipe_outer_radius.widget.setMinimum)
         self.option_pipe_borehole_radius = FloatBox(
@@ -392,6 +484,7 @@ class GuiStructure:
             maximal_value=10000,
             step=0.001,
         )
+        self.option_pipe_design.add_link_2_show(self.option_pipe_borehole_radius, on_index=0)
         self.option_pipe_distance = FloatBox(
             category=self.category_pipe_data,
             label="Distance of pipe until center [m]: ",
@@ -400,6 +493,16 @@ class GuiStructure:
             minimal_value=0,
             maximal_value=10000,
             step=0.001,
+        )
+        self.option_pipe_design.add_link_2_show(self.option_pipe_distance, on_index=0)
+        self.option_pipe_depth = FloatBox(
+            category=self.category_pipe_data,
+            label="Burial depth [m]: ",
+            default_value=4,
+            decimal_number=1,
+            minimal_value=0,
+            maximal_value=10000,
+            step=0.1,
         )
         self.option_pipe_roughness = FloatBox(
             category=self.category_pipe_data,
@@ -410,15 +513,27 @@ class GuiStructure:
             maximal_value=10000,
             step=0.000001,
         )
-        self.option_pipe_depth = FloatBox(
+        self.option_pipe_design.add_link_2_show(self.option_pipe_roughness, on_index=0)
+        self.option_inner_pipe_roughness = FloatBox(
             category=self.category_pipe_data,
-            label="Burial depth [m]: ",
-            default_value=4,
-            decimal_number=1,
+            label="Inner pipe roughness [m]: ",
+            default_value=0.000_001,
+            decimal_number=7,
             minimal_value=0,
             maximal_value=10000,
-            step=0.1,
+            step=0.000001,
         )
+        self.option_pipe_design.add_link_2_show(self.option_inner_pipe_roughness, on_index=1)
+        self.option_outer_pipe_roughness = FloatBox(
+            category=self.category_pipe_data,
+            label="Outer pipe roughness [m]: ",
+            default_value=0.000_001,
+            decimal_number=7,
+            minimal_value=0,
+            maximal_value=10000,
+            step=0.000001,
+        )
+        self.option_pipe_design.add_link_2_show(self.option_outer_pipe_roughness, on_index=1)
 
         self.option_pipe_number.change_event(self.check_distance_between_pipes)
         self.option_pipe_outer_radius.change_event(self.check_distance_between_pipes)
@@ -429,7 +544,13 @@ class GuiStructure:
         self.option_pipe_outer_radius.change_event(self.update_borehole)
         self.option_pipe_inner_radius.change_event(self.update_borehole)
         self.option_pipe_borehole_radius.change_event(self.update_borehole)
+        self.option_pipe_borehole_radius_coax.change_event(self.update_borehole)
         self.option_pipe_distance.change_event(self.update_borehole)
+        self.option_pipe_design.change_event(self.update_borehole)
+        self.option_inner_pipe_inner_radius.change_event(self.update_borehole)
+        self.option_inner_pipe_outer_radius.change_event(self.update_borehole)
+        self.option_outer_pipe_outer_radius.change_event(self.update_borehole)
+        self.option_outer_pipe_outer_radius.change_event(self.update_borehole)
 
         self.page_borehole_resistance.add_function_called_if_button_clicked(self.update_borehole)
 
@@ -868,16 +989,6 @@ class GuiStructure:
         :return: None
         """
         if isinstance(self.category_pipe_data.graphic_left, QtWidgets_QGraphicsView):
-            # import all that is needed
-            # get variables from gui
-            number_of_pipes = self.option_pipe_number.get_value()
-            r_out = self.option_pipe_outer_radius.get_value() * 10
-            r_in = self.option_pipe_inner_radius.get_value() * 10
-            r_bore = max(self.option_pipe_borehole_radius.get_value() * 10, 0.001)
-            dis = self.option_pipe_distance.get_value() * 10
-            # calculate scale from graphic view size
-            max_l = min(self.category_pipe_data.graphic_left.width(), self.category_pipe_data.graphic_left.height())
-            scale = max_l / r_bore / 1.25  # leave 25 % space
             # set colors
             dark_color = array(DARK.replace('rgb(', '').replace(')', '').split(','), dtype=int64)
             white_color = array(WHITE.replace('rgb(', '').replace(')', '').split(','), dtype=int64)
@@ -896,34 +1007,80 @@ class GuiStructure:
             else:
                 scene = self.category_pipe_data.graphic_left.scene()
                 scene.clear()
+            # check for U-Pipe Design
+            if self.option_pipe_design.get_value() == 0:
+                # import all that is needed
+                # get variables from gui
+                number_of_pipes = max(self.option_pipe_number.get_value(), 1)
+                r_out = self.option_pipe_outer_radius.get_value() * 10
+                r_in = self.option_pipe_inner_radius.get_value() * 10
+                r_bore = max(self.option_pipe_borehole_radius.get_value() * 10, 0.001)
+                dis = self.option_pipe_distance.get_value() * 10
+                # calculate scale from graphic view size
+                max_l = min(self.category_pipe_data.graphic_left.width(), self.category_pipe_data.graphic_left.height())
+                scale = max_l / r_bore / 1.25  # leave 25 % space
+                # create borehole circle in grey wih no border
+                circle = QGraphicsEllipseItem(-r_bore * scale / 2, -r_bore * scale / 2, r_bore * scale, r_bore * scale)
+                circle.setPen(QPen(grey, 0))
+                circle.setBrush(grey)
+                scene.addItem(circle)
+                # calculate pipe position and draw circle (white for outer pipe and blue for inner pipe)
+                dt: float = pi / float(number_of_pipes)
+                for i in range(number_of_pipes):
+                    pos_1 = dis * cos(2.0 * i * dt + pi) / 2
+                    pos_2 = dis * sin(2.0 * i * dt + pi) / 2
+                    circle = QGraphicsEllipseItem((pos_1 - r_out / 2) * scale, (pos_2 - r_out / 2) * scale, r_out * scale, r_out * scale)
+                    circle.setPen(white_color)
+                    circle.setBrush(white_color)
+                    scene.addItem(circle)
+                    circle = QGraphicsEllipseItem((pos_1 - r_in / 2) * scale, (pos_2 - r_in / 2) * scale, r_in * scale, r_in * scale)
+                    circle.setPen(blue_color)
+                    circle.setBrush(blue_color)
+                    scene.addItem(circle)
+                    pos_1 = dis * cos(2.0 * i * dt + pi + dt) / 2
+                    pos_2 = dis * sin(2.0 * i * dt + pi + dt) / 2
+                    circle = QGraphicsEllipseItem((pos_1 - r_out / 2) * scale, (pos_2 - r_out / 2) * scale, r_out * scale, r_out * scale)
+                    circle.setPen(white_color)
+                    circle.setBrush(white_color)
+                    scene.addItem(circle)
+                    circle = QGraphicsEllipseItem((pos_1 - r_in / 2) * scale, (pos_2 - r_in / 2) * scale, r_in * scale, r_in * scale)
+                    circle.setPen(blue_light)
+                    circle.setBrush(blue_light)
+                    scene.addItem(circle)
+                return
+            r_out_out = self.option_outer_pipe_outer_radius.get_value() * 10
+            r_in_out = self.option_outer_pipe_inner_radius.get_value() * 10
+            r_out_in = self.option_inner_pipe_outer_radius.get_value() * 10
+            r_in_in = self.option_inner_pipe_inner_radius.get_value() * 10
+            r_bore = max(self.option_pipe_borehole_radius_coax.get_value() * 10, 0.001)
+            # calculate scale from graphic view size
+            max_l = min(self.category_pipe_data.graphic_left.width(), self.category_pipe_data.graphic_left.height())
+            scale = max_l / r_bore / 1.25  # leave 25 % space
             # create borehole circle in grey wih no border
             circle = QGraphicsEllipseItem(-r_bore * scale / 2, -r_bore * scale / 2, r_bore * scale, r_bore * scale)
             circle.setPen(QPen(grey, 0))
             circle.setBrush(grey)
             scene.addItem(circle)
-            # calculate pipe position and draw circle (white for outer pipe and blue for inner pipe)
-            dt: float = pi / float(number_of_pipes)
-            for i in range(number_of_pipes):
-                pos_1 = dis * cos(2.0 * i * dt + pi) / 2
-                pos_2 = dis * sin(2.0 * i * dt + pi) / 2
-                circle = QGraphicsEllipseItem((pos_1 - r_out / 2) * scale, (pos_2 - r_out / 2) * scale, r_out * scale, r_out * scale)
-                circle.setPen(white_color)
-                circle.setBrush(white_color)
-                scene.addItem(circle)
-                circle = QGraphicsEllipseItem((pos_1 - r_in / 2) * scale, (pos_2 - r_in / 2) * scale, r_in * scale, r_in * scale)
-                circle.setPen(blue_color)
-                circle.setBrush(blue_color)
-                scene.addItem(circle)
-                pos_1 = dis * cos(2.0 * i * dt + pi + dt) / 2
-                pos_2 = dis * sin(2.0 * i * dt + pi + dt) / 2
-                circle = QGraphicsEllipseItem((pos_1 - r_out / 2) * scale, (pos_2 - r_out / 2) * scale, r_out * scale, r_out * scale)
-                circle.setPen(white_color)
-                circle.setBrush(white_color)
-                scene.addItem(circle)
-                circle = QGraphicsEllipseItem((pos_1 - r_in / 2) * scale, (pos_2 - r_in / 2) * scale, r_in * scale, r_in * scale)
-                circle.setPen(blue_light)
-                circle.setBrush(blue_light)
-                scene.addItem(circle)
+
+            circle = QGraphicsEllipseItem(-r_out_out * scale / 2, -r_out_out * scale / 2, r_out_out * scale, r_out_out * scale)
+            circle.setPen(white_color)
+            circle.setBrush(white_color)
+            scene.addItem(circle)
+
+            circle = QGraphicsEllipseItem(-r_in_out * scale / 2, -r_in_out * scale / 2, r_in_out * scale, r_in_out * scale)
+            circle.setPen(blue_color)
+            circle.setBrush(blue_color)
+            scene.addItem(circle)
+
+            circle = QGraphicsEllipseItem(-r_out_in * scale / 2, -r_out_in * scale / 2, r_out_in * scale, r_out_in * scale)
+            circle.setPen(white_color)
+            circle.setBrush(white_color)
+            scene.addItem(circle)
+
+            circle = QGraphicsEllipseItem(-r_in_in * scale / 2, -r_in_in * scale / 2, r_in_in * scale, r_in_in * scale)
+            circle.setPen(blue_light)
+            circle.setBrush(blue_light)
+            scene.addItem(circle)
 
     # TODO, one (or both) of the functions beneath should run if L4 is selected / or 
     def fun_update_combo_box_data_file(self, filename: str) -> None:
