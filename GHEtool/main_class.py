@@ -1504,11 +1504,11 @@ class Borefield:
         db = read_csv(file_path, sep=separator, header=head)
 
         if first_column_heating:
-            self.set_hourly_heating_load(db.iloc[:, 0].tolist())
-            self.set_hourly_cooling_load(db.iloc[:, 1].tolist())
+            self.set_hourly_heating_load(db.iloc[:, 0].to_numpy())
+            self.set_hourly_cooling_load(db.iloc[:, 1].to_numpy())
         else:
-            self.set_hourly_heating_load(db.iloc[:, 1].tolist())
-            self.set_hourly_cooling_load(db.iloc[:, 0].tolist())
+            self.set_hourly_heating_load(db.iloc[:, 1].to_numpy())
+            self.set_hourly_cooling_load(db.iloc[:, 0].to_numpy())
 
     def convert_hourly_to_monthly(self, peak_cooling_load: float = None, peak_heating_load: float = None) -> None:
         """

@@ -25,7 +25,7 @@ if __name__ == "__main__":
     # according to L2
     L2_start = time.time()
     borefield.convert_hourly_to_monthly()
-    depth_L2 = borefield.size(100, L2_sizing=True)
+    depth_L2 = borefield.size(150, L2_sizing=True)
     L2_stop = time.time()
 
     # according to L3

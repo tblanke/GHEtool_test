@@ -6,7 +6,7 @@ The results are returned.
 
 """
 # import all the relevant functions
-from GHEtool import *
+from GHEtool import Borefield, GroundData
 
 if __name__ == "__main__":
 
