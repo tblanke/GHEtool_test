@@ -1294,7 +1294,6 @@ class GuiStructure:
 
             bf.set_pipe_parameters(pipe_data)
             r_b = bf.calculate_Rb()
-            print(r_b)
         except ValueError or ZeroDivisionError:
             return
         text: str = self.hint_rb.hint
