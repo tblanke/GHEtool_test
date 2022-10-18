@@ -535,6 +535,8 @@ class GuiStructure:
         )
         self.option_pipe_design.add_link_2_show(self.option_outer_pipe_roughness, on_index=1)
 
+        self.hint_rb = Hint('Equivalent borehole resistance [mK/W]: 0.0001', category=self.category_pipe_data, warning=False)
+
         self.option_pipe_number.change_event(self.check_distance_between_pipes)
         self.option_pipe_outer_radius.change_event(self.check_distance_between_pipes)
         self.option_pipe_borehole_radius.change_event(self.check_distance_between_pipes)
@@ -551,6 +553,9 @@ class GuiStructure:
         self.option_inner_pipe_outer_radius.change_event(self.update_borehole)
         self.option_outer_pipe_outer_radius.change_event(self.update_borehole)
         self.option_outer_pipe_outer_radius.change_event(self.update_borehole)
+
+        for option in [option for option in self.category_pipe_data.list_of_options if isinstance(option, Option)]:
+            option.change_event(self.calculate_Rb)
 
         self.page_borehole_resistance.add_function_called_if_button_clicked(self.update_borehole)
 
@@ -1253,6 +1258,23 @@ class GuiStructure:
             self.status_bar.showMessage(self.translations.ValueError[self.option_language.get_value()], 5000)
         except KeyError:
             self.status_bar.showMessage(self.translations.ColumnError[self.option_language.get_value()], 5000)
+
+    def calculate_Rb(self):
+        import pygfunction as gt
+        borehole = gt.boreholes.Borehole(self.option_depth.get_value(), self.pipe_data.D, self.pipe_data.r_b, 0, 0)
+        if self.pipe_data.__class__ == PipeData or isinstance(self.pipe_data, MultipleUPPipeData):
+            pipe = gt.pipes.MultipleUTube(self.pos, self.pipe_data.r_in, self.pipe_data.r_out, borehole, self.k_s, self.pipe_data.k_g,
+                                          self.resistances[0], self.pipe_data.number_of_pipes, J=2)
+        elif isinstance(self.pipe_data, CoaxialPipe):
+            pipe = gt.pipes.Coaxial(pos=self.pos,
+                                    r_in=np.array([self.pipe_data.r_in_out, self.pipe_data.r_in]) if self.pipe_data.is_annulus_inlet else
+                                    np.array([self.pipe_data.r_in, self.pipe_data.r_in_out]),
+                                    r_out=np.array([self.pipe_data.r_out_out, self.pipe_data.r_out]) if self.pipe_data.is_annulus_inlet else
+                                    np.array([self.pipe_data.r_out, self.pipe_data.r_out_out]),
+                                    borehole=borehole, k_s=self.k_s, k_g=self.pipe_data.k_g, R_ff=self.resistances[0], R_fp=self.resistances[1], J=2)
+        pipe.effective_borehole_thermal_resistance(self.fluid_data.mfr, self.fluid_data.Cp)
+        text: str = self.hint_rb.hint
+        self.hint_rb.set_text(text.replace(text[-6:], f'{r_b:.4f}'))
 
     def translate(self, index: int, translation: Translations):
         Page.next_label = translation.label_next[index]
