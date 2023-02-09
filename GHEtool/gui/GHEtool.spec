@@ -21,7 +21,7 @@ a = Analysis(
 )
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 splash = Splash(
-    'icons/Icon.ico',
+    'icons/icon_squared.png',
     binaries=a.binaries,
     datas=a.datas,
     text_pos=(5, 245),

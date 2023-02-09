@@ -107,7 +107,7 @@ class UiGhetool:
         font.setItalic(False)
         ghe_tool.setFont(font)
         icon = QtG.QIcon()
-        icon.addFile(f"{FOLDER}/gui/icons/icon_05.svg", QtC.QSize(), QtG.QIcon.Normal, QtG.QIcon.Off)
+        icon.addFile(f"{FOLDER}/gui/icons/icon_07.svg", QtC.QSize(), QtG.QIcon.Normal, QtG.QIcon.Off)
         ghe_tool.setWindowIcon(icon)
         ghe_tool.setStyleSheet(
             f"*{'{'}color: {WHITE};font: 11pt 'Lexend';background-color: {DARK};selection-background-color: {LIGHT};alternate-background-color: {LIGHT};{'}'}\n"

@@ -43,15 +43,13 @@ def run(path_list=None):  # pragma: no cover
     if is_frozen:
         pyi_splash.update_text('Loading ...')
     # load file if it is in path list
-    if path is not None:
-        main_window.filename = (path, 0)
+    if path_list is not None:
+        main_window.filename = ([path for path in path_list if path.endswith('.GHEtool')][0], 0)
         main_window.fun_load_known_filename()
 
     # show window
-    try:
+    if is_frozen:
         pyi_splash.close()
-    except ModuleNotFoundError:
-        pass
     window.showMaximized()
     # close app
     sys_exit(app.exec())
@@ -59,4 +57,4 @@ def run(path_list=None):  # pragma: no cover
 
 if __name__ == "__main__":  # pragma: no cover
     # pass system args like a file to read
-    run([path for path in argv if path.endswith('.GHEtool')][0] if len(argv) > 1 else None)
+    run(argv if len(argv) > 1 else None)
