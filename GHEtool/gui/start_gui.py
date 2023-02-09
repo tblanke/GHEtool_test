@@ -1,17 +1,29 @@
 from sys import argv
+import sys
+
+is_frozen = getattr(sys, 'frozen', False)
 
 
 def run(path_list=None):  # pragma: no cover
+    if is_frozen:
+        import pyi_splash
+        pyi_splash.update_text('Loading .')
     from pathlib import Path
     from configparser import ConfigParser
     from ctypes import windll as ctypes_windll
     from sys import exit as sys_exit
+
+    if is_frozen:
+        pyi_splash.update_text('Loading ..')
 
     from PySide6.QtWidgets import QApplication as QtWidgets_QApplication
     from PySide6.QtWidgets import QMainWindow as QtWidgets_QMainWindow
 
     from GHEtool import FOLDER
     from GHEtool.gui.gui_classes.gui_combine_window import MainWindow
+
+    if is_frozen:
+        pyi_splash.update_text('Loading ...')
 
     # init application
     app = QtWidgets_QApplication()
@@ -29,6 +41,8 @@ def run(path_list=None):  # pragma: no cover
     window = QtWidgets_QMainWindow()
     # init gui window
     main_window = MainWindow(window, app)
+    if is_frozen:
+        pyi_splash.update_text('Loading ...')
     # load file if it is in path list
     if path_list is not None:
         main_window.filename = ([path for path in path_list if path.endswith('.GHEtool')][0], 0)
@@ -36,7 +50,6 @@ def run(path_list=None):  # pragma: no cover
 
     # show window
     try:
-        import pyi_splash
         pyi_splash.close()
     except ModuleNotFoundError:
         pass

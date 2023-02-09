@@ -24,10 +24,13 @@ splash = Splash(
     'icons/Icon.ico',
     binaries=a.binaries,
     datas=a.datas,
-    text_pos=None,
+    text_pos=(5, 245),
     text_size=12,
+    text_color='white',
+    text_font='Lexend',
     minify_script=True,
     always_on_top=True,
+    max_img_size=(250, 250)
 )
 
 exe = EXE(
