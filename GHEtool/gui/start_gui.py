@@ -28,9 +28,8 @@ def run(path_list=None):  # pragma: no cover
     # init application
     app = QtWidgets_QApplication()
     # get current version
-    path = Path(FOLDER).parent
     config = ConfigParser()
-    config.read_file(open(path.joinpath('setup.cfg'), 'r'))
+    config.read_file(open(Path(FOLDER).parent.joinpath('setup.cfg'), 'r'))
     version = config.get('metadata', 'version')
     # set version and id
     myAppID = f'GHEtool v{version}'  # arbitrary string
@@ -44,8 +43,8 @@ def run(path_list=None):  # pragma: no cover
     if is_frozen:
         pyi_splash.update_text('Loading ...')
     # load file if it is in path list
-    if path_list is not None:
-        main_window.filename = ([path for path in path_list if path.endswith('.GHEtool')][0], 0)
+    if path is not None:
+        main_window.filename = (path, 0)
         main_window.fun_load_known_filename()
 
     # show window
@@ -60,4 +59,4 @@ def run(path_list=None):  # pragma: no cover
 
 if __name__ == "__main__":  # pragma: no cover
     # pass system args like a file to read
-    run(argv if len(argv) > 1 else None)
+    run([path for path in argv if path.endswith('.GHEtool')][0] if len(argv) > 1 else None)
