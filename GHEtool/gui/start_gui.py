@@ -1,5 +1,5 @@
-from sys import argv
 import sys
+from sys import argv
 
 is_frozen = getattr(sys, 'frozen', False)
 
@@ -8,9 +8,9 @@ def run(path_list=None):  # pragma: no cover
     if is_frozen:
         import pyi_splash
         pyi_splash.update_text('Loading .')
-    from pathlib import Path
     from configparser import ConfigParser
     from ctypes import windll as ctypes_windll
+    from pathlib import Path
     from sys import exit as sys_exit
 
     if is_frozen:

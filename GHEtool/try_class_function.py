@@ -1,6 +1,7 @@
 from functools import partial
 from typing import Callable
 
+
 class Example:
 
     def __init__(self, a: int):

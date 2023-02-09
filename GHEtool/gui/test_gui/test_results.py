@@ -1,52 +1,80 @@
+"""
+test that the results are correctly calculated
+"""
 import sys
 from typing import Tuple
 
-sys.setrecursionlimit(1500)
-
+import numpy as np
 import PySide6.QtWidgets as QtW
+from hypothesis import HealthCheck, given, settings
+from hypothesis import strategies as st
 
+from GHEtool import Borefield, FluidData, GroundData, PipeData
+from GHEtool.gui.data_storage_2_borefield_callable_function import data_storage_2_borefield_callable
 from GHEtool.gui.gui_classes.gui_combine_window import MainWindow
 from GHEtool.gui.gui_structure import GuiStructure
-from GHEtool.gui.data_storage_2_borefield_callable_function import data_storage_2_borefield_callable
 
-from GHEtool import Borefield, GroundData, FluidData, PipeData
-import numpy as np
+sys.setrecursionlimit(1500)
 
-from hypothesis import given, strategies as st, settings, HealthCheck
+def round_down(value: float, decimal: int) -> float:
+    """
+    round the value down considering the decimal nuber
+    Parameters
+    ----------
+    value: float
+        value to be rounded
+    decimal : int
+        decimal number
+    Returns
+    -------
+        down rounded value
+    """
+    return int(value * 10 ** decimal) / (10 ** decimal)
 
 
-def create_borefield(gs: GuiStructure) -> Borefield:
-    borefield = Borefield(gs.option_simu_period.get_value())
+def create_borefield(g_s: GuiStructure) -> Borefield:
+    """
+    create borefield from Gui structure
+    Parameters
+    ----------
+    g_s GuiStructure:
+        gui structure
 
-    borefield.set_max_ground_temperature(gs.option_max_temp.get_value())
-    borefield.set_min_ground_temperature(gs.option_min_temp.get_value())
+    Returns
+    -------
+        borefield with data from g_s
+    """
+    borefield = Borefield(g_s.option_simu_period.get_value())
 
-    gd = GroundData(gs.option_conductivity.get_value(), gs.option_ground_temp.get_value(),
-                    gs.option_constant_rb.get_value(), gs.option_heat_capacity.get_value() * 1000, 0)
-    borefield.set_ground_parameters(gd)
+    borefield.set_max_ground_temperature(g_s.option_max_temp.get_value())
+    borefield.set_min_ground_temperature(g_s.option_min_temp.get_value())
 
-    borefield.create_rectangular_borefield(gs.option_width.get_value(), gs.option_length.get_value(), gs.option_spacing.get_value(),
-                                           gs.option_spacing.get_value(), gs.option_depth.get_value(), gs.option_pipe_depth.get_value(),
-                                           gs.option_pipe_borehole_radius.get_value())
+    g_d = GroundData(g_s.option_conductivity.get_value(), g_s.option_ground_temp.get_value(),
+                    g_s.option_constant_rb.get_value(), g_s.option_heat_capacity.get_value() * 1000, 0)
+    borefield.set_ground_parameters(g_d)
 
-    borefield.set_length_peak_heating(gs.option_len_peak_heating.get_value())
-    borefield.set_length_peak_cooling(gs.option_len_peak_cooling.get_value())
+    borefield.create_rectangular_borefield(g_s.option_width.get_value(), g_s.option_length.get_value(), g_s.option_spacing.get_value(),
+                                           g_s.option_spacing.get_value(), g_s.option_depth.get_value(), g_s.option_pipe_depth.get_value(),
+                                           g_s.option_pipe_borehole_radius.get_value())
 
-    hl = [gs.option_hl_jan.get_value(), gs.option_hl_feb.get_value(), gs.option_hl_mar.get_value(), gs.option_hl_apr.get_value(),
-          gs.option_hl_may.get_value(), gs.option_hl_jun.get_value(), gs.option_hl_jul.get_value(), gs.option_hl_aug.get_value(),
-          gs.option_hl_sep.get_value(), gs.option_hl_oct.get_value(), gs.option_hl_nov.get_value(), gs.option_hl_dec.get_value()]
+    borefield.set_length_peak_heating(g_s.option_len_peak_heating.get_value())
+    borefield.set_length_peak_cooling(g_s.option_len_peak_cooling.get_value())
 
-    cl = [gs.option_cl_jan.get_value(), gs.option_cl_feb.get_value(), gs.option_cl_mar.get_value(), gs.option_cl_apr.get_value(),
-          gs.option_cl_may.get_value(), gs.option_cl_jun.get_value(), gs.option_cl_jul.get_value(), gs.option_cl_aug.get_value(),
-          gs.option_cl_sep.get_value(), gs.option_cl_oct.get_value(), gs.option_cl_nov.get_value(), gs.option_cl_dec.get_value()]
+    hl = [g_s.option_hl_jan.get_value(), g_s.option_hl_feb.get_value(), g_s.option_hl_mar.get_value(), g_s.option_hl_apr.get_value(),
+          g_s.option_hl_may.get_value(), g_s.option_hl_jun.get_value(), g_s.option_hl_jul.get_value(), g_s.option_hl_aug.get_value(),
+          g_s.option_hl_sep.get_value(), g_s.option_hl_oct.get_value(), g_s.option_hl_nov.get_value(), g_s.option_hl_dec.get_value()]
 
-    hp = [gs.option_hp_jan.get_value(), gs.option_hp_feb.get_value(), gs.option_hp_mar.get_value(), gs.option_hp_apr.get_value(),
-          gs.option_hp_may.get_value(), gs.option_hp_jun.get_value(), gs.option_hp_jul.get_value(), gs.option_hp_aug.get_value(),
-          gs.option_hp_sep.get_value(), gs.option_hp_oct.get_value(), gs.option_hp_nov.get_value(), gs.option_hp_dec.get_value()]
+    cl = [g_s.option_cl_jan.get_value(), g_s.option_cl_feb.get_value(), g_s.option_cl_mar.get_value(), g_s.option_cl_apr.get_value(),
+          g_s.option_cl_may.get_value(), g_s.option_cl_jun.get_value(), g_s.option_cl_jul.get_value(), g_s.option_cl_aug.get_value(),
+          g_s.option_cl_sep.get_value(), g_s.option_cl_oct.get_value(), g_s.option_cl_nov.get_value(), g_s.option_cl_dec.get_value()]
 
-    cp = [gs.option_cp_jan.get_value(), gs.option_cp_feb.get_value(), gs.option_cp_mar.get_value(), gs.option_cp_apr.get_value(),
-          gs.option_cp_may.get_value(), gs.option_cp_jun.get_value(), gs.option_cp_jul.get_value(), gs.option_cp_aug.get_value(),
-          gs.option_cp_sep.get_value(), gs.option_cp_oct.get_value(), gs.option_cp_nov.get_value(), gs.option_cp_dec.get_value()]
+    hp = [g_s.option_hp_jan.get_value(), g_s.option_hp_feb.get_value(), g_s.option_hp_mar.get_value(), g_s.option_hp_apr.get_value(),
+          g_s.option_hp_may.get_value(), g_s.option_hp_jun.get_value(), g_s.option_hp_jul.get_value(), g_s.option_hp_aug.get_value(),
+          g_s.option_hp_sep.get_value(), g_s.option_hp_oct.get_value(), g_s.option_hp_nov.get_value(), g_s.option_hp_dec.get_value()]
+
+    cp = [g_s.option_cp_jan.get_value(), g_s.option_cp_feb.get_value(), g_s.option_cp_mar.get_value(), g_s.option_cp_apr.get_value(),
+          g_s.option_cp_may.get_value(), g_s.option_cp_jun.get_value(), g_s.option_cp_jul.get_value(), g_s.option_cp_aug.get_value(),
+          g_s.option_cp_sep.get_value(), g_s.option_cp_oct.get_value(), g_s.option_cp_nov.get_value(), g_s.option_cp_dec.get_value()]
 
     borefield.set_baseload_heating(hl)
     borefield.set_baseload_cooling(cl)
@@ -68,11 +96,11 @@ def test_temp_profile_ground_data(qtbot, depth: float, k_s: float, heat_cap: flo
     main_window.save_scenario()
     main_window.add_scenario()
 
-    k_s = round(k_s, 3)
-    heat_cap = round(heat_cap, 1)
-    depth = round(depth, 2)
-    ground_temp = round(ground_temp, 2)
-    r_b = round(ground_temp, 4)
+    k_s = round_down(k_s, 3)
+    heat_cap = round_down(heat_cap, 1)
+    depth = round_down(depth, 2)
+    ground_temp = round_down(ground_temp, 2)
+    r_b = round_down(ground_temp, 4)
 
     gs = main_window.gui_structure
 
@@ -119,8 +147,8 @@ def test_temp_profile_temp_gradient(qtbot, gradient: float, ground_temp: float):
     k_s = gs.option_conductivity.get_value()
     depth = gs.option_depth.get_value()
 
-    gradient = round(gradient, 3)
-    ground_temp = round(ground_temp, 3)
+    gradient = round_down(gradient, 3)
+    ground_temp = round_down(ground_temp, 3)
 
     gs.aim_temp_profile.widget.click() if not gs.aim_temp_profile.widget.isChecked() else None
 
@@ -132,7 +160,7 @@ def test_temp_profile_temp_gradient(qtbot, gradient: float, ground_temp: float):
     main_window.save_scenario()
 
     borefield.ground_data.flux = k_s * gradient / 100
-    borefield.ground_data.Tg = round(ground_temp, 2)
+    borefield.ground_data.Tg = round_down(ground_temp, 2)
 
     borefield._sizing_setup.use_constant_Tg = False
 
@@ -169,12 +197,12 @@ def test_temp_profile_pipe_data(qtbot, n_pipes: int, conduct_grout: float, condu
     depth = gs.option_depth.get_value()
     gs.option_pipe_borehole_radius.set_value(0.5)
 
-    conduct_grout = round(conduct_grout, 3)
-    conduct_pipe = round(conduct_pipe, 3)
-    inner_pipe = round(inner_pipe, 4)
-    dis = round(0.5 - (inner_pipe + pipe_thickness) - 0.02, 4)
-    outer_pipe = round(inner_pipe + pipe_thickness, 4)
-    roughness = round(roughness, 7)
+    conduct_grout = round_down(conduct_grout, 3)
+    conduct_pipe = round_down(conduct_pipe, 3)
+    inner_pipe = round_down(inner_pipe, 4)
+    dis = round_down(0.5 - (inner_pipe + pipe_thickness) - 0.02, 4)
+    outer_pipe = round_down(inner_pipe + pipe_thickness, 4)
+    roughness = round_down(roughness, 7)
 
     pipe_data = PipeData(conduct_grout, inner_pipe, outer_pipe, conduct_pipe, dis, n_pipes, roughness)
     fluid_data = FluidData(gs.option_fluid_mass_flow.get_value(), gs.option_fluid_conductivity.get_value(), gs.option_fluid_density.get_value(),
@@ -227,11 +255,11 @@ def test_temp_profile_fluid_data(qtbot, conduct: float, density: float, heat_cap
 
     depth = gs.option_depth.get_value()
 
-    conduct = round(conduct, 3)
-    density = round(density, 1)
-    heat_cap = round(heat_cap, 1)
-    viscosity = round(viscosity, 6)
-    flow_rate = round(flow_rate, 3)
+    conduct = round_down(conduct, 3)
+    density = round_down(density, 1)
+    heat_cap = round_down(heat_cap, 1)
+    viscosity = round_down(viscosity, 6)
+    flow_rate = round_down(flow_rate, 3)
 
     pipe_data = PipeData(gs.option_pipe_grout_conductivity.get_value(), gs.option_pipe_inner_radius.get_value(), gs.option_pipe_outer_radius.get_value(),
                                         gs.option_pipe_conductivity.get_value(), gs.option_pipe_distance.get_value(), gs.option_pipe_number.get_value(), gs.option_pipe_roughness.get_value())
@@ -273,9 +301,9 @@ def test_temp_profile_borefield_data(qtbot, width: int, length: int, spacing: fl
     main_window.save_scenario()
     main_window.add_scenario()
 
-    spacing = round(spacing, 2)
-    radius = round(radius, 4)
-    burial_depth = round(burial_depth, 1)
+    spacing = round_down(spacing, 2)
+    radius = round_down(radius, 4)
+    burial_depth = round_down(burial_depth, 1)
 
     gs = main_window.gui_structure
 
@@ -305,9 +333,9 @@ def test_temp_profile_borefield_data(qtbot, width: int, length: int, spacing: fl
 @given(L2=st.booleans(), temps=st.tuples(st.floats(-10, 40), st.floats(4, 12), st.floats(4, 12)))
 @settings(suppress_health_check=[HealthCheck.function_scoped_fixture], max_examples=10,  deadline=None)
 def test_sizing_L2_L3_min_max(qtbot, L2: bool, temps: Tuple[float, float, float]) -> None:
-    min_temp = round(temps[0], 2)
-    ground_temp = round(temps[0] + temps[1], 2)
-    max_temp = round(temps[0] + temps[1] + temps[2], 2)
+    min_temp = round_down(temps[0], 2)
+    ground_temp = round_down(temps[0] + temps[1], 2)
+    max_temp = round_down(temps[0] + temps[1] + temps[2], 2)
 
     # init gui window
     main_window = MainWindow(QtW.QMainWindow(), qtbot)
@@ -354,8 +382,8 @@ def test_temp_profile_period_peak_length(qtbot, period: int, peak_heating: float
     main_window.save_scenario()
     main_window.add_scenario()
 
-    peak_heating = round(peak_heating, 2)
-    peak_cooling = round(peak_cooling, 2)
+    peak_heating = round_down(peak_heating, 2)
+    peak_cooling = round_down(peak_cooling, 2)
 
     gs = main_window.gui_structure
 
@@ -395,8 +423,8 @@ def test_temp_profile_heating_data(qtbot, delay: int, factor: float) -> None:
 
     heat_load = [44_400, 37_500, 29_700, 19_200, 0, 0, 0, 18_300, 26_100, 35_100, 43_200, 46_500]
 
-    heat_load = np.array([round(heat_load[i] * factor, 0) for i in range(-delay, 12 - delay)])
-    heat_peak = np.array([round(heat_peak[i] * factor, 3) for i in range(-delay, 12 - delay)])
+    heat_load = np.array([round_down(heat_load[i] * factor, 0) for i in range(-delay, 12 - delay)])
+    heat_peak = np.array([round_down(heat_peak[i] * factor, 3) for i in range(-delay, 12 - delay)])
 
     gs = main_window.gui_structure
 
@@ -431,6 +459,19 @@ def test_temp_profile_heating_data(qtbot, delay: int, factor: float) -> None:
 @given(delay=st.integers(0, 12), factor=st.floats(0, 2))
 @settings(suppress_health_check=[HealthCheck.function_scoped_fixture], max_examples=50,  deadline=None)
 def test_temp_profile_cooling_data(qtbot, delay: int, factor: float) -> None:
+    """
+    test cooling data
+
+    Parameters
+    ----------
+    qtbot: qtbot
+        qtbot
+    delay: int
+        change within the year
+    factor: float
+        factor to scale profile
+
+    """
     # init gui window
     main_window = MainWindow(QtW.QMainWindow(), qtbot)
     main_window.save_scenario()
@@ -440,34 +481,35 @@ def test_temp_profile_cooling_data(qtbot, delay: int, factor: float) -> None:
 
     cool_load = [4_000, 8_000, 8_000, 8_000, 12_000, 16_000, 32_000, 32_000, 16_000, 12_000, 8_000, 4_000]
 
-    cool_load = np.array([round(cool_load[i] * factor, 0) for i in range(-delay, 12 - delay)])
-    cool_peak = np.array([round(cool_peak[i] * factor, 3) for i in range(-delay, 12 - delay)])
+    cool_load = np.array([round_down(cool_load[i] * factor, 0) for i in range(-delay, 12 - delay)])
+    cool_peak = np.array([round_down(cool_peak[i] * factor, 3) for i in range(-delay, 12 - delay)])
 
-    gs = main_window.gui_structure
+    g_s = main_window.gui_structure
 
-    gs.aim_temp_profile.widget.click() if not gs.aim_temp_profile.widget.isChecked() else None
+    if not g_s.aim_temp_profile.widget.isChecked():
+        g_s.aim_temp_profile.widget.click()
 
-    borefield = create_borefield(gs)
+    borefield = create_borefield(g_s)
     borefield.set_baseload_cooling(cool_load)
     borefield.set_peak_cooling(cool_peak)
 
-    for option, value in zip([gs.option_cl_jan, gs.option_cl_feb, gs.option_cl_mar, gs.option_cl_apr, gs.option_cl_may, gs.option_cl_jun, gs.option_cl_jul,
-                              gs.option_cl_aug, gs.option_cl_sep, gs.option_cl_oct, gs.option_cl_nov, gs.option_cl_dec], cool_load):
+    for option, value in zip([g_s.option_cl_jan, g_s.option_cl_feb, g_s.option_cl_mar, g_s.option_cl_apr, g_s.option_cl_may, g_s.option_cl_jun, g_s.option_cl_jul,
+                              g_s.option_cl_aug, g_s.option_cl_sep, g_s.option_cl_oct, g_s.option_cl_nov, g_s.option_cl_dec], cool_load):
         option.set_value(value)
 
-    for option, value in zip([gs.option_cp_jan, gs.option_cp_feb, gs.option_cp_mar, gs.option_cp_apr, gs.option_cp_may, gs.option_cp_jun, gs.option_cp_jul,
-                              gs.option_cp_aug, gs.option_cp_sep, gs.option_cp_oct, gs.option_cp_nov, gs.option_cp_dec], cool_peak):
+    for option, value in zip([g_s.option_cp_jan, g_s.option_cp_feb, g_s.option_cp_mar, g_s.option_cp_apr, g_s.option_cp_may, g_s.option_cp_jun, g_s.option_cp_jul,
+                              g_s.option_cp_aug, g_s.option_cp_sep, g_s.option_cp_oct, g_s.option_cp_nov, g_s.option_cp_dec], cool_peak):
         option.set_value(value)
 
     main_window.save_scenario()
-    ds = main_window.list_ds[-1]
-    borefield_gui, func = data_storage_2_borefield_callable(ds)
+    d_s = main_window.list_ds[-1]
+    borefield_gui, func = data_storage_2_borefield_callable(d_s)
     assert np.allclose(borefield_gui.baseload_heating, borefield.baseload_heating)
     assert np.allclose(borefield_gui.baseload_cooling, borefield.baseload_cooling)
     assert np.allclose(borefield_gui.peak_heating, borefield.peak_heating)
     assert np.allclose(borefield_gui.peak_cooling, borefield.peak_cooling)
     assert func.func == borefield_gui.calculate_temperatures
-    assert func.args == (gs.option_depth.get_value(),)
+    assert func.args == (g_s.option_depth.get_value(),)
     assert func.keywords == {}
 
     main_window.delete_backup()

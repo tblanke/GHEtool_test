@@ -1,19 +1,17 @@
 from functools import partial
 from typing import Callable, Tuple
 
-from GHEtool.gui.gui_data_storage import DataStorage
-from GHEtool.gui.gui_structure import load_data_GUI
-from GHEtool import Borefield, FluidData, GroundData, PipeData
-
 import numpy as np
 from numpy.typing import NDArray
 
+from GHEtool import Borefield, FluidData, GroundData, PipeData
+from GHEtool.gui.gui_data_storage import DataStorage
+from GHEtool.gui.gui_structure import load_data_GUI
 
 
-def data_storage_2_borefield_callable(ds: DataStorage) -> Tuple[Borefield, Callable[[], None]]:
+def data_storage_2_borefield_callable(ds: DataStorage) -> Tuple[Borefield, partial[[], None]]:
     # import bore field class from GHEtool and not in start up to save time
     from GHEtool import Borefield
-
 
     # create the bore field object
     borefield = Borefield(

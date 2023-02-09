@@ -5,8 +5,8 @@ aims in the GUI.
 
 import PySide6.QtCore as QtC
 
-from GHEtool.gui.gui_data_storage import DataStorage
 from GHEtool.gui.data_storage_2_borefield_callable_function import data_storage_2_borefield_callable
+from GHEtool.gui.gui_data_storage import DataStorage
 
 
 class CalcProblem(QtC.QThread):
