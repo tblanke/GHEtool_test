@@ -1,57 +1,48 @@
-# GHEtool: An open-source tool for borefield sizing in Python
-[![Status](https://img.shields.io/github/workflow/status/wouterpeere/ghetool/test?style=flat-square)](https://pypi.python.org/pypi/ghetool)
-[![Status](https://img.shields.io/pypi/status/ghetool?style=flat-square)](https://pypi.python.org/pypi/ghetool)
-[![Version](https://img.shields.io/pypi/v/ghetool.svg?style=flat-square)](https://pypi.python.org/pypi/ghetool)
-[![Python Version](https://img.shields.io/pypi/pyversions/ghetool?style=flat-square)](https://pypi.python.org/pypi/ghetool)
-[![Wheel](https://img.shields.io/pypi/wheel/ghetool?style=flat-square)](https://pypi.python.org/pypi/ghetool)
-[![PyPI - License](https://img.shields.io/pypi/l/ghetool?style=flat-square)](https://opensource.org/licenses/BSD-3-Clause)
-[![DOI](https://img.shields.io/badge/JOSS-10.21105%2Fjoss.04406-brightgreen?style=flat-square)](https://doi.org/10.21105/joss.04406)
-[![codecov](https://img.shields.io/codecov/c/github/tblanke/GHEtool_test?style=flat-square)](https://app.codecov.io/github/tblanke/GHEtool_test)
-[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat-square&labelColor=ef8336)](https://pycqa.github.io/isort/)
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg?style=flat-square)](https://www.python.org/)
-[![Last Commit](https://img.shields.io/github/last-commit/wouterpeere/ghetool?style=flat-square)](https://github.com/wouterpeere/GHEtool)
-[![Release Date](https://img.shields.io/github/release-date/wouterpeere/ghetool?style=flat-square)](https://github.com/wouterpeere/GHEtool)
-[![Release Date](https://img.shields.io/github/issues/wouterpeere/ghetool?style=flat-square)](https://github.com/wouterpeere/GHEtool/issues)
+# GHEtool: An open-source tool for borefield sizing
 
-
+[![PyPI version](https://badge.fury.io/py/GHEtool.svg)](https://badge.fury.io/py/GHEtool)
+[![Tests](https://github.com/wouterpeere/GHEtool/actions/workflows/test.yml/badge.svg)](https://github.com/wouterpeere/GHEtool/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/wouterpeere/GHEtool/branch/main/graph/badge.svg?token=I9WWHW60OD)](https://codecov.io/gh/wouterpeere/GHEtool)
+[![DOI](https://joss.theoj.org/papers/10.21105/joss.04406/status.svg)](https://doi.org/10.21105/joss.04406)
+[![Downloads](https://static.pepy.tech/personalized-badge/ghetool?period=total&units=international_system&left_color=black&right_color=blue&left_text=Downloads)](https://pepy.tech/project/ghetool)
+[![Downloads](https://static.pepy.tech/personalized-badge/ghetool?period=week&units=international_system&left_color=black&right_color=orange&left_text=Downloads%20last%20week)](https://pepy.tech/project/ghetool)
+[![Read the Docs](https://readthedocs.org/projects/ghetool/badge/?version=stable)](https://ghetool.readthedocs.io/en/stable/)
 ## What is *GHEtool*?
-<img src="https://raw.githubusercontent.com/wouterpeere/GHEtool/main/GHEtool/gui/Icon.png" width="110" align="left">
+<img src="https://raw.githubusercontent.com/wouterpeere/GHEtool/main/docs/sources/gui/_figure/Icon.png" width="110" align="left">
 
 GHEtool is a Python package that contains all the functionalities needed to deal with borefield design. It is developed for both researchers and practitioners.
-The core of this package is the automated sizing of borefield under different conditions. The sizing of a borefield is typically slow due to the high complexity of the mathematical background. Because this tool has a lot of precalculated data (cf. infra), GHEtool can size a borefield in the order of tenths of milliseconds. This sizing typically takes the order of minutes. Therefore, this tool is suited for being implemented in workflows where iterations are required.
+The core of this package is the automated sizing of borefield under different conditions. By making use of combination of just-in-time calculations of thermal ground responses (using [pygfunction](https://github.com/MassimoCimmino/pygfunction)) with
+intelligent interpolation, this automated sizing can be done in the order of milliseconds. Please visit our website [https://GHEtool.eu](https://GHEtool.eu) for more information.
+
+#### Read The Docs
+GHEtool has an elaborate documentation were all the functionalities of the tool are explained, with examples, literature and validation.
+This can be found on [GHEtool.readthedocs.io](https://ghetool.readthedocs.io).
 
 #### Graphical user interface
-GHEtool also comes with a *graphical user interface (GUI)*. This GUI is prebuilt as an exe-file (only for Windows platforms currently) because this provides access to all the functionalities without coding. A setup to install the GUI at the user-defined place is also implemented and available [here](https://www.mech.kuleuven.be/en/tme/research/thermal_systems/tools/ghetool).
-This graphical interface is made by Tobias Blanke from FH Aachen.
+GHEtool also comes with a *graphical user interface (GUI)*. This GUI is prebuilt as an exe-file (only for Windows platforms currently) because this provides access to all the functionalities without coding. A setup to install the GUI at the user-defined place is also implemented and available at [https://GHEtool.eu](https://GHEtool.eu).
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/wouterpeere/GHEtool/main/GHEtool/gui/GHEtool.PNG" width="600"></br>
-  Screenshot of the GUI.
+<img src="https://raw.githubusercontent.com/wouterpeere/GHEtool/main/docs/sources/gui/_figure/GHEtool.PNG" width="600">
 </p>
 
 ## Requirements
-This code is tested with Python 3.8 and requires the following libraries (the versions mentioned are the ones with which the code is tested)
+This code is tested with Python 3.8, 3.9, 3.10 and 3.11 and requires the following libraries (the versions mentioned are the ones with which the code is tested)
 
 * Numpy (>=1.20.2)
 * Scipy (>=1.6.2)
 * Matplotlib (>=3.4.1)
-* Pygfunction (>=2.1.0)
+* Pygfunction (>=2.2.1)
 * Openpyxl (>=3.0.7)
 * Pandas (>=1.2.4)
 
 For the GUI
 
-* PyQt5 (>=5.10)
+* PySide6 (>=6.4.1)
+* configparser (>=5.3.0)
 
 For the tests
 
 * Pytest (>=7.1.2)
-
-When working with Python 3.9 and higher, installing a newer version of pygfunction (>=2.1.0) can lead to problems due to the fact that its dependency CoolProp is not compatible with Python 3.9 and higher (see also <https://github.com/CoolProp/CoolProp/issues/1992> and <https://github.com/CoolProp/CoolProp/issues/2119>). If one wants to work with the newer version of pygfunction and with Python 3.9 or higher, one can install a development version of CoolProp using
-
-```
-pip install -i https://test.pypi.org/simple/ CoolProp==6.4.2.dev0
-```
 
 ## Quick start
 ### Installation
@@ -70,7 +61,7 @@ pip install --extra-index-url https://test.pypi.org/simple/ GHEtool
 
 Developers can clone this repository.
 
-It is a good practise to use virtual environments (venv) when working on a (new) Python project so different Python and package versions don't conflict with eachother. For GHEtool, Python 3.8 is recommended. General information about Python virtual environments can be found [here](https://docs.Python.org/3.9/library/venv.html) and in [this article](https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/).
+It is a good practise to use virtual environments (venv) when working on a (new) Python project so different Python and package versions don't conflict with eachother. For GHEtool, Python 3.8 or higher is recommended. General information about Python virtual environments can be found [here](https://docs.Python.org/3.9/library/venv.html) and in [this article](https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/).
 
 ### Check installation
 
@@ -80,7 +71,7 @@ To check whether everything is installed correctly, run the following command
 pytest --pyargs GHEtool
 ```
 
-This runs some predefined cases to see whether all the internal dependencies work correctly. 9 test should pass successfully.
+This runs some predefined cases to see whether all the internal dependencies work correctly. All test should pass successfully.
 
 ### Get started with GHEtool
 
@@ -90,16 +81,12 @@ To get started with GHEtool, one needs to create a Borefield object. This is don
 from GHEtool import Borefield, GroundData
 ```
 
-After importing the necessary classes, one sets all the relevant ground data.
+After importing the necessary classes, one sets all the relevant ground data and borehole equivalent resistance.
 
 ```Python
-data = GroundData(110, # depth of the field (m)
-                  6,   # distance between the boreholes (m)
-                  3,   # ground thermal conductivity (W/mK)
+data = GroundData(3,   # ground thermal conductivity (W/mK)
                   10,  # initial/undisturbed ground temperature (deg C)
                   0.2, # borehole equivalent resistance (mK/W)
-                  10,  # number of boreholes in width direction of the field (/)
-                  12,  # number of boreholes in the length direction of the field (/)
                   2.4*10**6) # volumetric heat capacity of the ground (J/m3K) 
 ```
 
@@ -113,7 +100,7 @@ monthly_load_heating = [46500.0, 44400.0, 37500.0, 29700.0, 19200.0, 0.0, 0.0, 0
 monthly_load_cooling = [4000.0, 8000.0, 8000.0, 8000.0, 12000.0, 16000.0, 32000.0, 32000.0, 16000.0, 12000.0, 8000.0, 4000.0]  # in kWh
 ```
 
-Next, one creates the borefield object and sets the temperature constraints and the ground data.
+Next, one creates the borefield object in GHEtool and sets the temperature constraints and the ground data.
 
 ```Python
 # create the borefield object
@@ -128,6 +115,21 @@ borefield.set_ground_parameters(data)
 # set temperature boundaries
 borefield.set_max_ground_temperature(16)  # maximum temperature
 borefield.set_min_ground_temperature(0)  # minimum temperature
+```
+
+```Python
+# set a rectangular borefield
+borefield.create_rectangular_borefield(10, 12, 6, 6, 110, 4, 0.075)
+```
+
+Note that the borefield can also be set using the pygfunction package.
+
+```Python
+import pygfunction as gt
+
+# set a rectangular borefield
+borefield_gt = gt.boreholes.rectangle_field(10, 12, 6, 6, 110, 1, 0.075) 
+borefield.set_borefield(borefield_gt)
 ```
 
 Once a Borefield object is created, one can make use of all the functionalities of GHEtool. One can for example size the borefield using:
@@ -146,77 +148,57 @@ borefield.print_temperature_profile(legend=True)
 A full list of functionalities is given below.
 
 ## Functionalities
-GHEtool offers functionalities of value to all different disciplines working with borefields. The features are available both in the code environment and in the GUI. These functions are listed in the table below, alongside with a link to an example document where one can find how these functionalities can be used.
-
-| Functionality | Example document |
-| --- | --- |
-| Sizing the borefield (i.e. calculating the required depth) for a given injection and extraction load for the borefield (three sizing methods are available). | [main_functionalities.py](GHEtool/Examples/main_functionalities.py) |
-| Calculating the temperature evolution of the ground for a given building load and borefield configuration | [main_functionalities.py](GHEtool/Examples/main_functionalities.py) |
-| Using dynamically calculated borehole thermal resistance (this is directly based on the code of pygfunction) | [sizing_with_Rb_calculation.py](GHEtool/Validation/sizing_with_Rb_calculation.py) |
-| Optimising the load profile for a given heating and cooling load | [optimise_load_profile.py](GHEtool/Examples/optimise_load_profile.py)|
-| Finding the optimal rectangular borefield configuration for a given heating and cooling load | [size_borefield_by_length_and_width.py](GHEtool/Examples/size_borefield_by_length_and_width.py) |
-| Importing heating and cooling loads from .csv and .xlsx files | [import_data.py](GHEtool/Examples/import_data.py) |
-| Using your custom borefield configuration | [custom_borefield_configuration.py](GHEtool/Examples/custom_borefield_configuration.py) |
-
-| Comparisons | Example document |
-| --- | --- |
-| Comparison of different sizing methods (L2, L3) for different random profiles| [sizing_method_comparison.py](GHEtool/Validation/sizing_method_comparison.py) |
-| Comparison in calculation time and accuracy between using the precalculated gfunction data or not | [speed_comparison.py](GHEtool/Validation/speed_comparison.py) |
-| Comparison of different sizing methods (L2, L3 and L4) for the same hourly profile | [sizing_method_comparison_L2_L3_L4.py](GHEtool/Examples/sizing_method_comparison_L2_L3_L4.py) |
-| Comparison in calculation time and accuracy between the simplified L2 sizing methodology and the more accurate L3 method. | [sizing_method_comparison.py](GHEtool/Validation/sizing_method_comparison.py) |
-| Comparison of Rb* calculation between GHEtool and EED. | [validation_effective_borehole_thermal_resistance.py](GHEtool/Validation/validation_effective_borehole_thermal_resistance.py) |
-
-
-## Precalculated data
-This tool comes with precalculated g-functions for all borefields of type nxm (for 0<n,m<21) for which the boreholes are connected in parallel. For these borefield configurations, the g-functions are calculated for different depth-thermal diffusivity-spacing combinations. The ranges are:
-
-* Depth: 25 - 350m in increments of 25m
-* Thermal diffusivity of the soil (defined as thermal conductivity / volumetric heat capacity): 0.036 - 0.144m²/day in increments of 0.018m²/day
-(This is equal to a range of thermal conductivity from 1-4W/mK with a constant volumetric heat capacity of 2.4MJ/m³K)
-* Spacings (equal): 3 - 9m in increments of 1m
-
-Here a burial depth (D) of 4.0m is assumed even as a borehole radius of 7.5cm for all the precalculated data.
-
-It is possible to calculate your own dataset to your specific project based on the [pygfunction](https://github.com/MassimoCimmino/pygfunction) tool and use this one in the code.
+GHEtool offers functionalities of value to all different disciplines working with borefields. The features are available both in the code environment and in the GUI.
+For more information about the functionalities of GHEtool, please visit the [ReadTheDocs](https://ghetool.readthedocs.org).
 
 ## License
 
 *GHEtool* is licensed under the terms of the 3-clause BSD-license.
 See [GHEtool license](LICENSE).
 
-## Contributing to *GHEtool*
+## Contact GHEtool
+- Do you want to contribute to GHEtool?
+- Do you have a great idea for a new feature?
+- Do you have a specific remark/problem?
 
-You can report bugs and propose enhancements on the
-[issue tracker](https://github.com/wouterpeere/GHEtool/issues).
-If you want to add new features and contribute to the code,
-please contact Wouter Peere (wouter.peere@kuleuven.be).
-
-## Main contributors
-Wouter Peere, KU Leuven & boydens engineering (part of Sweco), wouter.peere@kuleuven.be
-
-Tobias Blanke, Solar-Institute Jülich, FH Aachen, blanke@sij.fh-aachen.de
+Please do contact us at [wouter@ghetool.eu](mailto:wouter@ghetool.eu).
 
 ## Citation
 Please cite GHEtool using the JOSS paper.
 
-Peere, W., Blanke, T.(2022). _GHEtool: An open-source tool for borefield sizing in Python._ Journal of Open Source Software, 7(76), 4406, https://doi.org/10.21105/joss.04406
+Peere, W., Blanke, T.(2022). GHEtool: An open-source tool for borefield sizing in Python. _Journal of Open Source Software, 7_(76), 4406, https://doi.org/10.21105/joss.04406
+
+For more information on how to cite GHEtool, please visit the ReadTheDocs at [GHEtool.readthedocs.io](https://ghetool.readthedocs.io/en/stable/).
+
 
 ## References
+
 ### Development of GHEtool
-Peere, W., Blanke, T. (2022). _GHEtool: An open-source tool for borefield sizing in Python._ Journal of Open Source Software, 7(76), 4406, https://doi.org/10.21105/joss.04406
+Peere, W., Blanke, T. (2022). GHEtool: An open-source tool for borefield sizing in Python. _Journal of Open Source Software, 7_(76), 4406, https://doi.org/10.21105/joss.04406
 
-Peere, W., Picard, D., Cupeiro Figueroa, I., Boydens, W., and Helsen, L. (2021) _Validated combined first and last year borefield sizing methodology._ In _Proceedings of International Building Simulation Conference 2021_. Brugge (Belgium), 1-3 September 2021. https://doi.org/10.26868/25222708.2021.30180
+Peere, W., Picard, D., Cupeiro Figueroa, I., Boydens, W., and Helsen, L. (2021). Validated combined first and last year borefield sizing methodology. In _Proceedings of International Building Simulation Conference 2021_. Brugge (Belgium), 1-3 September 2021. https://doi.org/10.26868/25222708.2021.30180
 
-Peere, W. (2020) Methode voor economische optimalisatie van geothermische verwarmings- en koelsystemen. Master thesis, Departement of Mechanical Engineering,
+Peere, W. (2020). Methode voor economische optimalisatie van geothermische verwarmings- en koelsystemen. Master thesis, Department of Mechanical Engineering,
 KU Leuven, Belgium.
 
 ### Applications/Mentions of GHEtool
-M. Sharifi. (2022) Early-Stage Integrated Design Methods for Hybrid GEOTABS Buildings. PhD thesis, Department of Architecture and Urban Planning, Faculty of Engineering and Architecture, Ghent University.
 
-Coninx M., De Nies J. (2022) Cost-efficient Cooling of Buildings by means of Borefields with Active and Passive Cooling. Master thesis, Departement of Mechanical Engineering, KU Leuven, Belgium.
+Cimmino, M., Cook., J. C. (2022). pygfunction 2.2 : New Features and Improvements in Accuracy and Computational Efficiency. In _Proceedings of IGSHPA Research Track 2022_. Las Vegas (USA), 6-8 December 2022. https://doi.org/10.22488/okstate.22.000015
 
-Michiels E. (2022) Dimensionering van meerdere gekoppelde boorvelden op basis van het type vraagprofiel en de verbinding met de gebruikers. Master thesis, Departement of Mechanical Engineering, KU Leuven, Belgium.
+Verleyen, L., Peere, W., Michiels, E., Boydens, W., Helsen, L. (2022). The beauty of reason and insight: a story about 30 years old borefield equations. _IEA HPT Magazine 40_(3), 36-39, https://doi.org/10.23697/6q4n-3223
 
-Vanpoucke B. (2022) Optimale dimensionering van boorvelden door een variabel massadebiet. Master thesis, Departement of Mechanical Engineering, KU Leuven, Belgium.
+Peere, W., Boydens, W., Helsen, L. (2022). GHEtool: een open-sourcetool voor boorvelddimensionering. Presented at the 15e warmtepompsymposium: van uitdaging naar aanpak, Quadrivium, Heverlee, België.
 
-Haesen R., Hermans L. (2021) Design and Assessment of Low-carbon Residential District Concepts with(Collective) Seasonal Thermal Energy Storage. Master thesis, Departement of Mechanical Engineering, KU Leuven, Belgium.
+Peere, W., Coninx, M., De Nies, J., Hermans, L., Boydens, W., Helsen, L. (2022). Cost-efficient Cooling of Buildings by means of Borefields with Active and Passive Cooling. Presented at the 15e warmtepompsymposium: van uitdaging naar aanpak, Quadrivium, Heverlee, België.
+
+Peere, W. (2022). Technologieën voor de energietransitie. Presented at the Energietransitie in meergezinswoningen en kantoorgebouwen: uitdagingen!, VUB Brussel Bruxelles - U Residence.
+
+Sharifi., M. (2022). Early-Stage Integrated Design Methods for Hybrid GEOTABS Buildings. PhD thesis, Department of Architecture and Urban Planning, Faculty of Engineering and Architecture, Ghent University.
+
+Coninx, M., De Nies, J. (2022). Cost-efficient Cooling of Buildings by means of Borefields with Active and Passive Cooling. Master thesis, Department of Mechanical Engineering, KU Leuven, Belgium.
+
+Michiels, E. (2022). Dimensionering van meerdere gekoppelde boorvelden op basis van het type vraagprofiel en de verbinding met de gebruikers. Master thesis, Department of Mechanical Engineering, KU Leuven, Belgium.
+
+Vanpoucke, B. (2022). Optimale dimensionering van boorvelden door een variabel massadebiet. Master thesis, Department of Mechanical Engineering, KU Leuven, Belgium.
+
+Haesen R., Hermans L. (2021). Design and Assessment of Low-carbon Residential District Concepts with (Collective) Seasonal Thermal Energy Storage. Master thesis, Departement of Mechanical Engineering, KU Leuven, Belgium.

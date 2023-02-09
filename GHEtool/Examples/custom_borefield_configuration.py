@@ -4,12 +4,11 @@ This file gives an example on how to work with a custom borefield within GHEtool
 When working on a custom borefield configuration, one needs to import this configuration into the GHEtool.
 Based on the pygfunction, one creates his custom borefield and gives it as an argument to the class initiater Borefield of GHEtool.
 
-You also need a custom g-function file for interpolation. This can also be given as an argument to the class initiater as custom_gfunction.
+You also need a custom g-function file for interpolation. This can also be given as an argument to the class initiater as _custom_gfunction.
 This custom variable, must contain gfunctions for all time steps in Borefield.DEFAULT_TIME_ARRAY, and should be structured as follows:
 {"Time":Borefield.DEFAULT_TIME_ARRAY,"Data":[[Depth1,[Gfunc1,Gfunc2 ...]],[Depth2,[Gfunc1, Gfunc2 ...]]]}.
 
 However, one can use the function 'create_custom_dataset' when a custom borefield is given. This will make the required dataset for the optimisation.
-Please note that, depending on the complexity of the custom field, this can range between 5 minutes and 5 hours.
  """
 
 import numpy as np
@@ -18,10 +17,10 @@ import pygfunction as gt
 # import all the relevant functions
 from GHEtool import *
 
-if __name__ == "__main__":
 
+def custom_borefield_configuration():
     # set the relevant ground data for the calculations
-    data = GroundData(110, 6, 3, 10, 0.12, 10, 12, 2.4 * 10**6)
+    data = GroundData(3, 10, 0.12)
 
     # Monthly loading values
     peak_cooling = np.array([0., 0, 3.4, 6.9, 13., 18., 21., 50., 16., 3.7, 0., 0.])  # Peak cooling in kW
@@ -55,13 +54,10 @@ if __name__ == "__main__":
 
     # create custom borefield based on pygfunction
     custom_field = gt.boreholes.L_shaped_field(N_1=4, N_2=5, B_1=5., B_2=5., H=100., D=4, r_b=0.05)
-    borefield.create_custom_dataset(custom_field, "customfield")
-
-    # set the custom dataset
-    borefield.set_custom_gfunction("customfield")
 
     # set the custom borefield (so the number of boreholes is correct)
     borefield.set_borefield(custom_field)
+    borefield.create_custom_dataset()
 
     # size borefield
     depth = borefield.size(100)
@@ -80,3 +76,7 @@ if __name__ == "__main__":
     borefield.calculate_temperatures(depth=90)
     print("Result array for cooling peaks")
     print(borefield.results_peak_cooling)
+
+
+if __name__ == "__main__":  # pragma: no cover
+    custom_borefield_configuration()
