@@ -148,7 +148,7 @@ def test_temp_profile_temp_gradient(qtbot, gradient: float, ground_temp: float):
     depth = gs.option_depth.get_value()
 
     gradient = round_down(gradient, 3)
-    ground_temp = round_down(ground_temp, 3)
+    ground_temp = round_down(ground_temp, 2)
 
     gs.aim_temp_profile.widget.click() if not gs.aim_temp_profile.widget.isChecked() else None
 
@@ -160,7 +160,7 @@ def test_temp_profile_temp_gradient(qtbot, gradient: float, ground_temp: float):
     main_window.save_scenario()
 
     borefield.ground_data.flux = k_s * gradient / 100
-    borefield.ground_data.Tg = round_down(ground_temp, 2)
+    borefield.ground_data.Tg = ground_temp
 
     borefield._sizing_setup.use_constant_Tg = False
 
